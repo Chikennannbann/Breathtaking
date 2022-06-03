@@ -1,24 +1,33 @@
-# README
+# BREATHTAKING
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
 
-Things you may want to cover:
+### サイトテーマ
 
-* Ruby version
+絶景を検索したり、自分が撮った絶景写真を投稿したり、絶景スポットに行くグループを作成できるコミュニティーサイト
 
-* System dependencies
+### テーマを選んだ理由
 
-* Configuration
+空や自然が好きで旅行の際も風景が良いところを訪れていました。壮大な景色を見て心を洗われた経験をした人は多いと思います。自然の美しさや素晴らしさを共有でき、また一緒に絶景スポットへ行く仲間を探す場があればと思いテーマにしました。
 
-* Database creation
+### ターゲットユーザ
 
-* Database initialization
+自然や絶景が好きな人、絶景スポットに行きたい人
 
-* How to run the test suite
+### 主な利用シーン
 
-* Services (job queues, cache servers, search engines, etc.)
+旅行の参考にしたり、同じ感性を持つ人との繋がりを持つことができる
 
-* Deployment instructions
+## 設計書
+* ER図
+https://drive.google.com/file/d/1SrpLpb-D1ux3QFcI-byodh_xNdwHrzhR/view?usp=sharing
+* テーブル設計書
+https://docs.google.com/spreadsheets/d/1t7SPO5NPTLPTEBDFaYZtdlXagzDGnkt5Um47eNge6Xk/edit?usp=sharing
 
-* ...
+## 開発環境
+
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JS ライブラリ：jQuery
+- IDE：Cloud9
