@@ -1,2 +1,11 @@
-<h1>Public::Posts#index</h1>
-<p>Find me in app/views/public/posts/index.html.erb</p>
+<div class='container'>
+  <div class='row'>
+    <h1>投稿一覧</h1>
+      <% @posts.each do |f| %>
+        <div>
+        <%= image_tag f.get_view_image, size: "200x200" %><br>
+        <%= f.title %>
+        </div>
+      <% end %>
+  </div>
+</div>
