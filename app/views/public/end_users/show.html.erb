@@ -1,2 +1,9 @@
-<h1>Public::EndUsers#show</h1>
-<p>Find me in app/views/public/end_users/show.html.erb</p>
+<div class'container'>
+  <div class='row'>
+    <h1>マイページ</h1>
+    <%= @end_user.name %>
+    <div>
+      <%= link_to "ユーザー情報を変更する", edit_information_path, class: "btn btn-success" %>
+    </div>
+  </div>
+</div>
