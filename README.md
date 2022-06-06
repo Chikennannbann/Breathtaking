@@ -1,4 +1,4 @@
-# BREATHTAKING
+# BREATHTAKING -絶景-
 
 ## サイト概要
 
@@ -8,21 +8,30 @@
 
 ### テーマを選んだ理由
 
-空や自然が好きで旅行の際も風景が良いところを訪れていました。壮大な景色を見て心を洗われた経験をした人は多いと思います。自然の美しさや素晴らしさを共有でき、また一緒に絶景スポットへ行く仲間を探す場があればと思いテーマにしました。
+　コロナが流行し３年目となり、いくらか制限が緩和された様子ですが、まだまだ不安を抱えながら生活している人が多いのではないかと思います。そんな中で少しでも感動が生まれ、心が豊かになるきっかけづくりができたらと考えました。さらにグループを活用することで、実際に絶景スポットへ行き経験を共有することが可能になり、より感動が伝染していく仕組みとなっています。また目的が自然の絶景スポットへ行くことであり、行動範囲が室外であることから感染症への不安が比較的少ないという安心感に繋がることで、需要が生まれるのではないかと思いテーマにしました。
 
 ### ターゲットユーザ
 
-自然や絶景が好きな人、絶景スポットに行きたい人
+- 自然や絶景が好きな人
+- 絶景スポットに行きたい人
+- 旅先を探している人
+- 写真が好きな人
+- 思い出や経験を共有したい人
 
 ### 主な利用シーン
 
-旅行の参考にしたり、同じ感性を持つ人との繋がりを持つことができる
+- 他者との繋がり
+- 記録
+- 同じ感性を持つ人とコミュニケーション
+- 旅行の参考
 
 ## 設計書
-* ER図
-https://drive.google.com/file/d/1SrpLpb-D1ux3QFcI-byodh_xNdwHrzhR/view?usp=sharing
+* ER図<br>
+ https://drive.google.com/file/d/1SrpLpb-D1ux3QFcI-byodh_xNdwHrzhR/view?usp=sharing
 * テーブル設計書
-https://docs.google.com/spreadsheets/d/1t7SPO5NPTLPTEBDFaYZtdlXagzDGnkt5Um47eNge6Xk/edit?usp=sharing
+　　https://docs.google.com/spreadsheets/d/1t7SPO5NPTLPTEBDFaYZtdlXagzDGnkt5Um47eNge6Xk/edit?usp=sharing
+* アプリケーション詳細設計
+ https://docs.google.com/spreadsheets/d/1TGVG4Lv8A5TyUDbpNN9HLdBqK6CRNvhsOJBBoj-fBew/edit?usp=sharing
 
 ## 開発環境
 
