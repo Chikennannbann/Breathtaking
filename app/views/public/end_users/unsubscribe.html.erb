@@ -1,2 +1,7 @@
-<h1>Public::EndUsers#unsubscribe</h1>
-<p>Find me in app/views/public/end_users/unsubscribe.html.erb</p>
+<div class='container'>
+  <div class='row'>
+    <h1>本当に退会しますか？</h1>
+    <%= link_to "戻る", end_user_path(current_end_user), class:'btn btn-outline-secondary' %>
+    <%= link_to "退会する", withdraw_end_user_path, method: :patch, class:'btn btn-outline-danger' %>
+  </div>
+</div>

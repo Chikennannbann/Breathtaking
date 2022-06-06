@@ -1,2 +1,25 @@
-<h1>Public::EndUsers#edit</h1>
-<p>Find me in app/views/public/end_users/edit.html.erb</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h1>ユーザー情報編集</h1>
+      <%= form_with model:@end_user, url: end_user_path, method: :patch do |f| %>
+        <table class='table'>
+          <tr>
+            <td><%= f.label :"プロフィール写真"%></td>
+            <td><%= f.file_field :profile_image, size: "200x200", accept:'image/*' %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :"名前" %></td>
+            <td><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :"プロフィール" %></td>
+            <td><%= f.text_area :introduction %></td>
+          </tr>
+        </table>
+        <%= f.submit "更新", class: 'btn btn-outline-success' %>
+        <%= link_to "退会する", confirm_unsubscribe_path, class:'btn btn-outline-danger' %>
+      <% end %>
+    </div>
+  </div>
+</div>
