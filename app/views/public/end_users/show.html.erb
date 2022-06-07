@@ -14,7 +14,7 @@
         <td>投稿数:<%= @posts.count %></td>
         <td>グループ数:</td>
       </tr>
-      <% if @end_user == current_end_user %>
+      <% if @end_user == current_end_user && @end_user.name != 'guestenduser'%>
       <tr>
         <td colspan='2'><%= link_to "ユーザー情報を変更する", edit_end_user_path, class: "btn btn-success" %></td>
       </tr>
