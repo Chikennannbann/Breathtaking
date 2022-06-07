@@ -1,2 +1,42 @@
-<h1>Admin::Posts#show</h1>
-<p>Find me in app/views/admin/posts/show.html.erb</p>
+<div class='container mt-5'>
+  <div class="row">
+    <div>
+      <%= image_tag @post.get_view_image, size:'600x400' %>
+      <table class='table'>
+        <tr>
+          <th><%= @post.title %></th>
+        </tr>
+        <tr>
+          <td><%= @post.body %></td>
+        </tr>
+      </table>
+      <table class='table'>
+        <tr>
+          <th>国</th>
+          <td><%= @post.nation %></td>
+        </tr>
+        <tr>
+          <th>県・州</th>
+          <td><%= @post.nation %></td>
+        </tr>
+        <tr>
+          <th>スポット</th>
+          <td><%= @post.nation %></td>
+        </tr>
+      </table>
+      <table class="table">
+        <tr>
+          <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
+        </tr>
+        <tr>
+          <td><%= link_to @post.end_user.name, admin_end_user_path(@post.end_user_id) %></td>
+        </tr>
+        <tr>
+          <td>
+              <%= link_to "投稿削除", post_path, method: :delete, class: 'btn btn-outline-danger'%>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
