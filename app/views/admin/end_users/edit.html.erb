@@ -1,2 +1,40 @@
-<h1>Admin::EndUsers#edit</h1>
-<p>Find me in app/views/admin/end_users/edit.html.erb</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class='col-md-12'>
+        <h3><%= @end_user.name %>さんの詳細編集</h3>
+        <%= form_with model: @end_user, url: admin_end_user_path, method: :patch do |f| %>
+        <table class="table">
+          <tr>
+            <th>ユーザーID</th>
+            <td><%= @end_user.id %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :"名前" %></th>
+            <td><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :"メールアドレス" %></th>
+            <td><%= f.text_area :email %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :"プロフィール" %></th>
+            <td><%= f.text_area :introduction %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :"プロフィール写真" %></th>
+            <td><%= f.file_field :profile_image, size: "200x200", accept:'image/*' %></td>
+          </tr>
+            <th><%= f.label :"ステータス" %></th>
+            <td>
+              <%= f.radio_button :is_deleted, :false %>
+              <%= f.label :is_deleted, "有効", class: 'text-success font-weight-bold' %>
+              <%= f.radio_button :is_deleted, :true %>
+              <%= f.label :is_deleted, "退会", class: 'text-secondary' %>
+            </td>
+          </tr>
+        </table>
+        <%= f.submit "変更を保存", class: 'btn btn-outline-success' %>
+        <% end %>
+    </div>
+  </div>
+</div>
