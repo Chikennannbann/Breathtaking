@@ -30,7 +30,7 @@
           <td colspan='3'><%= link_to @post.end_user.name, admin_end_user_path(@post.end_user_id) %></td>
         </tr>
         <tr>
-          <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= l @post.created_at, format: :short %></td>
         </tr>
         <tr>
           <td>
@@ -51,7 +51,7 @@
               </tr>
               <tr>
                 <td><%= comment.body %></td>
-                <td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
+                <td><%= l comment.created_at, format: :short %></td>
                 <td>
                   <%= link_to "削除", post_post_comment_path(comment.post, comment), method: :delete, remote: true, class: 'btn btn-outline-danger btn-sm' %>
                 </td>

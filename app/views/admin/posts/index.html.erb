@@ -13,7 +13,7 @@
         <% @posts.each do |f| %>
         <tbody>
           <tr onclick='window.location="<%= '/admin/posts/' + f.id.to_s %>"' role="link" >
-            <td><%= f.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+            <td><%= l f.created_at %></td>
             <td><%= link_to f.end_user.name, admin_post_path(f.end_user_id) %></td>
             <td><%= f.title %></td>
           </tr>
