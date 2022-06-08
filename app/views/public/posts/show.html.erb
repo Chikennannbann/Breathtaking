@@ -31,16 +31,8 @@
         </tr>
         <tr>
           <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
-          <td>
-            <% if @post.favorited_by?(current_end_user) %>
-              <%= link_to post_favorites_path(@post),method: :delete do %>
-              ♥ <%= @post.favorites.count %>
-              <% end %>
-            <% else %>
-              <%= link_to post_favorites_path(@post), method: :post do %>
-              ♡ <%= @post.favorites.count %>
-              <% end %>
-            <% end %>
+          <td class='favorite-btn'>
+            <%= render 'public/favorites/favorite-btn', post: @post %>
           </td>
         </tr>
         <tr>
