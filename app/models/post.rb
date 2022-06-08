@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   has_one_attached :view_image
   belongs_to :end_user
+  has_many :post_comments, dependent: :destroy
 
   validates :view_image, presence: true
   validates :title, presence: true

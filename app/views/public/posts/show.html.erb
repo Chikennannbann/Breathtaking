@@ -40,6 +40,28 @@
           </td>
         </tr>
       </table>
+        <p>コメント<%= @post.post_comments.count %></p>
+        <% @post.post_comments.each do |comment| %>
+        <table>
+            <tr>
+              <td rowspan='2'><%= image_tag comment.end_user.get_profile_image, size:'50x50' %></td>
+              <td colspan='3'><%= comment.end_user.name %></td>
+            </tr>
+            <tr>
+            <td><%= comment.body %></td>
+            <td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
+            <% if comment.end_user == current_end_user %>
+              <td><%= link_to "削除", post_post_comment_path(comment.post, comment), method: :delete, class: 'btn btn-outline-danger btn-sm' %></td>
+            <% end %>
+            </tr>
+        </table>
+        <% end %>
+        <div>
+          <%= form_with model:[@post, @post_comment], url: post_post_comments_path(@post, @post_comment), method: :post do |f| %>
+            <%= f.text_area :body, rows:'2', placeholder: "コメントする" %>
+            <%= f.submit "送信する", class: 'btn btn-outline-secondary' %>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>
