@@ -1,7 +1,8 @@
 <div class='container mt-5'>
-  <div class="row">
-    <div>
-      <%= image_tag @post.get_view_image, size:'600x400' %>
+  <div class='row'>
+    <div class='mx-auto mb-5'>
+      <%= image_tag @post.get_view_image, size:'500x300' %>
+    </div>
       <table class='table'>
         <tr>
           <th><%= @post.title %></th>
@@ -26,10 +27,10 @@
       </table>
       <table class="table">
         <tr>
-          <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
+          <td colspan='3'><%= link_to @post.end_user.name, admin_end_user_path(@post.end_user_id) %></td>
         </tr>
         <tr>
-          <td><%= link_to @post.end_user.name, admin_end_user_path(@post.end_user_id) %></td>
+          <td><%= l @post.created_at, format: :short %></td>
         </tr>
         <tr>
           <td>
@@ -37,6 +38,27 @@
           </td>
         </tr>
       </table>
-    </div>
+      <div>
+        <div class='comments-counter'>
+          <%= render 'public/post_comments/counter', post: @post %>
+        </div>
+        <div class='comments-index'>
+          <% @post.post_comments.each do |comment| %>
+            <table>
+              <tr>
+                <td rowspan='2'><%= image_tag comment.end_user.get_profile_image, size:'50x50' %></td>
+                <td colspan='3'><%= link_to comment.end_user.name, admin_end_user_path(@post.end_user_id) %></td>
+              </tr>
+              <tr>
+                <td><%= comment.body %></td>
+                <td><%= l comment.created_at, format: :short %></td>
+                <td>
+                  <%= link_to "削除", post_post_comment_path(comment.post, comment), method: :delete, remote: true, class: 'btn btn-outline-danger btn-sm' %>
+                </td>
+              </tr>
+            </table>
+          <% end %>
+        </div>
+      </div>
   </div>
 </div>
