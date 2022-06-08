@@ -32,8 +32,8 @@ Rails.application.routes.draw do
     resources :end_users, only: [:show, :edit, :update]
     resources :posts do
       resources :post_comments, only: [:create, :destroy]
+      resource :favorites, only: [:create, :destroy]
     end
-    resources :favorites, only: [:create, :destroy]
     resources :groups do
       resources :group_end_users, only: [:create, :destroy]
       resources :event_notices, only: [:new, :create]

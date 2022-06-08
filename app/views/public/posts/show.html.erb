@@ -1,7 +1,8 @@
 <div class='container mt-5'>
-  <div class="row">
-    <div>
-      <%= image_tag @post.get_view_image, size:'600x400' %>
+  <div class='row'>
+    <div class='mx-auto mb-5'>
+      <%= image_tag @post.get_view_image, size:'800x550' %>
+    </div>
       <table class='table'>
         <tr>
           <th><%= @post.title %></th>
@@ -26,10 +27,13 @@
       </table>
       <table class="table">
         <tr>
-          <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
+          <td colspan='3'><%= link_to @post.end_user.name, end_user_path(@post.end_user_id) %></td>
         </tr>
         <tr>
-          <td><%= link_to @post.end_user.name, end_user_path(@post.end_user_id) %></td>
+          <td><%= @post.created_at.strftime('%Y/%m/%d') %></td>
+          <td class='favorite-btn'>
+            <%= render 'public/favorites/favorite-btn', post: @post %>
+          </td>
         </tr>
         <tr>
           <td>
@@ -40,6 +44,14 @@
           </td>
         </tr>
       </table>
-    </div>
+      <div>
+        <div class='comments-counter'>
+          <%= render 'public/post_comments/counter', post: @post %>
+        </div>
+        <div class='comments-index'>
+          <%= render 'public/post_comments/index', post: @post %>
+        </div>
+          <%= render 'public/post_comments/form', post: @post, post_comment: @post_comment %>
+      </div>
   </div>
 </div>
