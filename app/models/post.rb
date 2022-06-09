@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   belongs_to :end_user
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :tags, through: :post_tags
+  has_many :post_tags, dependent: :destroy
 
   validates :view_image, presence: true
   validates :title, presence: true
@@ -26,4 +28,21 @@ class Post < ApplicationRecord
       Post.all
     end
   end
+
+　def save_tags(sent_tags)
+    current_tags = self.tags.plunk(:name) unless self.tags.nil?
+    # タグが存在していればタグの名前を配列として取得
+    old_tags = current_tags - sent_tags
+    new_tags = sent_tags - current_tags
+
+    old_tags.each do |old|
+      self.post_tags.delete(Tag.find_by(name: old))
+    end
+
+    new_tags.each do |new|
+      new_post_tag = Tag.find_or_create_by(name: new)
+      self.post_tags << new_post_tag
+    end
+　end
+
 end
