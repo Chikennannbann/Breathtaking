@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
     get 'end_users/unsubscribe' => 'end_users#unsubscribe', as: 'confirm_unsubscribe'
     patch 'end_users/withdraw' => 'end_users#withdraw', as: 'withdraw_end_user'
-    get 'search' => 'serches/search'
+    get 'search' => 'searches#search'
 
     resources :end_users, only: [:show, :edit, :update]
     resources :posts do
