@@ -29,6 +29,7 @@
             <td><%= f.text_field :place %></td>
           </tr>
         </table>
+        <%= link_to "戻る", post_path(@post), class: 'btn btn-outline-secondary' %>
         <%= f.submit "更新", class: 'btn btn-outline-success' %>
       <% end %>
     </div>

@@ -18,11 +18,11 @@
         </tr>
         <tr>
           <th>県・州</th>
-          <td><%= @post.nation %></td>
+          <td><%= @post.prefecture %></td>
         </tr>
         <tr>
           <th>スポット</th>
-          <td><%= @post.nation %></td>
+          <td><%= @post.place %></td>
         </tr>
       </table>
       <table class="table">
@@ -33,6 +33,15 @@
           <td><%= l @post.created_at, format: :short %></td>
           <td class='favorite-btn'>
             <%= render 'public/favorites/favorite-btn', post: @post %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <% if @post_tags.exists? %>
+              <% @post_tags.each do |f| %>
+              <%= f.name %>
+              <% end %>
+            <% end %>
           </td>
         </tr>
         <tr>

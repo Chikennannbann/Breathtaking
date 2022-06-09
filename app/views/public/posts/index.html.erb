@@ -1,5 +1,8 @@
 <div class='container mt-5'>
   <div class='row'>
+    <% @tag_list.each do |list| %>
+      <span><%= list.name %>(<%= list.post_tags.count %>)</span>
+    <% end %>
       <% @posts.each do |f| %>
         <div class='mr-5'>
         <%= link_to image_tag(f.get_view_image, size:'300x200'), post_path(f.id) %><br>

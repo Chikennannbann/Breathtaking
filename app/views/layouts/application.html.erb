@@ -11,6 +11,7 @@
 
   <body>
     <header style="background-color: #FFFFBB; height: 100px;">
+      <a href='/' style='font-family: Gill Sans, sans-serif; font-size: 24px;'><span>BREATHTAKING -絶景-</span></a>
       <div>
         <ul class='list-group'>
           <% if admin_signed_in? %>
@@ -34,6 +35,7 @@
       </div>
     </header>
     <main>
+      <%= render 'public/searches/form' %>
       <p id="notice"><%= notice %></p>
       <%= yield %>
     </main>
