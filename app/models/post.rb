@@ -18,15 +18,12 @@ class Post < ApplicationRecord
     favorites.exists?(end_user_id: end_user.id)
   end
 
-  # def self.looks(word)
-  #   if @range == "国名"
-  #     Post.where(['nation LIKE?', "%#{word}%"])
-  #   elsif @range == "県・州名"
-  #     Post.where(['prefecture LIKE?', "%#{word}%"])
-  #   elsif @range == "スポット名"
-  #     Post.where(['place LIKE?', "%#{word}%"])
-  #   else
-  #     Post.all
-  #   end
-  # end
+  def self.looks(word)
+    if word
+      Post.where('title LIKE? or body LIKE? or nation LIKE? or prefecture LIKE? or place LIKE?',
+      "%#{word}%","%#{word}%","%#{word}%", "%#{word}%","%#{word}%")
+    else
+      Post.all
+    end
+  end
 end
