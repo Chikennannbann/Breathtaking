@@ -9,30 +9,38 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header style="background-color: #FFFFBB; height: 100px;">
-      <a href='/' style='font-family: Gill Sans, sans-serif; font-size: 24px;'><span>BREATHTAKING -絶景-</span></a>
-      <div>
-        <ul class='list-group'>
-          <% if admin_signed_in? %>
-            <li><%= link_to '投稿一覧', admin_posts_path %></li>
-            <li><%= link_to 'ユーザー一覧', admin_end_users_path %></li>
-            <li><%= link_to 'グループ一覧' %></li>
-            <li><%= link_to 'タグ一覧' %></li>
-            <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
-          <% elsif end_user_signed_in? %>
-            <li><%= link_to '新規投稿', new_post_path %></li>
-            <li><%= link_to 'グループ作成', new_group_path %></li>
-            <li><%= link_to 'マイページ', end_user_path(current_end_user.id) %></li>
-            <li><%= link_to 'ログアウト', destroy_end_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to 'サイトについて', about_path %></li>
-            <li><%= link_to 'ゲストログイン(閲覧用)', end_users_guest_sign_in_path, method: :post %></li>
-            <li><%= link_to 'ログイン', new_end_user_session_path %></li>
-            <li><%= link_to '新規登録', new_end_user_registration_path %></li>
-          <% end %>
-        </ul>
-      </div>
+  <body class='d-flex flex-column vh-100'>
+    <header style="background-color: #FFFFBB;">
+      <nav class='navbar navbar-light'>
+        <div class='container'>
+          <a class='navbar-brand' href='/' style='font-family: Gill Sans, sans-serif; font-size: 24px;'>BREATHTAKING -絶景-</a>
+          <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavDropdown'
+                  aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
+            <span class='navbar-toggler-icon'></span>
+          </button>
+          <div class='collapse navbar-collapse' id='navbarNavDropdown'>
+            <ul class='navbar-nav ml-auto'>
+              <% if admin_signed_in? %>
+                <li class='nav-item'><%= link_to '投稿一覧', admin_posts_path, class: 'nav-link text-ligit' %></li>
+                <li class='nav-item'><%= link_to 'ユーザー一覧', admin_end_users_path, class: 'nav-link text-dark' %></li>
+                <li class='nav-item'><%= link_to 'グループ一覧', groups_path, class: 'nav-link text-dark' %></li>
+                <li class='nav-item'><%= link_to 'タグ一覧', class: 'nav-link text-dark' %></li>
+                <li class='nav-item'><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %></li>
+              <% elsif end_user_signed_in? %>
+                <li class='nav-item'><%= link_to '新規投稿', new_post_path, class: 'nav-link text-dark' %></li>
+                <li class='nav-item'><%= link_to 'グループ一覧', groups_path, class: 'nav-link text-dark' %></li>
+                <li class='nav-item'><%= link_to 'マイページ', end_user_path(current_end_user.id), class: 'nav-link text-dark' %></li>
+                <li class='nav-item'><%= link_to 'ログアウト', destroy_end_user_session_path, method: :delete, class: 'nav-link text-dark' %></li>
+              <% else %>
+                <li class='nav-item'><%= link_to 'サイトについて', about_path, class: 'nav-link text-dark' %></li>
+                <li class='nav-item'><%= link_to 'ゲストログイン(閲覧用)', end_users_guest_sign_in_path, method: :post, class: 'nav-link text-dark' %></li>
+                <li class='nav-item'><%= link_to 'ログイン', new_end_user_session_path, class: 'nav-link text-dark' %></li>
+                <li class='nav-item'><%= link_to '新規登録', new_end_user_registration_path, class: 'nav-link text-dark' %></li>
+              <% end %>
+            </ul>
+         </div>
+        </div>
+      </nav>
     </header>
     <main>
       <%= render 'public/searches/form' %>

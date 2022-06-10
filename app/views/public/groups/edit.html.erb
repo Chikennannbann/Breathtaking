@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h1>新規グループ作成</h1>
+      <%= form_with model:@group, url: group_path, method: :patch do |f| %>
+      <table class='table'>
+         <tr>
+            <td><%= f.label :"グループ写真" %></td>
+            <td><%= f.file_field :group_image, size: "200x200", accept:'image/*' %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :"グループ名"%></td>
+            <td><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :"概要" %></td>
+            <td><%= f.text_area :caption %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :"行き先" %></td>
+            <td><%= f.text_field :destination %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :"日付" %></td>
+            <td><%= f.date_field :date %></td>
+          </tr>
+        </table>
+        <%= f.submit "更新", class: 'btn btn-outline-success' %>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>
