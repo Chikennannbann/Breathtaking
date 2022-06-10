@@ -8,6 +8,11 @@ class EndUser < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :group_end_users
+  has_many :groups, through: :group_end_users
+
+  validates :name, uniqueness: true
+  validates :introduction, length: { maximum: 200 }
 
   def get_profile_image
     if profile_image.attached?
