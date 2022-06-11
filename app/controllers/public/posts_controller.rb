@@ -7,7 +7,7 @@ class Public::PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
-    @post_tags = @post.post_tags
+    @post_tags = @post.tags
   end
 
   def new
@@ -17,6 +17,7 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.end_user_id = current_end_user.id
+    # byebug
     tag_list = params[:post][:name].split(',')
     if @post.save
       @post.save_tags(tag_list)

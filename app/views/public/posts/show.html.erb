@@ -39,7 +39,7 @@
           <td>
             <% if @post_tags.exists? %>
               <% @post_tags.each do |f| %>
-              <%= f.name %>
+              <%= link_to f.name %>
               <% end %>
             <% end %>
           </td>

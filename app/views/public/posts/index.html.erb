@@ -1,7 +1,7 @@
 <div class='container mt-5'>
   <div class='row'>
     <% @tag_list.each do |list| %>
-      <span><%= list.name %>(<%= list.post_tags.count %>)</span>
+      <span><%= link_to list.name %>(<%= list.post_tags.count %>)</span>
     <% end %>
       <% @posts.each do |f| %>
         <div class='mr-5'>
