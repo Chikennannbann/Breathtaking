@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       resources :post_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
+    resources :tags, only: [:show, :index]
     resources :groups do
       resources :group_end_users, only: [:create, :destroy]
       resources :event_notices, only: [:new, :create]

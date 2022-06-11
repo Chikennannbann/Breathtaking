@@ -1,7 +1,6 @@
 class Public::PostsController < ApplicationController
   def index
     @posts = Post.all
-    @tag_list = Tag.all
   end
 
   def show
