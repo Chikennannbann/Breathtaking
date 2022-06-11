@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show] do
       resources :post_comments, only: [:destroy]
     end
+    resources :groups, only: [:index, :show]
   end
 
   devise_for :end_users, skip: [:passwords], controllers: {
