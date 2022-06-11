@@ -2,12 +2,7 @@
   <h3>"<%= @word %>"の検索結果：<%= @posts.count %>件</h3>
   <div class='row'>
     <% if @posts.exists? %>
-      <% @posts.each do |f| %>
-        <div class='mr-5'>
-        <%= link_to image_tag(f.get_view_image, size:'300x200'), post_path(f.id) %><br>
-        <%= f.title %>
-        </div>
-      <% end %>
+      <%= render 'public/posts/index', posts: @posts %>
     <% else %>
       <p>ヒットする投稿がありませんでした。他の単語で再検索してください。</p>
     <% end %>

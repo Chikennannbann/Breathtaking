@@ -37,10 +37,8 @@
         </tr>
         <tr>
           <td>
-            <% if @post_tags.exists? %>
-              <% @post_tags.each do |f| %>
+            <% @post_tags.each do |f| %>
               <%= link_to f.name, tag_path(f) %>
-              <% end %>
             <% end %>
           </td>
         </tr>
