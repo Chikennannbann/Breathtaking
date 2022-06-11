@@ -38,6 +38,8 @@ Rails.application.routes.draw do
     resources :groups do
       resources :group_end_users, only: [:create, :destroy]
       resources :event_notices, only: [:new, :create]
+      get 'join' => 'groups#join'
+      delete 'withdraw' => 'groups#withdraw'
       get 'event_notices/sent' => 'event_notices#sent', as: 'sent'
     end
   end
