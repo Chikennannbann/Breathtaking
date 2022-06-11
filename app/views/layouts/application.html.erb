@@ -41,9 +41,10 @@
          </div>
         </div>
       </nav>
+      <%= link_to "タグから検索する", tags_path%>
+      <%= render 'public/searches/form' %>
     </header>
     <main>
-      <%= render 'public/searches/form' %>
       <p id="notice"><%= notice %></p>
       <%= yield %>
     </main>

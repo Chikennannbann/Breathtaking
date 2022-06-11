@@ -10,6 +10,13 @@ class Public::GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+  def join
+    @group = Group.find(params[:group_id])
+    @group.end_users << current_end_user
+    redirect_to groups_path
+    flash[:notice] = "グループに参加しました"
+  end
+
   def new
     @group = Group.new
   end
@@ -17,6 +24,7 @@ class Public::GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.owner_id = current_end_user.id
+    @group.end_users << current_end_user
     if @group.save
       redirect_to groups_path
       flash[:notice] = "グループを作成しました"
@@ -41,6 +49,13 @@ class Public::GroupsController < ApplicationController
     @group.destroy
     redirect_to groups_path
     flash[:notice] = "グループを削除しました"
+  end
+
+  def withdraw
+    @group = Group.find(params[:group_id])
+    @group.end_users.delete(current_end_user)
+    redirect_to groups_path
+    flash[:notice] = "グループから脱退しました"
   end
 
 

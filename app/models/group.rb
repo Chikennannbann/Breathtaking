@@ -11,12 +11,16 @@ class Group < ApplicationRecord
 
 
   def get_group_image
-    if group_image.attached?
-      group_image
-    else
-      file_path = Rails.root.join('app/assets/images/mt-fuji.jpeg')
-      group_image.attach(io: File.open(file_path), filename: 'mt-fuji.jpeg', content_type: 'image/jpeg')
+    # jpgにするとデプロイでのエラー回避になる, if文もokだが記述量が多くなるためunlessが無難
+    unless group_image.attached?
+      file_path = Rails.root.join('app/assets/images/mt-fuji.jpg')
+      group_image.attach(io: File.open(file_path), filename: 'mt-fuji.jpg', content_type: 'image/jpeg')
     end
+    group_image
   end
 
+  # オーナーの名前をどこからでも引っ張るためのメソッド
+  def owner_name
+    self.end_users.find(self.owner_id).name
+  end
 end
