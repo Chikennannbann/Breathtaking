@@ -1,4 +1,5 @@
 class Public::EventNoticesController < ApplicationController
+  before_action :authenticate_end_user!
 
   def new
     @group = Group.find(params[:group_id])

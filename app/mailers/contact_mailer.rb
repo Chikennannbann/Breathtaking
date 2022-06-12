@@ -9,7 +9,7 @@ class ContactMailer < ApplicationMailer
     mail(
       from: ENV['MAIL_ADDRESS'],
       to: member.email,
-      subject: '新しいイベントの通知です！'
+      subject: 'BREATHTAKING-絶景- グループからの通知'
       )
   end
 
