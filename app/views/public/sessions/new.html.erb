@@ -1,3 +1,6 @@
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-9 col-lg-4 px-5 px-sm-0 mx-auto">
 <h2>ログイン</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,5 +25,8 @@
     <%= f.submit "ログイン" %>
   </div>
 <% end %>
-
-<%= render "public/shared/links" %>
+<%= link_to '新規登録', new_end_user_registration_path, class: 'link text-warning' %><br>
+<%= link_to 'ゲストログイン', end_users_guest_sign_in_path, method: :post, class: 'link text-warning' %>
+    </div>
+  </div>
+</div>
