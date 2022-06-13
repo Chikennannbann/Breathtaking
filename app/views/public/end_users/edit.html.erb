@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h1>ユーザー情報編集</h1>
+      <%= render 'layouts/errors', object: @end_user %>
       <%= form_with model:@end_user, url: end_user_path, method: :patch do |f| %>
         <table class='table'>
           <tr>

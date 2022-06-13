@@ -1,5 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :ensure_correct_end_user, only: [:edit, :update, :destroy]
+  before_action :ensure_guest_end_user, except: [:index, :show, :new]
 
   def index
     @posts = Post.all
@@ -33,7 +34,9 @@ class Public::PostsController < ApplicationController
   end
 
   def update
+    tag_list = params[:post][:name].split(',')
     if @post.update(post_params)
+      @post.save_tags(tag_list)
       redirect_to posts_path
       flash[:notice] = "編集が完了しました"
     else
@@ -59,6 +62,12 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
     unless @post.end_user == current_end_user
       redirect_to posts_path
+    end
+  end
+
+  def ensure_guest_end_user
+    if current_end_user.name == "guestenduser"
+      redirect_to posts_path, notice: 'ゲストユーザーではご利用いただけません'
     end
   end
 

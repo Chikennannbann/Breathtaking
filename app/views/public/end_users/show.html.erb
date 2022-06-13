@@ -11,12 +11,12 @@
         <td colspan='2'><%= @end_user.introduction %></td>
       </tr>
       <tr>
-        <td>投稿数:<%= @posts.count %></td>
-        <td>グループ数:</td>
+        <td>投稿数：<%= @posts.count %></td>
+        <td>グループ数：<%= @groups.count %></td>
       </tr>
       <% if @end_user == current_end_user && @end_user.name != 'guestenduser'%>
       <tr>
-        <td colspan='2'><%= link_to "ユーザー情報を変更する", edit_end_user_path, class: "btn btn-success" %></td>
+        <td colspan='2'><%= link_to "ユーザー情報を変更する", edit_end_user_path, class: "btn btn-outline-success" %></td>
       </tr>
       <% end %>
     </table>

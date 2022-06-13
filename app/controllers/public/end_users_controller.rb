@@ -1,10 +1,12 @@
 class Public::EndUsersController < ApplicationController
+  before_action :authenticate_end_user!, except: [:show]
   before_action :ensure_correct_end_user, only: [:edit, :update]
   before_action :ensure_guest_end_user, only: [:edit]
 
   def show
     @end_user = EndUser.find(params[:id])
     @posts = @end_user.posts
+    @groups = @end_user.groups
   end
 
   def edit
@@ -44,7 +46,7 @@ class Public::EndUsersController < ApplicationController
       redirect_to end_user_path(current_end_user)
     end
   end
-  
+
   def ensure_guest_end_user
     @end_user = EndUser.find(params[:id])
     if @end_user.name == "guestenduser"

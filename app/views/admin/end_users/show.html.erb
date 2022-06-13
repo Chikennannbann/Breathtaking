@@ -33,9 +33,8 @@
             </td>
           </tr>
         </table>
-
+        <%= link_to "戻る", admin_end_users_path, class: 'btn btn-outline-secondary' %>
         <%= link_to "編集する", edit_admin_end_user_path(@end_user.id), class: "mr-3 btn btn-outline-success" %>
-        <%= link_to "投稿一覧を見る", admin_posts_path, class: "btn btn-outline-primary" %>
     </div>
   </div>
 </div>
