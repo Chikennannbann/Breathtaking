@@ -11,7 +11,7 @@ class EndUser < ApplicationRecord
   has_many :group_end_users
   has_many :groups, through: :group_end_users
 
-  validates :name, uniqueness: true
+  validates :name, presence: true, uniqueness: true
   validates :introduction, length: { maximum: 200 }
 
   def get_profile_image

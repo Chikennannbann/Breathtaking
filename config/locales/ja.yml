@@ -3,3 +3,57 @@ ja:
     formats:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%Y/%m/%d"
+
+  devise:
+    confirmations:
+      confirmed: 'アカウントを登録しました'
+    failure:
+      already_authenticated: 'すでにログインしています。'
+      invalid: "%{authentication_keys} もしくはパスワードが不正です。"
+      not_found_in_database: "%{authentication_keys} もしくはパスワードが不正です。"
+      unauthenticated: 'アカウント登録もしくはログインしてください。'
+    mailer:
+      password_change:
+        subject: 'パスワードの変更について'
+    omniauth_callbacks:
+      failure: "%{kind} アカウントによる認証に失敗しました。理由：（%{reason}）"
+      success: "%{kind} アカウントによる認証に成功しました。"
+    registrations:
+      signed_up: 'アカウント登録が完了しました'
+    sessions:
+      signed_in: 'ログインしました'
+      signed_out: 'ログアウトしました'
+      already_signed_out: '既にログアウト済みです'
+  errors:
+    messages:
+      already_confirmed: 'は既に登録済みです。ログインしてください。'
+      not_found: 'は見つかりませんでした。'
+      not_saved:
+        one: "エラーが発生したため保存されませんでした:"
+        other: "%{count} 件のエラー"
+      taken: "は既に使用されています。"
+      blank: "が入力されていません。"
+      too_short: "は%{count}文字以上に設定して下さい。"
+      too_long: "は%{count}文字以下に設定して下さい。"
+      invalid: "は有効でありません。"
+      confirmation: "が内容とあっていません。"
+
+  activerecord:
+      attributes:
+        end_user:
+          email: "メールアドレス"
+          password: "パスワード"
+          name: "名前"
+          introduction: "プロフィール"
+        post:
+          view_image: "写真"
+          title: "タイトル"
+          nation: "国"
+          prefecture: "県・州"
+          place: "スポット名"
+        group:
+          name: "グループ名"
+          caption: "概要"
+          price: "税抜価格"
+          destination: "行き先"
+          date: "日付"

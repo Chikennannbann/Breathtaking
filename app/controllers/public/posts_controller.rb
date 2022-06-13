@@ -33,7 +33,9 @@ class Public::PostsController < ApplicationController
   end
 
   def update
+    tag_list = params[:post][:name].split(',')
     if @post.update(post_params)
+      @post.save_tags(tag_list)
       redirect_to posts_path
       flash[:notice] = "編集が完了しました"
     else
