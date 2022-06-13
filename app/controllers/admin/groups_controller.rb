@@ -1,4 +1,5 @@
 class Admin::GroupsController < ApplicationController
+  before_action :authenticate_admin!
 
   def index
     @groups = Group.all
@@ -7,5 +8,5 @@ class Admin::GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
   end
-  
+
 end
