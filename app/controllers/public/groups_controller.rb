@@ -1,6 +1,7 @@
 class Public::GroupsController < ApplicationController
   before_action :authenticate_end_user!, except: [:index]
   before_action :ensure_correct_end_user, only: [:edit, :update]
+  before_action :ensure_guest_end_user, except: [:index, :show]
 
   def index
     @groups = Group.all
@@ -71,5 +72,10 @@ class Public::GroupsController < ApplicationController
       redirect_to groups_path
     end
   end
-end
 
+  def ensure_guest_end_user
+    if current_end_user.name == "guestenduser"
+      redirect_to groups_path, notice: 'ゲストユーザーではご利用いただけません'
+    end
+  end
+end

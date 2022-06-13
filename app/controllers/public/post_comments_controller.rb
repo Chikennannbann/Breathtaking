@@ -1,4 +1,5 @@
 class Public::PostCommentsController < ApplicationController
+  before_action :ensure_guest_end_user
 
   def create
     post = Post.find(params[:post_id])
@@ -20,4 +21,9 @@ class Public::PostCommentsController < ApplicationController
     params.require(:post_comment).permit(:body)
   end
 
+  def ensure_guest_end_user
+    if current_end_user.name == "guestenduser"
+      redirect_to request.referer, notice: 'ゲストユーザーではご利用いただけません'
+    end
+  end
 end
