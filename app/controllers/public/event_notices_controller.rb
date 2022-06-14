@@ -15,7 +15,7 @@ class Public::EventNoticesController < ApplicationController
       :title => @title,
       :body => @body
     }
-
+    
     ContactMailer.send_notifications_to_group(event)
 
     redirect_to group_sent_path(@group)
