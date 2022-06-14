@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   }
 
   scope module: :public do
-    root 'posts#index'
+    root 'homes#top'
     get 'about' => 'homes#about', as: 'about'
 
     get 'end_users/unsubscribe' => 'end_users#unsubscribe', as: 'confirm_unsubscribe'

@@ -1,2 +1,14 @@
-<h1>BREATHTAKING ~絶景~</h1>
-
+<div class='top-image'>
+  <div class='top-text'>
+    自然が織りなす絶景<br>
+    感動を共有しましょう<br>
+    <div class='border'>
+    <%= link_to "サイトについて", about_path, class: 'text-light' %>
+    </div>
+  </div>
+</div>
+<div class='container mt-5'>
+  <div class='row my-5 card-wrapper'>
+    <%= render 'public/posts/index', posts: @posts %>
+  </div>
+</div>

@@ -1,9 +1,15 @@
-<% if post.favorited_by?(current_end_user) %>
-  <%= link_to post_favorites_path(post), method: :delete, remote: true do %>
-   ♥ <%= post.favorites.count %>
+<% if end_user_signed_in? %>
+
+  <% if post.favorited_by?(current_end_user) %>
+    <%= link_to post_favorites_path(post), method: :delete, remote: true do %>
+     ♥ <%= post.favorites.count %>
+    <% end %>
+  <% else %>
+    <%= link_to post_favorites_path(post), method: :post, remote: true do %>
+     ♡ <%= post.favorites.count %>
+    <% end %>
   <% end %>
+
 <% else %>
-  <%= link_to post_favorites_path(post), method: :post, remote: true do %>
-   ♡ <%= post.favorites.count %>
-  <% end %>
+  ♡ <%= @post.favorites.count %>
 <% end %>

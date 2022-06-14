@@ -5,15 +5,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 　　<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class='d-flex flex-column vh-100'>
-    <header style="background-color: #FFFFBB;">
+    <header class='border-bottom border-dark'>
       <nav class='navbar navbar-light'>
         <div class='container'>
-          <a class='navbar-brand' href='/' style='font-family: Gill Sans, sans-serif; font-size: 24px;'>BREATHTAKING -絶景-</a>
+          <a class='navbar-brand' href='/' style='font-family: Gill Sans, sans-serif; font-size: 30px;'>BREATHTAKING -絶景-</a>
           <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavDropdown'
                   aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
             <span class='navbar-toggler-icon'></span>
@@ -43,12 +43,9 @@
          </div>
         </div>
       </nav>
-
+      <%= render 'public/searches/form' %>
     </header>
     <main>
-      <div class='text-right mr-5'>
-      <%= render 'public/searches/form' %>
-      </div>
       <p id='notice' class='text-center'><%= notice %></p>
       <%= yield %>
     </main>
