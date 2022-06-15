@@ -1,9 +1,12 @@
- <div class='container mt-5'>
+ <div class='container my-5'>
   <div class='row'>
-    <% @tags.each do |f| %>
-      <span class='mr-3'>
-        <%= link_to f.name, tag_path(f.id) %>(<%= f.post_tags.count %>)
-      </span>
-    <% end %>
+    <div class='col-8 mx-auto'>
+      <h3>タグから探す</h3>
+      <% @tags.each do |f| %>
+        <span class='mr-3 mt-5'>
+          <i class="fa-solid fa-tags"></i> <u><%= link_to f.name, tag_path(f.id), class: 'text-dark' %></u>(<%= f.post_tags.count %>)
+        </span>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -1,7 +1,8 @@
-<div class='container mt-5'>
+<div class='container my-5'>
   <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-6 px-5 px-sm-0 mx-auto text-center">
     <%= image_tag @group.get_group_image, size:'100x100' %>
-        <table class='table'>
+        <table class='table text-left my-4'>
           <thead>
             <tr>
               <th>グループ名</th>
@@ -23,7 +24,7 @@
               <th>メンバー</th>
               <td>
                 <% @group.end_users.each do |f| %>
-                  <%= link_to f.name, end_user_path(f) %><br>
+                  <u><%= link_to f.name, end_user_path(f), class: 'text-dark' %></u>
                 <% end %>
               </td>
             </tr>
@@ -31,21 +32,37 @@
               <th>作成者</th>
               <td><%= @group.owner_name %></td>
             </tr>
-            <tr>
-              <th></th>
-              <td>
-                <% if @group.owner_id == current_end_user.id %>
-                  <%= link_to "メール作成", new_group_event_notice_path(@group), class: 'btn btn-outline-primary' %>
-                  <%= link_to "編集", edit_group_path(@group), class: 'btn btn-outline-warning' %>
-                  <%= link_to "削除", group_path, method: :delete, class: 'btn btn-outline-danger' %>
-                <% elsif @group.end_users.include?(current_end_user) %>
-                  <%= link_to "脱退する", group_withdraw_path(@group), method: :delete, class: 'btn btn-outline-danger' %>
-                <% else %>
-                  <%= link_to "参加する", group_join_path(@group), class: 'btn btn-outline-success' %>
-                <% end %>
-              </td>
-            </tr>
           </thead>
         </table>
+                <% if @group.owner_id == current_end_user.id %>
+                  <%= link_to "メンバーにイベントを通知（次のページでメール作成）", new_group_event_notice_path(@group), class: 'btn btn-dark' %>
+                  <div class='row mt-4'>
+                    <div class='col-4 mx-auto'>
+                      <%= link_to "編集", edit_group_path(@group), class: 'btn btn-outline-dark btn-block' %>
+                    </div>
+                    <div class='col-4 mx-auto'>
+                     <%= link_to "削除", group_path, method: :delete, class: 'btn btn-outline-dark btn-block' %>
+                    </div>
+                  </div>
+                <% elsif @group.end_users.include?(current_end_user) %>
+                  <div class='row'>
+                    <div class='col-4 mx-auto'>
+                      <%= link_to "戻る", groups_path, class: 'btn btn-outline-dark btn-block' %>
+                    </div>
+                    <div class='col-4 mx-auto'>
+                      <%= link_to "脱退する", group_withdraw_path(@group), method: :delete, class: 'btn btn-dark' %>
+                    </div>
+                  </div>
+                <% else %>
+                 <div class='row'>
+                    <div class='col-4 mx-auto'>
+                      <%= link_to "戻る", groups_path, class: 'btn btn-outline-dark btn-block' %>
+                    </div>
+                    <div class='col-4 mx-auto'>
+                      <%= link_to "参加する", group_join_path(@group), class: 'btn btn-dark' %>
+                    </div>
+                  </div>
+                <% end %>
+    </div>
   </div>
 </div>

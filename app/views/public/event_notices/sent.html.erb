@@ -1,16 +1,18 @@
-<div class='container'>
-  <div class='row justify-content-center'>
-    <div class='col-6'>
-      <h1>送信が完了しました</h1>
-      <p>内容は以下の通りです。</p>
+<div class='container my-5'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-6 px-5 px-sm-0 mx-auto text-center">
+      <h2>メールを送信しました</h2>
+      <p>内容は以下の通りです。<u>※ グループ作成者にもメールが届きます。</u></p>
 
-      <h3>タイトル</h3>
+      <div class='col-lg-8 mx-auto text-left my-4'>
+      <h4>タイトル</h4>
       <p><%= @title %></p>
 
-      <h3>本文</h3>
+      <h4>本文</h4>
       <p><%= @body %></p>
+      </div>
 
-      <%= link_to "グループ一覧へ戻る", groups_path, class: 'btn btn-outline-primary' %>
+      <%= link_to "グループ一覧へ戻る", groups_path, class: 'btn btn-dark' %>
     </div>
   </div>
 </div>

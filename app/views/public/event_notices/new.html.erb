@@ -1,18 +1,26 @@
-<div class='container'>
-  <div class='row justify-content-center'>
-    <div class='col-6'>
-      <h2><%= @group.name %>メンバーへのメール</h2>
+<div class='container my-5'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-6 px-5 px-sm-0 mx-auto">
+      <h2><%= @group.name %>　へのメール</h2>
       <%= form_with model:@group, url: group_event_notices_path(@group), method: :post do |f| %>
-      <div class='form-group'>
-        <%= f.label:"タイトル" %>
-        <%= f.text_field :title, class:'form-control'%>
-      </div>
-      <div class="form-group">
-        <%=f.label:"本文" %>
-        <%= f.text_area :body, class:'form-control' %>
-      </div>
-      <div>
-      <%= f.submit "送信", class: 'btn btn-outline-success' %>
+        <div class='form-group'>
+          <%= f.label:"タイトル" %>
+          <%= f.text_field :title, class:'form-control'%>
+        </div>
+        <div class="form-group">
+          <%=f.label:"本文" %>
+          <%= f.text_area :body, class:'form-control' %>
+        </div>
+
+        <div class='row mt-4'>
+          <div class='col-4 mx-auto'>
+            <%= link_to "戻る", group_path(@group), class: 'btn btn-outline-dark btn-block' %>
+          </div>
+          <div class='col-4 mx-auto'>
+            <%= f.submit "送信", class: 'btn btn-dark btn-block' %>
+          </div>
+        </div>
+
       <% end %>
     </div>
   </div>
