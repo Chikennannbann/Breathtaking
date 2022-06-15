@@ -1,9 +1,11 @@
 class Public::GroupsController < ApplicationController
-  before_action :authenticate_end_user!, except: [:index]
+  before_action :authenticate_end_user!, except: [:index, :show]
   before_action :ensure_correct_end_user, only: [:edit, :update, :destroy]
   before_action :ensure_guest_end_user, except: [:index, :show]
 
   def index
+    session[:title] = nil
+    session[:body] = nil
     @groups = Group.all
   end
 
@@ -68,7 +70,7 @@ class Public::GroupsController < ApplicationController
 
   def ensure_correct_end_user
     @group = Group.find(params[:id])
-    unless @group.owner_id == current_end_user.id
+    unless @group.owner_id == current_end_user.id || current_end_user.name == "guestenduser"
       redirect_to groups_path
     end
   end
