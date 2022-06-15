@@ -1,11 +1,11 @@
 <div class="container my-5">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-6 px-5 px-sm-0 mx-auto text-center">
+    <div class="col-sm-12 col-md-10 col-lg-6 px-5 px-sm-0 mx-auto text-center">
       <h2>ユーザー情報編集</h2>
       <%= render 'layouts/errors', object: @end_user %>
       <%= form_with model:@end_user, url: end_user_path, method: :patch do |f| %>
 
-        <table class='table my-4'>
+        <table class='table text-left my-4'>
           <tr>
             <td><%= f.label :"プロフィール写真"%></td>
             <td><%= f.file_field :profile_image, size: "200x200", accept:'image/*' %></td>
@@ -20,9 +20,16 @@
           </tr>
         </table>
 
-        <div class='col-6 mx-auto'>
+        <div class='row'>
+          <div class='col-4 mx-auto'>
+            <%= link_to "戻る", end_user_path(@end_user), class: 'btn btn-outline-dark btn-block' %>
+          </div>
+          <div class='col-4 mx-auto'>
           <%= f.submit "更新", class: 'btn btn-dark btn-block' %>
-          <%= link_to "退会する", confirm_unsubscribe_path, class:'btn btn-outline-dark btn-block' %>
+          </div>
+        </div>
+        <div class='mt-5'>
+          <%= link_to "退会する", confirm_unsubscribe_path, class:'text-dark' %>
         </div>
       <% end %>
     </div>

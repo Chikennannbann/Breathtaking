@@ -1,41 +1,49 @@
-<div class="container mt-5">
+<div class="container my-5">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-      <h1>投稿編集</h1>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto text-center">
+      <h2>投稿編集</h2>
       <%= render 'layouts/errors', object: @post %>
       <%= form_with model:@post, url: post_path, method: :patch do |f| %>
-        <table class='table'>
+
+        <table class='table text-left my-4'>
           <tr>
             <td><%= f.label :"写真" %></td>
             <td><%= f.file_field :view_image, size: "200x200", accept:'image/*' %></td>
           </tr>
           <tr>
             <td><%= f.label :"タイトル"%></td>
-            <td><%= f.text_field :title %></td>
+            <td><%= f.text_field :title, autofocus: true, size:30 %></td>
           </tr>
           <tr>
             <td><%= f.label :"コメント" %></td>
-            <td><%= f.text_area :body %></td>
+            <td><%= f.text_area :body, size:'30x5' %></td>
           </tr>
           <tr>
             <td><%= f.label :"国"%></td>
-            <td><%= f.text_field :nation %></td>
+            <td><%= f.text_field :nation, size:30 %></td>
           </tr>
           <tr>
             <td><%= f.label :"県、州"%></td>
-            <td><%= f.text_field :prefecture %></td>
+            <td><%= f.text_field :prefecture, size:30 %></td>
           </tr>
           <tr>
             <td><%= f.label :"スポット名"%></td>
-            <td><%= f.text_field :place %></td>
+            <td><%= f.text_field :place, size:30 %></td>
           </tr>
           <tr>
             <td><%= f.label :"タグ" %></td>
-            <td><%= f.text_field :name, placeholder: ",で区切ると複数のタグが登録できます" %></td>
+            <td><%= f.text_field :name, placeholder: ",で区切ると複数のタグが登録可能", size:30 %></td>
           </tr>
         </table>
-        <%= link_to "戻る", post_path(@post), class: 'btn btn-outline-secondary' %>
-        <%= f.submit "更新", class: 'btn btn-outline-success' %>
+
+        <div class='row'>
+          <div class='col-4 mx-auto'>
+            <%= link_to "戻る", post_path(@post), class: 'btn btn-outline-dark btn-block' %>
+          </div>
+          <div class='col-4 mx-auto'>
+            <%= f.submit "更新", class: 'btn btn-dark btn-block' %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>

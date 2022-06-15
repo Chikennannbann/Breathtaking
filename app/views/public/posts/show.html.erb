@@ -1,8 +1,11 @@
-<div class='container mt-5'>
+<div class='container my-5'>
   <div class='row'>
-    <div class='mx-auto mb-5'>
+    <div class="col-sm-12 col-md-12 col-lg-8 px-5 px-sm-0 mx-auto">
       <%= image_tag @post.get_view_image, size:'800x550' %>
     </div>
+  </div>
+  <div class='row my-4'>
+    <div class='col-6'>
       <table class='table'>
         <tr>
           <th><%= @post.title %></th>
@@ -25,9 +28,14 @@
           <td><%= @post.place %></td>
         </tr>
       </table>
+    </div>
+
+    <div class='col-4 offset-1'>
       <table class="table">
         <tr>
-          <td colspan='3'><%= link_to @post.end_user.name, end_user_path(@post.end_user_id) %></td>
+          <td colspan='3'>
+            <u><%= link_to @post.end_user.name, end_user_path(@post.end_user_id), class: 'text-dark' %></u>
+          </td>
         </tr>
         <tr>
           <td><%= l @post.created_at, format: :short %></td>
@@ -37,28 +45,32 @@
         </tr>
         <tr>
           <td>
+            <i class="fa-solid fa-tags"></i>
             <% @post_tags.each do |f| %>
-              <%= link_to f.name, tag_path(f) %>
+              <u><%= link_to f.name, tag_path(f), class: 'text-dark' %></u>
             <% end %>
           </td>
         </tr>
         <tr>
           <td>
             <% if @post.end_user == current_end_user %>
-              <%= link_to "投稿編集", edit_post_path, class: 'btn btn-outline-warning' %>
-              <%= link_to "投稿削除", post_path, method: :delete, class: 'btn btn-outline-danger'%>
+              <%= link_to "編集", edit_post_path, class: 'btn btn-dark' %>
+              <%= link_to "削除", post_path, method: :delete, class: 'btn btn-dark'%>
             <% end %>
           </td>
         </tr>
       </table>
-      <div>
-        <div class='comments-counter'>
-          <%= render 'public/post_comments/counter', post: @post %>
-        </div>
-        <div class='comments-index'>
-          <%= render 'public/post_comments/index', post: @post %>
-        </div>
-          <%= render 'public/post_comments/form', post: @post, post_comment: @post_comment %>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-6 mx-auto'>
+      <div class='comments-counter'>
+        <%= render 'public/post_comments/counter', post: @post %>
       </div>
+      <div class='comments-index'>
+        <%= render 'public/post_comments/index', post: @post %>
+      </div>
+      <%= render 'public/post_comments/form', post: @post, post_comment: @post_comment %>
+    </div>
   </div>
 </div>

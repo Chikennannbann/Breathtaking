@@ -1,15 +1,15 @@
 <% post.post_comments.each do |comment| %>
-  <table>
+  <table class='table text-left'>
     <tr>
       <td rowspan='2'><%= image_tag comment.end_user.get_profile_image, size:'50x50' %></td>
-      <td colspan='3'><%= comment.end_user.name %></td>
+      <td rowspan='2'><%= comment.end_user.name %></td>
+      <td><%= l comment.created_at, format: :short %></td>
     </tr>
     <tr>
-      <td><%= comment.body %></td>
-      <td><%= l comment.created_at, format: :short %></td>
+      <td colspan='3'><%= comment.body %></td>
       <td>
         <% if comment.end_user == current_end_user %>
-          <%= link_to "削除", post_post_comment_path(comment.post, comment), method: :delete, remote: true, class: 'btn btn-outline-danger btn-sm' %>
+          <%= link_to "削除", post_post_comment_path(comment.post, comment), method: :delete, remote: true, class: 'btn btn-outline-dark btn-sm' %>
         <% end %>
       </td>
     </tr>

@@ -1,7 +1,16 @@
-<div class='container'>
+<div class='container my-5'>
   <div class='row'>
-    <h1>本当に退会しますか？</h1>
-    <%= link_to "戻る", end_user_path(current_end_user), class:'btn btn-outline-secondary' %>
-    <%= link_to "退会する", withdraw_end_user_path, method: :patch, class:'btn btn-outline-danger' %>
+    <div class="col-sm-12 col-md-8 col-lg-6 px-5 px-sm-0 mx-auto text-center">
+    <h2>本当に退会しますか？</h2>
+
+    <div class='row mt-5'>
+      <div class='col-4 mx-auto'>
+    <%= link_to "戻る", end_user_path(current_end_user), class:'btn btn-dark btn-block' %>
+    </div>
+    <div class='col-4 mx-auto'>
+    <%= link_to "退会する", withdraw_end_user_path, method: :patch, class:'btn btn-outline-dark btn-block' %>
+    </div>
+    </div>
+    </div>
   </div>
 </div>

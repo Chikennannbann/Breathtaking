@@ -1,4 +1,8 @@
 <%= form_with model:[post, post_comment], url: post_post_comments_path(post, post_comment), method: :post, local: false do |f| %>
-  <%= f.text_area :body, rows:'2', placeholder: "コメントする", class: 'comment-textarea' %>
-  <%= f.submit "送信する", class: 'btn btn-outline-secondary' %>
+  <table>
+    <tr>
+      <td><%= f.text_area :body, placeholder: "コメント100文字以内", size:'45x2'%></td>
+      <td><%= f.submit "送信する", class: 'btn border-none' %></td>
+    </tr>
+  </table>
 <% end %>

@@ -4,7 +4,7 @@
     <h2>新規投稿</h2>
       <%= render 'layouts/errors', object: @post %>
       <%= form_with model:@post, url: posts_path, method: :post do |f| %>
-      
+
       <table class='table text-left my-4'>
          <tr>
             <td><%= f.label :"写真" %></td>
@@ -36,9 +36,14 @@
             <!--params[:post][:tag]でパラメーターを受け取れるようにする-->
           </tr>
         </table>
-        
-        <div class='col-6 mx-auto'>
-          <%= f.submit "投稿", class: 'btn btn-dark btn-block' %>
+
+        <div class='row'>
+          <div class='col-4 mx-auto'>
+            <%= link_to "戻る", posts_path, class: 'btn btn-outline-dark btn-block' %>
+          </div>
+          <div class='col-4 mx-auto'>
+            <%= f.submit "投稿", class: 'btn btn-dark btn-block' %>
+          </div>
         </div>
       <% end %>
     </div>
