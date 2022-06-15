@@ -1,7 +1,10 @@
-<div class='container mt-5'>
+<div class='container my-5'>
   <div class='row'>
-    <%= link_to "グループを作成する", new_group_path, class: 'btn btn-outline-success' %>
-        <table class='table'>
+    <div class='col-4 mx-auto'>
+      <%= link_to "グループを新規作成", new_group_path, class: 'btn btn-dark btn-block' %>
+    </div>
+    <div class='col-10 mx-auto mt-4'>
+        <table class='table table-hover'>
           <thead>
             <tr>
               <th></th>
@@ -13,9 +16,9 @@
           </thead>
           <tbody>
           <% @groups.each do |f| %>
-            <tr>
+            <tr onclick='window.location="<%= '/admin/groups/' + f.id.to_s %>"' role='link'>
               <td><%= image_tag f.get_group_image, size:'80x80' %></td>
-              <td><%= link_to f.name, group_path(f) %></td>
+              <td><%= link_to f.name, group_path(f), class: 'text-dark' %></td>
               <td><%= f.destination %></td>
               <td><%= f.date %></td>
               <td><%= f.end_users.count %></td>
@@ -23,5 +26,6 @@
           <% end %>
           </tbody>
         </table>
+    </div>
   </div>
 </div>

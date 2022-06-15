@@ -1,31 +1,36 @@
-<div class='container'>
+<div class='container my-5'>
   <div class='row'>
-    <table class='table'>
-      <tr>
-        <td colspan='2'><%= image_tag @end_user.get_profile_image, size:'150x150' %></td>
-      </tr>
-      <tr>
-        <td colspan='2'><%= @end_user.name %></td>
-      </tr>
-      <tr>
-        <td colspan='2'><%= @end_user.introduction %></td>
-      </tr>
-      <tr>
-        <td>投稿数：<%= @posts.count %></td>
-        <td>グループ数：<%= @groups.count %></td>
-      </tr>
-      <% if @end_user == current_end_user && @end_user.name != 'guestenduser'%>
-      <tr>
-        <td colspan='2'><%= link_to "ユーザー情報を変更する", edit_end_user_path, class: "btn btn-outline-success" %></td>
-      </tr>
-      <% end %>
-    </table>
+    <div class='col-6 mx-auto text-center'>
+      <%= image_tag @end_user.get_profile_image, size:'120x120' %>
 
+      <table class='table table-sm my-4'>
+        <tr>
+          <td colspan='2'><%= @end_user.name %></td>
+        </tr>
+        <tr>
+          <td colspan='2'><%= @end_user.introduction %></td>
+        </tr>
+        <tr>
+          <td>投稿数：<%= @posts.count %></td>
+          <td>グループ数：<%= @groups.count %></td>
+        </tr>
+      </table>
+
+      <% if @end_user == current_end_user && @end_user.name != 'guestenduser'%>
+        <%= link_to "ユーザー情報を変更する", edit_end_user_path, class: "btn btn-outline-dark" %>
+      <% end %>
+    </div>
+
+    <div class='row card-wrapper'>
       <% @posts.each do |f| %>
-        <div class='mr-5'>
-        <%= link_to image_tag(f.get_view_image, size:'300x200'), post_path(f.id) %><br>
-        <%= f.title %>
+        <div class='card w-30 mx-4 my-3'>
+          <%= link_to image_tag(f.get_view_image, size:'330x200'), post_path(f.id) %><br>
+          <div class='card-text'>
+            <%= f.title %>
+          </div>
         </div>
       <% end %>
+    </div>
+
   </div>
 </div>
