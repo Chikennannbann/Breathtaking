@@ -51,7 +51,7 @@
               <%= link_to "戻る", groups_path, class: 'btn btn-outline-dark btn-block' %>
             </div>
             <div class='col-4 mx-auto'>
-              <%= link_to "脱退する", group_withdraw_path(@group), method: :delete, class: 'btn btn-dark' %>
+              <%= link_to "脱退する", group_withdraw_path(@group), method: :delete, class: 'btn btn-dark btn-block' %>
             </div>
             </div>
         <% else %>
@@ -60,7 +60,7 @@
                 <%= link_to "戻る", groups_path, class: 'btn btn-outline-dark btn-block' %>
               </div>
               <div class='col-4 mx-auto'>
-                <%= link_to "参加する", group_join_path(@group), class: 'btn btn-dark' %>
+                <%= link_to "参加する", group_join_path(@group), class: 'btn btn-dark btn-block' %>
               </div>
             </div>
         <% end %>

@@ -1,10 +1,9 @@
-<div class='container'>
+<div class='container my-5'>
   <div class='row'>
     <div class="col-sm-12 col-md-9 col-lg-4 px-5 px-sm-0 mx-auto text-center">
-　　　<h2>ログイン</h2>
-
-　　　<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-　　　<table class='table-sm text-left'>
+      <h2>ログイン</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <table class='table-sm text-left my-5'>
         <tr>
           <td><%= f.label :"メールアドレス　　" %></td>
           <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
@@ -14,12 +13,12 @@
           <td><%= f.password_field :password, autocomplete: "current-password" %></td>
         </tr>
       </table>
-        <div class='col-6 mx-auto my-3'>
+        <div class='col-6 mx-auto mb-4'>
           <%= f.submit "ログイン", class: 'btn btn-dark btn-block' %>
         </div>
       <% end %>
 
-      <div class='col-10 mx-auto mb-5'>
+      <div class='col-10 mx-auto'>
       <%= link_to '新規登録', new_end_user_registration_path, class: 'nav-link text-center text-dark border border-dark' %><br>
       <%= link_to 'ゲストログイン', end_users_guest_sign_in_path, method: :post, class: 'nav-link text-center text-dark border border-dark' %>
       </div>
