@@ -63,13 +63,15 @@
     </div>
   </div>
   <div class='row'>
-    <div class='col-6 mx-auto'>
+    <div class='col-md-8 mx-auto'>
       <div class='comments-counter'>
         <%= render 'public/post_comments/counter', post: @post %>
       </div>
       <div class='comments-index'>
         <%= render 'public/post_comments/index', post: @post %>
       </div>
+    </div>
+    <div class='col-md-5 mx-auto'>
       <%= render 'public/post_comments/form', post: @post, post_comment: @post_comment %>
     </div>
   </div>
