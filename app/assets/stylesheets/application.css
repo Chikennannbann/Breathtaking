@@ -42,3 +42,13 @@
   text-decoration: none;
   background-color: #a0c4d3;
 }
+
+.pagination>li>a {
+  border: none;
+  color: #000000;
+  margin-right: 20px;
+}
+
+.pagination>.active>a {
+  color: darkgray;
+}
