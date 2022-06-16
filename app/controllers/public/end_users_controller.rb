@@ -5,7 +5,7 @@ class Public::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
-    @posts = @end_user.posts
+    @posts = @end_user.posts.page(params[:page]).per(9).order(created_at: :desc)
     @groups = @end_user.groups
   end
 

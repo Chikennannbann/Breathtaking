@@ -6,7 +6,7 @@ class Public::GroupsController < ApplicationController
   def index
     session[:title] = nil
     session[:body] = nil
-    @groups = Group.all
+    @groups = Group.page(params[:page]).order(created_at: :desc)
   end
 
   def show

@@ -20,19 +20,35 @@
    height: 700px;
    position: relative;
  }
- .top-text{
+
+ .top-text {
+  padding: 200px 60px;
   text-align: center;
   font-size: 50px;
-  padding: 200px 60px;
+  text-shadow: 2px 2px 2px #6c6c6c;
   color: #fcfcfc;
  }
 
- /*main {*/
- /* margin-bottom: 20px;*/
- /*}*/
+.about-button a {
+  padding: 1em 2em;
+  width: 300px;
+  color: #ffffff;
+  font-size: 18px;
+  border: 1px solid #ffffff;
+}
 
- /*.search-form {*/
-  /*position: absolute;*/
- /* top: 30px;*/
- /* right: 30px;*/
- /*}*/
+.about-button a:hover {
+  color: #000000;
+  text-decoration: none;
+  background-color: #a0c4d3;
+}
+
+.pagination>li>a {
+  border: none;
+  color: #000000;
+  margin-right: 20px;
+}
+
+.pagination>.active>a {
+  color: darkgray;
+}

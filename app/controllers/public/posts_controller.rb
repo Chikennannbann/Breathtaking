@@ -3,12 +3,13 @@ class Public::PostsController < ApplicationController
   before_action :ensure_guest_end_user, except: [:index, :show, :new]
 
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(15).order(created_at: :desc)
   end
 
   def show
     @post = Post.find(params[:id])
     @post_comment = PostComment.new
+    @post_comments = @post.post_comments.page(params[:page]).per(5)
     @post_tags = @post.tags
   end
 

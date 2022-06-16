@@ -57,3 +57,10 @@ ja:
           price: "税抜価格"
           destination: "行き先"
           date: "日付"
+  views:
+    pagination:
+      first: <i class="fa-solid fa-angles-left"></i>
+      last: <i class="fa-solid fa-angles-right"></i>
+      previous: <i class="fa-solid fa-angle-left"></i>
+      next: <i class="fa-solid fa-angle-right"></i>
+      truncate: "..."
