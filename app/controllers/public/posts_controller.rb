@@ -56,7 +56,7 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:end_user_id, :view_image, :title, :body, :nation, :prefecture, :place)
+    params.require(:post).permit(:end_user_id, :view_image, :title, :body, :nation, :prefecture, :place, :latitude, :longitude)
   end
 
   def ensure_correct_end_user
