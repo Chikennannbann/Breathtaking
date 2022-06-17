@@ -13,6 +13,9 @@ class Post < ApplicationRecord
   validates :prefecture, presence: true
   validates :place, presence: true
 
+  geocoded_by :place
+  after_validation :geocode
+
   def get_view_image
       view_image
   end

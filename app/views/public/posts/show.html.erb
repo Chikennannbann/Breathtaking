@@ -64,6 +64,36 @@
   </div>
 
   <div class='row'>
+    <h3>どこ？</h3>
+    <div id='map' style='width: 400px; height: 300px'></div>
+  </div>
+
+  <script>
+    let map
+
+    function initMap(){
+      geocoder = new google.maps.Geocoder()
+      var test = {lat: <%= @post.latitude %>, lng: <%= @post.longitude %>};
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: test,
+        zoom: 15,
+      });
+
+      var contentString = 'スポット名：<%= @post.place %>';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+
+      marker = new google.maps.Marker({
+        position: test,
+        map: map,
+        title: contentString
+      });
+    }
+  </script>
+
+  <div class='row'>
     <div class='col-md-8 mx-auto'>
       <%= render 'public/post_comments/counter', post: @post %>
       <%= render 'public/post_comments/index', post_comments: @post_comments %>

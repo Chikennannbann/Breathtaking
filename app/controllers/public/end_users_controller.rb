@@ -31,6 +31,7 @@ class Public::EndUsersController < ApplicationController
     @end_user.update(is_deleted: true)
     reset_session
     redirect_to root_path
+    flash[:notice] = "退会しました。ご利用いただきありがとうございました！"
   end
 
 

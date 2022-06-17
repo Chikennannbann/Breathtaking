@@ -16,7 +16,7 @@ class Public::GroupsController < ApplicationController
   def join
     @group = Group.find(params[:group_id])
     @group.end_users << current_end_user
-    redirect_to groups_path
+    redirect_to group_path(@group)
     flash[:notice] = "グループに参加しました"
   end
 
@@ -57,7 +57,7 @@ class Public::GroupsController < ApplicationController
   def withdraw
     @group = Group.find(params[:group_id])
     @group.end_users.delete(current_end_user)
-    redirect_to groups_path
+    redirect_to group_path(@group)
     flash[:notice] = "グループから脱退しました"
   end
 
