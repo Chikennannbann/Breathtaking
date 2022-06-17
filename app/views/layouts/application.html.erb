@@ -26,6 +26,7 @@
                 <li><%= link_to 'グループ', admin_groups_path, class: 'nav-link text-dark' %></li>
                 <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %></li>
               <% elsif end_user_signed_in? %>
+                <li><%= link_to 'サイトについて', about_path, class: 'nav-link text-dark' %></li>
                 <li><%= link_to '新規投稿', new_post_path, class: 'nav-link text-dark' %></li>
                 <li><%= link_to '投稿', posts_path, class: 'nav-link text-dark' %></li>
                 <li><%= link_to 'グループ', groups_path, class: 'nav-link text-dark' %></li>
