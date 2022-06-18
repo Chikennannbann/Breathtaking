@@ -5,28 +5,28 @@
       <u><%= link_to "グループとは？", about_path(anchor: 'group-explanation'), class: 'text-dark' %></u>
     </div>
     <div class='col-10 mx-auto mt-4'>
-        <table class='table table-hover'>
-          <thead>
-            <tr>
-              <th></th>
-              <th>グループ名</th>
-              <th>行き先</th>
-              <th>日付</th>
-              <th>参加人数</th>
-            </tr>
-          </thead>
-          <tbody>
-          <% @groups.each do |f| %>
-            <tr onclick='window.location="<%= '/groups/' + f.id.to_s %>"' role='link'>
-              <td><%= image_tag f.get_group_image, size:'80x80' %></td>
-              <td><%= link_to f.name, group_path(f), class: 'text-dark' %></td>
-              <td><%= f.destination %></td>
-              <td><%= f.date %></td>
-              <td><%= f.end_users.count %></td>
-            </tr>
-          <% end %>
-          </tbody>
-        </table>
+      <table class='table table-hover'>
+        <thead>
+          <tr>
+            <th></th>
+            <th>グループ名</th>
+            <th>行き先</th>
+            <th>日付</th>
+            <th>参加人数</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @groups.each do |f| %>
+          <tr onclick='window.location="<%= '/groups/' + f.id.to_s %>"' role='link'>
+            <td><%= image_tag f.get_group_image, size:'80x80' %></td>
+            <td><%= link_to f.name, group_path(f), class: 'text-dark' %></td>
+            <td><%= f.destination %></td>
+            <td><%= f.date %></td>
+            <td><%= f.end_users.count %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
   <div class='row'>

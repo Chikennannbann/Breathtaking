@@ -4,7 +4,6 @@
       <h2>ユーザー情報編集</h2>
       <%= render 'layouts/errors', object: @end_user %>
       <%= form_with model:@end_user, url: end_user_path, method: :patch do |f| %>
-
         <table class='table text-left my-4'>
           <tr>
             <td><%= f.label :"プロフィール写真"%></td>
@@ -19,13 +18,12 @@
             <td><%= f.text_area :introduction, size:'30x3' %></td>
           </tr>
         </table>
-
         <div class='row'>
           <div class='col-4 mx-auto'>
             <%= link_to "戻る", end_user_path(@end_user), class: 'btn btn-outline-dark btn-block' %>
           </div>
           <div class='col-4 mx-auto'>
-          <%= f.submit "更新", class: 'btn btn-dark btn-block' %>
+            <%= f.submit "更新", class: 'btn btn-dark btn-block' %>
           </div>
         </div>
         <div class='mt-5'>

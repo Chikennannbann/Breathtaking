@@ -19,5 +19,4 @@ class ContactMailer < ApplicationMailer
       ContactMailer.send_notification(member, event).deliver_now
     end
   end
-
 end

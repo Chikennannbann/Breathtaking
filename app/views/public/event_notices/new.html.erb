@@ -11,7 +11,6 @@
           <%=f.label:"本文（開催日時、集合場所、予算などの詳細）" %>
           <%= f.text_area :body,size: '50x5', class:'form-control' %>
         </div>
-
         <div class='row mt-4'>
           <div class='col-4 mx-auto'>
             <%= link_to "戻る", group_path(@group), class: 'btn btn-outline-dark btn-block' %>
@@ -20,7 +19,6 @@
             <%= f.submit "送信", class: 'btn btn-dark btn-block' %>
           </div>
         </div>
-
       <% end %>
     </div>
   </div>

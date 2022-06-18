@@ -71,5 +71,4 @@ class Public::PostsController < ApplicationController
       redirect_to posts_path, notice: 'ゲストユーザーではご利用いただけません'
     end
   end
-
 end

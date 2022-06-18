@@ -29,7 +29,6 @@
         </tr>
       </table>
     </div>
-
     <div class='col-4 offset-1'>
       <table class="table">
         <tr>
@@ -62,14 +61,14 @@
       </table>
     </div>
   </div>
-
+  
   <div class='row my-4'>
     <div class='col-md-6 mx-auto'>
       <h3><%= @post.place %>　どこ？</h3>
       <div id='map' class='my-4' style='width: 500px; height: 300px'></div>
     </div>
   </div>
-
+  
   <div class='row'>
     <div class='col-md-8 mx-auto'>
       <%= render 'public/post_comments/counter', post: @post %>

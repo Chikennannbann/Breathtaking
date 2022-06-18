@@ -30,5 +30,4 @@ class Public::EventNoticesController < ApplicationController
     @title = session[:title]
     @body = session[:body]
   end
-
 end

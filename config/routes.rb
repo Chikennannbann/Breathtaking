@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'tags/index'
-  end
   devise_scope :end_user do
     post 'end_users/guest_sign_in' => 'end_users/sessions#guest_sign_in'
   end
@@ -27,7 +24,6 @@ Rails.application.routes.draw do
   scope module: :public do
     root 'homes#top'
     get 'about' => 'homes#about', as: 'about'
-
     get 'end_users/unsubscribe' => 'end_users#unsubscribe', as: 'confirm_unsubscribe'
     patch 'end_users/withdraw' => 'end_users#withdraw', as: 'withdraw_end_user'
     get 'search' => 'searches#search'
