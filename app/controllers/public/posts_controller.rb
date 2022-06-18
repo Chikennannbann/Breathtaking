@@ -1,6 +1,6 @@
 class Public::PostsController < ApplicationController
   before_action :ensure_correct_end_user, only: [:edit, :update, :destroy]
-  before_action :ensure_guest_end_user, except: [:index, :show, :new]
+  before_action :ensure_guest_end_user, except: [:index, :show]
 
   def index
     @posts = Post.page(params[:page]).per(15).order(created_at: :desc)
@@ -67,7 +67,7 @@ class Public::PostsController < ApplicationController
   end
 
   def ensure_guest_end_user
-    if current_end_user.name == "guestenduser"
+    if current_end_user.name == "ゲストユーザー"
       redirect_to posts_path, notice: 'ゲストユーザーではご利用いただけません'
     end
   end

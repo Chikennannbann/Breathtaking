@@ -22,7 +22,7 @@ class Public::PostCommentsController < ApplicationController
   end
 
   def ensure_guest_end_user
-    if current_end_user.name == "guestenduser"
+    if current_end_user.name == "ゲストユーザー"
       redirect_to request.referer, notice: 'ゲストユーザーではご利用いただけません'
     end
   end
