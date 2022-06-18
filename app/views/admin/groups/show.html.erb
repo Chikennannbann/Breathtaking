@@ -3,46 +3,46 @@
     <div class="col-sm-12 col-md-8 col-lg-6 px-5 px-sm-0 mx-auto text-center">
       <h3><%= @group.name %> の詳細</h3>
       <%= image_tag @group.get_group_image, size:'100x100' %>
-        <table class='table text-left my-4'>
-          <thead>
-            <tr>
-              <th>グループ名</th>
-              <td><%= @group.name %></td>
-            </tr>
-            <tr>
-              <th>概要</th>
-              <td><%= @group.caption %></td>
-            </tr>
-            <tr>
-              <th>行き先</th>
-              <td><%= @group.destination %></td>
-            </tr>
-            <tr>
-              <th>日付</th>
-              <td><%= @group.date %></td>
-            </tr>
-            <tr>
-              <th>メンバー</th>
-              <td>
-                <% @group.end_users.each do |f| %>
-                  <u><%= link_to f.name, admin_end_user_path(f), class: 'text-dark' %></u>
-                <% end %>
-              </td>
-            </tr>
-            <tr>
-              <th>作成者</th>
-              <td><%= @group.owner_name %></td>
-            </tr>
-          </thead>
-        </table>
-        <div class='row mt-4'>
-          <div class='col-4 mx-auto'>
-            <%= link_to "戻る", admin_groups_path, class: 'btn btn-dark btn-block' %>
-          </div>
-          <div class='col-4 mx-auto'>
-            <%= link_to "削除", group_path, method: :delete, class: 'btn btn-outline-dark btn-block' %>
-          </div>
+      <table class='table text-left my-4'>
+        <thead>
+          <tr>
+            <th>グループ名</th>
+            <td><%= @group.name %></td>
+          </tr>
+          <tr>
+            <th>概要</th>
+            <td><%= @group.caption %></td>
+          </tr>
+          <tr>
+            <th>行き先</th>
+            <td><%= @group.destination %></td>
+          </tr>
+          <tr>
+            <th>日付</th>
+            <td><%= @group.date %></td>
+          </tr>
+          <tr>
+            <th>メンバー</th>
+            <td>
+              <% @group.end_users.each do |f| %>
+                <u><%= link_to f.name, admin_end_user_path(f), class: 'text-dark' %></u>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th>作成者</th>
+            <td><%= @group.owner_name %></td>
+          </tr>
+        </thead>
+      </table>
+      <div class='row mt-4'>
+        <div class='col-4 mx-auto'>
+          <%= link_to "戻る", admin_groups_path, class: 'btn btn-dark btn-block' %>
         </div>
+        <div class='col-4 mx-auto'>
+          <%= link_to "削除", group_path, method: :delete, class: 'btn btn-outline-dark btn-block' %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

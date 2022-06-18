@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :end_users, only: [:index, :show, :edit, :update]
     resources :posts, only: [:index, :show]
     resources :groups, only: [:index, :show]
+    resources :tags, only: [:index]
   end
 
   devise_for :end_users, skip: [:passwords], controllers: {
@@ -23,7 +24,6 @@ Rails.application.routes.draw do
   scope module: :public do
     root 'homes#top'
     get 'about' => 'homes#about', as: 'about'
-
     get 'end_users/unsubscribe' => 'end_users#unsubscribe', as: 'confirm_unsubscribe'
     patch 'end_users/withdraw' => 'end_users#withdraw', as: 'withdraw_end_user'
     get 'search' => 'searches#search'
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
       resources :post_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
-    resources :tags, only: [:show, :index]
+    resources :tags, only: [:show, :index, :destroy]
     resources :groups do
       resources :group_end_users, only: [:create, :destroy]
       resources :event_notices, only: [:new, :create]

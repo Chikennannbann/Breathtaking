@@ -21,7 +21,7 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.end_user_id = current_end_user.id
-    tag_list = params[:post][:name].split(',')
+    tag_list = params[:post][:name].split('、')
     if @post.save
       @post.save_tags(tag_list)
       redirect_to posts_path
@@ -35,7 +35,7 @@ class Public::PostsController < ApplicationController
   end
 
   def update
-    tag_list = params[:post][:name].split(',')
+    tag_list = params[:post][:name].split('、')
     if @post.update(post_params)
       @post.save_tags(tag_list)
       redirect_to posts_path
@@ -71,5 +71,4 @@ class Public::PostsController < ApplicationController
       redirect_to posts_path, notice: 'ゲストユーザーではご利用いただけません'
     end
   end
-
 end

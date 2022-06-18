@@ -1,12 +1,11 @@
 <div class="container my-5">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto text-center">
-    <h2>新規グループ</h2>
-    <%= render 'layouts/errors', object: @group %>
+      <h2>新規グループ</h2>
+      <%= render 'layouts/errors', object: @group %>
       <%= form_with model:@group, url: groups_path, method: :post do |f| %>
-
-      <table class='table text-left my-4'>
-         <tr>
+        <table class='table text-left my-4'>
+          <tr>
             <td><%= f.label :"グループ写真" %></td>
             <td><%= f.file_field :group_image, size: "200x200", accept:'image/*' %></td>
           </tr>
@@ -26,8 +25,7 @@
             <td><%= f.label :"日付" %></td>
             <td><%= f.date_field :date %></td>
           </tr>
-      </table>
-
+        </table>
         <div class='row'>
           <div class='col-4 mx-auto'>
             <%= link_to "戻る", groups_path, class: 'btn btn-outline-dark btn-block' %>

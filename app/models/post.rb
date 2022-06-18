@@ -1,11 +1,11 @@
 class Post < ApplicationRecord
+
   has_one_attached :view_image
   belongs_to :end_user
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
-
 
   validates :view_image, presence: true
   validates :title, presence: true

@@ -11,7 +11,6 @@ class Group < ApplicationRecord
 
 
   def get_group_image
-    # jpgにするとデプロイでのエラー回避になる, if文もokだが記述量が多くなるためunlessが無難
     unless group_image.attached?
       file_path = Rails.root.join('app/assets/images/mt-fuji.jpg')
       group_image.attach(io: File.open(file_path), filename: 'mt-fuji.jpg', content_type: 'image/jpeg')
