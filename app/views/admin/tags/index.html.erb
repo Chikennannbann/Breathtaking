@@ -1,0 +1,13 @@
+ <div class='container my-5'>
+  <div class='row'>
+    <div class='col-8 mx-auto'>
+      <h3 class='mb-3'>タグ一覧</h3>
+      <% @tags.each do |f| %>
+        <span class='mr-3 mt-4'>
+          <i class="fa-solid fa-tags"></i> <%= f.name %>(<%= f.post_tags.count %>)
+          <%= link_to "削除", tag_path(f), method: :delete, class: 'btn btn-dark btn-sm' %>
+        </span>
+      <% end %>
+    </div>
+  </div>
+</div>

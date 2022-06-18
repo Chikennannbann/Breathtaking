@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'tags/index'
+  end
   devise_scope :end_user do
     post 'end_users/guest_sign_in' => 'end_users/sessions#guest_sign_in'
   end
@@ -13,6 +16,7 @@ Rails.application.routes.draw do
     resources :end_users, only: [:index, :show, :edit, :update]
     resources :posts, only: [:index, :show]
     resources :groups, only: [:index, :show]
+    resources :tags, only: [:index]
   end
 
   devise_for :end_users, skip: [:passwords], controllers: {
@@ -33,7 +37,7 @@ Rails.application.routes.draw do
       resources :post_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
-    resources :tags, only: [:show, :index]
+    resources :tags, only: [:show, :index, :destroy]
     resources :groups do
       resources :group_end_users, only: [:create, :destroy]
       resources :event_notices, only: [:new, :create]

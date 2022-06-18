@@ -63,11 +63,12 @@
     </div>
   </div>
 
-  <div class='row'>
-    <h3>どこ？</h3>
-    <div id='map' style='width: 400px; height: 300px'></div>
+  <div class='row my-4'>
+    <div class='col-md-6 mx-auto'>
+      <h3><%= @post.place %>　どこ？</h3>
+      <div id='map' class='my-4' style='width: 500px; height: 300px'></div>
+    </div>
   </div>
-
 
   <div class='row'>
     <div class='col-md-8 mx-auto'>
@@ -79,9 +80,7 @@
       <%= render 'public/post_comments/form', post: @post, post_comment: @post_comment %>
     </div>
   </div>
-  <%# binding.pry %>
 </div>
-
 
 <script>
   let map

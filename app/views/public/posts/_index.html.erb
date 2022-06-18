@@ -1,7 +1,7 @@
 <% posts.each do |f| %>
   <div class='card w-30 mx-4 my-3'>
-    <%= link_to image_tag(f.get_view_image, size:'330x200'), post_path(f.id) %>
-    <div class='card-text'>
+    <%= link_to image_tag(f.get_view_image, size:'310x200'), post_path(f.id) %>
+    <div class='card-text p-1'>
       <%= f.title %>
     </div>
   </div>
