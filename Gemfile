@@ -67,3 +67,5 @@ gem 'rails-i18n'
 gem 'kaminari','~> 1.2.1'
 
 gem 'geocoder'
+
+gem 'pry-rails'

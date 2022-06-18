@@ -8,6 +8,7 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    # binding.pry
     @post_comment = PostComment.new
     @post_comments = @post.post_comments.page(params[:page]).per(5)
     @post_tags = @post.tags
@@ -20,7 +21,6 @@ class Public::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.end_user_id = current_end_user.id
-    # byebug
     tag_list = params[:post][:name].split(',')
     if @post.save
       @post.save_tags(tag_list)
@@ -56,7 +56,7 @@ class Public::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:end_user_id, :view_image, :title, :body, :nation, :prefecture, :place, :latitude, :longitude)
+    params.require(:post).permit(:end_user_id, :view_image, :title, :body, :nation, :prefecture, :place)
   end
 
   def ensure_correct_end_user
