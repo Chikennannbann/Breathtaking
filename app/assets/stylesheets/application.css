@@ -13,6 +13,24 @@
  *= require_tree .
  *= require_self
  */
+ body {
+   min-height: 100vh;
+   position: relative;
+   padding-bottom: 120px;
+   box-sizing: border-box;
+ }
+
+ footer {
+   width: 100%;
+   position: absolute;
+   text-align: center;
+   padding: 40px 0;
+   bottom: 0;
+   font-family: Gill Sans, sans-serif;
+   font-size: 20px;
+   border-top: 1px solid;
+ }
+
  li a,
  li a:hover {
    color: black;
@@ -40,13 +58,12 @@
 .about-button a {
   padding: 1em 2em;
   width: 300px;
-  color: #ffffff;
+  color: #fff;
   font-size: 18px;
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
 }
 
 .about-button a:hover {
-  color: #000000;
   text-decoration: none;
   background-color: #a0c4d3;
 }
@@ -62,7 +79,7 @@
 
 .pagination>li>a {
   border: none;
-  color: #000000;
+  color: #000;
   margin-right: 20px;
 }
 

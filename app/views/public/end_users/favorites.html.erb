@@ -1,0 +1,11 @@
+<div class='container my-5'>
+  <h3>いいねした投稿： <%= @favorite_posts.count %>件  <%= link_to "タグ検索に戻る", end_user_path(current_end_user), class: 'btn btn-outline-dark' %></h3>
+  <div class='row card-wrapper'>
+    <% if @favorite_posts.present? %>
+      <%= render 'public/posts/index', posts: @favorite_posts %>
+    <% else %>
+      <p>いいねした投稿がありません。
+      <%= link_to "投稿を見に行く", posts_path, class: 'btn btn-dark btn-sm' %></p>
+    <% end %>
+  </div>
+</div>

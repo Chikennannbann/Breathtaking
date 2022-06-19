@@ -42,7 +42,7 @@
         <tr>
           <td>
             <%= link_to "戻る", admin_posts_path, class: 'btn btn-dark' %>
-            <%= link_to "投稿削除", post_path, method: :delete, class: 'btn btn-outline-dark'%>
+            <%= link_to "投稿削除", post_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-outline-dark'%>
           </td>
         </tr>
       </table>
@@ -54,7 +54,7 @@
         <%= render 'public/post_comments/counter', post: @post %>
       </div>
       <div class='comments-index'>
-        <% @post.post_comments.each do |comment| %>
+        <% @post_comments.each do |comment| %>
           <table class='table table-sm text-left'>
             <colgroup>
               <col class="col-1">
@@ -70,12 +70,14 @@
             </tr>
             <tr>
               <td>
-                <%= link_to "削除", post_post_comment_path(comment.post, comment), method: :delete, remote: true, class: 'btn btn-sm btn-outline-dark' %>
+                <%= link_to "削除", post_post_comment_path(comment.post, comment), method: :delete, remote: true,
+                data: {confirm: "本当に削除しますか？"}, class: 'btn btn-sm btn-outline-dark' %>
               </td>
             </tr>
           </table>
         <% end %>
       </div>
+      <div class='pagination'><%= paginate @post_comments %></div>
     </div>
   </div>
 </div>

@@ -9,8 +9,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class='d-flex flex-column vh-100'>
-    <header class='border-bottom border-dark'>
+  <body class='d-flex flex-column'>
+    <header style='border-bottom: 1px solid;'>
       <nav class='navbar navbar-light'>
         <div class='container'>
           <a class='navbar-brand' href='/' style='font-family: Gill Sans, sans-serif; font-size: 30px;'>BREATHTAKING -絶景-</a>
@@ -51,6 +51,6 @@
       <p id='notice' class='text-center'><%= notice %></p>
       <%= yield %>
     </main>
-    <%= render 'layouts/footer' %>
+    <footer><p>BREATHTAKING-絶景-</p></footer>
   </body>
 </html>

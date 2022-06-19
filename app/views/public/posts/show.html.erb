@@ -54,21 +54,21 @@
           <td>
             <% if @post.end_user == current_end_user %>
               <%= link_to "編集", edit_post_path, class: 'btn btn-dark' %>
-              <%= link_to "削除", post_path, method: :delete, class: 'btn btn-dark'%>
+              <%= link_to "削除", post_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark'%>
             <% end %>
           </td>
         </tr>
       </table>
     </div>
   </div>
-  
+
   <div class='row my-4'>
     <div class='col-md-6 mx-auto'>
       <h3><%= @post.place %>　どこ？</h3>
       <div id='map' class='my-4' style='width: 500px; height: 300px'></div>
     </div>
   </div>
-  
+
   <div class='row'>
     <div class='col-md-8 mx-auto'>
       <%= render 'public/post_comments/counter', post: @post %>

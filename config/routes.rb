@@ -28,7 +28,11 @@ Rails.application.routes.draw do
     patch 'end_users/withdraw' => 'end_users#withdraw', as: 'withdraw_end_user'
     get 'search' => 'searches#search'
 
-    resources :end_users, only: [:show, :edit, :update]
+    resources :end_users, only: [:show, :edit, :update] do
+      member do
+        get :favorites
+      end
+    end
     resources :posts do
       resources :post_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]

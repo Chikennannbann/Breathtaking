@@ -34,6 +34,12 @@ class Public::EndUsersController < ApplicationController
     flash[:notice] = "退会しました。ご利用いただきありがとうございました！"
   end
 
+  def favorites
+    @end_user = EndUser.find(params[:id])
+    favorites = Favorite.where(end_user_id: @end_user.id).pluck(:post_id)
+    @favorite_posts = Post.find(favorites)
+  end
+
 
   private
 

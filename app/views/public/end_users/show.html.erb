@@ -15,20 +15,14 @@
         </tr>
       </table>
       <% if @end_user == current_end_user && @end_user.name != 'ゲストユーザー'%>
-        <%= link_to "ユーザー情報を変更する", edit_end_user_path, class: "btn btn-outline-dark" %>
+        <%= link_to "ユーザー情報変更", edit_end_user_path, class: 'btn btn-outline-dark' %>
+        <%= link_to "いいねした投稿", favorites_end_user_path, class: 'btn btn-outline-dark' %>
       <% else %>
-        <%= link_to "投稿一覧へ戻る", post_path, class: "btn btn-dark" %>
+        <%= link_to "投稿一覧へ戻る", posts_path, class: 'btn btn-dark' %>
       <% end %>
     </div>
-    <div class='row card-wrapper'>
-      <% @posts.each do |f| %>
-        <div class='card w-30 mx-4 my-3'>
-          <%= link_to image_tag(f.get_view_image, size:'330x200'), post_path(f.id) %><br>
-          <div class='card-text'>
-            <%= f.title %>
-          </div>
-        </div>
-      <% end %>
+    <div class='row card-wrapper mt-4'>
+      <%= render 'public/posts/index', posts: @posts %>
     </div>
   </div>
   <div class='row'>

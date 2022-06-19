@@ -1,4 +1,5 @@
 class Public::PostsController < ApplicationController
+  before_action :authenticate_end_user!, except: [:index, :show]
   before_action :ensure_correct_end_user, only: [:edit, :update, :destroy]
   before_action :ensure_guest_end_user, except: [:index, :show]
 
