@@ -37,7 +37,8 @@ class Public::EndUsersController < ApplicationController
   def favorites
     @end_user = EndUser.find(params[:id])
     favorites = Favorite.where(end_user_id: @end_user.id).pluck(:post_id)
-    @favorite_posts = Post.find(favorites)
+    @favorite_posts = Kaminari.paginate_array(Post.find(favorites)).page(params[:page]).per(9)
+    # Kaminari.paginate_array(配列)でオブジェクト扱いになりpageが使用可能
   end
 
 
