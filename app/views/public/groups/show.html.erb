@@ -39,11 +39,14 @@
         <%= link_to "メンバーにイベントを通知（次のページでメール作成）", new_group_event_notice_path(@group), class: 'btn btn-dark' %>
         <div class='row mt-4'>
           <div class='col-4 mx-auto'>
-            <%= link_to "編集", edit_group_path(@group), class: 'btn btn-outline-dark btn-block' %>
+            <%= link_to "戻る", groups_path, class: 'btn btn-outline-dark btn-block' %>
           </div>
           <div class='col-4 mx-auto'>
-            <%= link_to "削除", group_path, method: :delete, class: 'btn btn-outline-dark btn-block' %>
+            <%= link_to "編集", edit_group_path(@group), class: 'btn btn-outline-dark btn-block' %>
           </div>
+        </div>
+        <div class='mt-5'>
+          <u><%= link_to "グループ削除", group_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'text-dark' %></u>
         </div>
       <% elsif @group.end_users.include?(current_end_user) %>
         <div class='row'>
@@ -51,7 +54,7 @@
             <%= link_to "戻る", groups_path, class: 'btn btn-outline-dark btn-block' %>
           </div>
           <div class='col-4 mx-auto'>
-            <%= link_to "脱退する", group_withdraw_path(@group), method: :delete, class: 'btn btn-dark btn-block' %>
+            <%= link_to "脱退する", group_withdraw_path(@group), method: :delete, data: {confirm: "本当に脱退しますか？"}, class: 'btn btn-dark btn-block' %>
           </div>
         </div>
       <% else %>

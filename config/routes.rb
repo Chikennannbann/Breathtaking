@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
     resources :end_users, only: [:index, :show, :edit, :update]
-    resources :posts, only: [:index, :show]
+    resources :posts, only: [:index, :show, :destroy] do
+      resources :post_comments, only: [:destroy]
+    end
     resources :groups, only: [:index, :show]
     resources :tags, only: [:index]
   end
@@ -28,7 +30,11 @@ Rails.application.routes.draw do
     patch 'end_users/withdraw' => 'end_users#withdraw', as: 'withdraw_end_user'
     get 'search' => 'searches#search'
 
-    resources :end_users, only: [:show, :edit, :update]
+    resources :end_users, only: [:show, :edit, :update] do
+      member do
+        get :favorites
+      end
+    end
     resources :posts do
       resources :post_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]

@@ -1,4 +1,5 @@
 class Public::PostCommentsController < ApplicationController
+  before_action :authenticate_end_user!
   before_action :ensure_guest_end_user
 
   def create
