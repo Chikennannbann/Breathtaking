@@ -1,5 +1,7 @@
 class Public::EventNoticesController < ApplicationController
   before_action :authenticate_end_user!
+  before_action :ensure_correct_end_user
+  before_action :ensure_guest_end_user, except: [:index, :show]
 
   def new
     @group = Group.find(params[:group_id])
@@ -29,5 +31,21 @@ class Public::EventNoticesController < ApplicationController
   def sent
     @title = session[:title]
     @body = session[:body]
+  end
+
+
+  private
+
+  def ensure_correct_end_user
+    @group = Group.find(params[:group_id])
+    unless @group.owner_id == current_end_user.id || current_end_user.name == "ゲストユーザー"
+      redirect_to groups_path
+    end
+  end
+
+  def ensure_guest_end_user
+    if current_end_user.name == "ゲストユーザー"
+      redirect_to groups_path, notice: 'ゲストユーザーではご利用いただけません'
+    end
   end
 end

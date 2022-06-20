@@ -5,7 +5,7 @@
       <% @tags.each do |f| %>
         <span class='mr-3 mt-4'>
           <i class="fa-solid fa-tags"></i> <%= f.name %>(<%= f.post_tags.count %>)
-          <%= link_to "削除", tag_path(f), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark btn-sm' %>
+          <%= link_to "削除", admin_tag_path(f), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark btn-sm' %>
         </span>
       <% end %>
     </div>
