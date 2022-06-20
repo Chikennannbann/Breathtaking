@@ -9,4 +9,11 @@ class Admin::GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+    redirect_to admin_groups_path
+    flash[:notice] = "グループを削除しました"
+  end
+
 end

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show, :destroy] do
       resources :post_comments, only: [:destroy]
     end
-    resources :groups, only: [:index, :show]
+    resources :groups, only: [:index, :show, :destroy]
     resources :tags, only: [:index]
   end
 
