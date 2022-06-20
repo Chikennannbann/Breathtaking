@@ -4,7 +4,8 @@ class Public::PostsController < ApplicationController
   before_action :ensure_guest_end_user, except: [:index, :show]
 
   def index
-    @posts = Post.page(params[:page]).per(15).order(created_at: :desc)
+    @end_user = EndUser.where("is_deleted = false")
+    @posts = Post.page(params[:page]).per(15).where(end_user_id: @end_user).order(created_at: :desc)
   end
 
   def show
