@@ -1,6 +1,6 @@
 class Public::EndUsersController < ApplicationController
   before_action :authenticate_end_user!, except: [:show]
-  before_action :ensure_correct_end_user, except: [:show]
+  before_action :ensure_correct_end_user, only: [:edit, :update, :favorites]
   before_action :ensure_guest_end_user, only: [:edit]
 
   def show
@@ -10,11 +10,9 @@ class Public::EndUsersController < ApplicationController
   end
 
   def edit
-    @end_user = EndUser.find(params[:id])
   end
 
   def update
-    @end_user = EndUser.find(params[:id])
     if @end_user.update(end_user_params)
       redirect_to end_user_path
       flash[:notice] = "ユーザー情報を更新しました"
@@ -35,7 +33,6 @@ class Public::EndUsersController < ApplicationController
   end
 
   def favorites
-    @end_user = EndUser.find(params[:id])
     favorites = Favorite.where(end_user_id: @end_user.id).pluck(:post_id)
     @favorite_posts = Kaminari.paginate_array(Post.find(favorites)).page(params[:page]).per(9)
     # Kaminari.paginate_array(配列)でオブジェクト扱いになりpageが使用可能
