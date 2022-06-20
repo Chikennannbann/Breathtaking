@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show, :destroy] do
       resources :post_comments, only: [:destroy]
     end
-    resources :groups, only: [:index, :show]
-    resources :tags, only: [:index]
+    resources :groups, only: [:index, :show, :destroy]
+    resources :tags, only: [:index, :destroy]
   end
 
   devise_for :end_users, skip: [:passwords], controllers: {
@@ -39,7 +39,7 @@ Rails.application.routes.draw do
       resources :post_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
-    resources :tags, only: [:show, :index, :destroy]
+    resources :tags, only: [:show, :index]
     resources :groups do
       resources :group_end_users, only: [:create, :destroy]
       resources :event_notices, only: [:new, :create]
