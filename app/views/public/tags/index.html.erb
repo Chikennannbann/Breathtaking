@@ -3,9 +3,11 @@
     <div class='col-8 mx-auto'>
       <h3 class='mb-3'>タグから探す</h3>
       <% @tags.each do |f| %>
-        <span class='mr-3 mt-4'>
-          <i class="fa-solid fa-tags"></i> <u><%= link_to f.name, tag_path(f.id), class: 'text-dark' %></u>(<%= f.post_tags.count %>)
-        </span>
+        <% if f.post_tags.where(post: @posts).count >= 1 %>
+          <span class='mr-3 mt-4'>
+            <i class="fa-solid fa-tags"></i> <u><%= link_to f.name, tag_path(f.id), class: 'text-dark' %></u>(<%= f.post_tags.where(post: @posts).count %>)
+          </span>
+        <% end %>
       <% end %>
     </div>
   </div>
