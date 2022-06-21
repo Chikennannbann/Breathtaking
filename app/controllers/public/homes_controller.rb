@@ -1,7 +1,8 @@
 class Public::HomesController < ApplicationController
 
   def top
-    @posts = Post.all.order(created_at: :desc).first(9)
+    @end_user = EndUser.where("is_deleted = false")
+    @posts = Post.all.where(end_user_id: @end_user).order(created_at: :desc).first(9)
   end
 
   def about

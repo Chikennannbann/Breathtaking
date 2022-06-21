@@ -1,84 +1,93 @@
 <div class='container my-5'>
-  <div class='row'>
-    <div class="col-sm-12 col-md-12 col-lg-8 px-5 px-sm-0 mx-auto">
-      <%= image_tag @post.get_view_image, size:'800x550' %>
+  <% if @end_user.is_deleted == false %>
+    <div class='row'>
+      <div class="col-sm-12 col-md-12 col-lg-8 px-5 px-sm-0 mx-auto">
+        <%= image_tag @post.get_view_image, size:'800x550' %>
+      </div>
     </div>
-  </div>
-  <div class='row my-4'>
-    <div class='col-6'>
-      <table class='table'>
-        <tr>
-          <th><%= @post.title %></th>
-        </tr>
-        <tr>
-          <td><%= @post.body %></td>
-        </tr>
-      </table>
-      <table class='table'>
-        <tr>
-          <th>国</th>
-          <td><%= @post.nation %></td>
-        </tr>
-        <tr>
-          <th>県・州</th>
-          <td><%= @post.prefecture %></td>
-        </tr>
-        <tr>
-          <th>スポット</th>
-          <td><%= @post.place %></td>
-        </tr>
-      </table>
+    <div class='row my-4'>
+      <div class='col-6'>
+        <table class='table'>
+          <tr>
+            <th><%= @post.title %></th>
+          </tr>
+          <tr>
+            <td><%= @post.body %></td>
+          </tr>
+        </table>
+        <table class='table'>
+          <tr>
+            <th>国</th>
+            <td><%= @post.nation %></td>
+          </tr>
+          <tr>
+            <th>県・州</th>
+            <td><%= @post.prefecture %></td>
+          </tr>
+          <tr>
+            <th>スポット</th>
+            <td><%= @post.place %></td>
+          </tr>
+        </table>
+      </div>
+      <div class='col-4 offset-1'>
+        <table class="table">
+          <tr>
+            <td colspan='3'>
+              <u><%= link_to @post.end_user.name, end_user_path(@post.end_user_id), class: 'text-dark' %></u>
+            </td>
+          </tr>
+          <tr>
+            <td><%= l @post.created_at, format: :short %></td>
+            <td class='favorite-btn'>
+              <%= render 'public/favorites/favorite-btn', post: @post %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <i class="fa-solid fa-tags"></i>
+              <% @post_tags.each do |f| %>
+                <u><%= link_to f.name, tag_path(f), class: 'text-dark' %></u>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <% if @post.end_user == current_end_user %>
+                <%= link_to "編集", edit_post_path, class: 'btn btn-dark' %>
+                <%= link_to "削除", post_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark'%>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <div class='col-4 offset-1'>
-      <table class="table">
-        <tr>
-          <td colspan='3'>
-            <u><%= link_to @post.end_user.name, end_user_path(@post.end_user_id), class: 'text-dark' %></u>
-          </td>
-        </tr>
-        <tr>
-          <td><%= l @post.created_at, format: :short %></td>
-          <td class='favorite-btn'>
-            <%= render 'public/favorites/favorite-btn', post: @post %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <i class="fa-solid fa-tags"></i>
-            <% @post_tags.each do |f| %>
-              <u><%= link_to f.name, tag_path(f), class: 'text-dark' %></u>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <% if @post.end_user == current_end_user %>
-              <%= link_to "編集", edit_post_path, class: 'btn btn-dark' %>
-              <%= link_to "削除", post_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark'%>
-            <% end %>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
 
-  <div class='row my-4'>
-    <div class='col-md-6 mx-auto'>
-      <h3><%= @post.place %>　どこ？</h3>
-      <div id='map' class='my-4' style='width: 500px; height: 300px'></div>
+    <div class='row my-4'>
+      <div class='col-md-6 mx-auto'>
+        <h3><%= @post.place %>　どこ？</h3>
+        <div id='map' class='my-4' style='width: 500px; height: 300px'></div>
+      </div>
     </div>
-  </div>
 
-  <div class='row'>
-    <div class='col-md-8 mx-auto'>
-      <%= render 'public/post_comments/counter', post: @post %>
-      <%= render 'public/post_comments/index', post_comments: @post_comments %>
-      <div class='pagination'><%= paginate @post_comments %></div>
+    <div class='row'>
+      <div class='col-md-8 mx-auto'>
+        <%= render 'public/post_comments/counter', post: @post %>
+        <%= render 'public/post_comments/index', post_comments: @post_comments %>
+        <div class='pagination'><%= paginate @post_comments %></div>
+      </div>
+      <div class='col-md-5 mx-auto'>
+        <%= render 'public/post_comments/form', post: @post, post_comment: @post_comment %>
+      </div>
     </div>
-    <div class='col-md-5 mx-auto'>
-      <%= render 'public/post_comments/form', post: @post, post_comment: @post_comment %>
+  <% else %>
+    <div class='row'>
+      <div class='col-md-4 mx-auto'>
+      退会済みユーザーの投稿です。
+      <%= link_to "投稿一覧に戻る", posts_path, class: 'btn btn-dark btn-sm' %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
 <script>
