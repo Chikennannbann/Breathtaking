@@ -10,7 +10,7 @@ class Public::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    # binding.pry
+    @end_user = @post.end_user
     @post_comment = PostComment.new
     @post_comments = @post.post_comments.page(params[:page]).per(5)
     @post_tags = @post.tags

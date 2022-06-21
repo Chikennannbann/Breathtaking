@@ -19,7 +19,7 @@ class Group < ApplicationRecord
   end
 
   # オーナーの名前をどこからでも引っ張るためのメソッド
-  def owner_name
-    self.end_users.find(self.owner_id).name
+  def owner
+    self.end_users.find(self.owner_id)
   end
 end

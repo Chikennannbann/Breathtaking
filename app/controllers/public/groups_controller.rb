@@ -6,11 +6,13 @@ class Public::GroupsController < ApplicationController
   def index
     session[:title] = nil
     session[:body] = nil
-    @groups = Group.page(params[:page]).order(created_at: :desc)
+    @end_user = EndUser.where("is_deleted = false")
+    @groups = Group.page(params[:page]).where(owner_id: @end_user).order(created_at: :desc)
   end
 
   def show
     @group = Group.find(params[:id])
+    @end_user = @group.owner
   end
 
   def join

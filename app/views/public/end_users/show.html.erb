@@ -1,33 +1,42 @@
 <div class='container my-5'>
-  <div class='row'>
-    <div class='col-6 mx-auto text-center'>
-      <%= image_tag @end_user.get_profile_image, size:'120x120' %>
-      <table class='table table-sm my-4'>
-        <tr>
-          <td colspan='2'><%= @end_user.name %></td>
-        </tr>
-        <tr>
-          <td colspan='2'><%= @end_user.introduction %></td>
-        </tr>
-        <tr>
-          <td>投稿数：<%= @posts.count %></td>
-          <td>グループ数：<%= @groups.count %></td>
-        </tr>
-      </table>
-      <% if @end_user == current_end_user && @end_user.name != 'ゲストユーザー'%>
-        <%= link_to "ユーザー情報変更", edit_end_user_path, class: 'btn btn-outline-dark' %>
-        <%= link_to "いいねした投稿", favorites_end_user_path, class: 'btn btn-outline-dark' %>
-      <% else %>
-        <%= link_to "投稿一覧へ戻る", posts_path, class: 'btn btn-dark' %>
-      <% end %>
+  <% if @end_user.is_deleted ==  false %>
+    <div class='row'>
+      <div class='col-6 mx-auto text-center'>
+        <%= image_tag @end_user.get_profile_image, size:'120x120' %>
+        <table class='table table-sm my-4'>
+          <tr>
+            <td colspan='2'><%= @end_user.name %></td>
+          </tr>
+          <tr>
+            <td colspan='2'><%= @end_user.introduction %></td>
+          </tr>
+          <tr>
+            <td>投稿数：<%= @posts.count %></td>
+            <td>グループ数：<%= @groups.count %></td>
+          </tr>
+        </table>
+        <% if @end_user == current_end_user && @end_user.name != 'ゲストユーザー'%>
+          <%= link_to "ユーザー情報変更", edit_end_user_path, class: 'btn btn-outline-dark' %>
+          <%= link_to "いいねした投稿", favorites_end_user_path, class: 'btn btn-outline-dark' %>
+        <% else %>
+          <%= link_to "投稿一覧へ戻る", posts_path, class: 'btn btn-dark' %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class='row card-wrapper mt-4'>
-    <%= render 'public/posts/index', posts: @posts %>
-  </div>
-  <div class='row'>
-    <div class='col-md-2 mx-auto mt-4'>
-      <div class='pagination'><%= paginate @posts %></div>
+    <div class='row card-wrapper mt-4'>
+      <%= render 'public/posts/index', posts: @posts %>
     </div>
-  </div>
+    <div class='row'>
+      <div class='col-md-2 mx-auto mt-4'>
+        <div class='pagination'><%= paginate @posts %></div>
+      </div>
+    </div>
+  <% else %>
+    <div class='row'>
+      <div class='col-md-4 mx-auto'>
+        退会済みユーザーです。
+        <%= link_to "投稿一覧に戻る", posts_path, class: 'btn btn-dark btn-sm' %>
+      </div>
+    </div>
+  <% end %>
 </div>
