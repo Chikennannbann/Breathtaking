@@ -19,7 +19,7 @@
         <% @groups.each do |f| %>
           <tr onclick='window.location="<%= '/groups/' + f.id.to_s %>"' role='link'>
             <td><%= image_tag f.get_group_image, size:'80x80' %></td>
-            <td><%= link_to f.name, group_path(f), class: 'text-dark' %></td>
+            <td><%= f.name %></td>
             <td><%= f.destination %></td>
             <td><%= f.date %></td>
             <td><%= f.end_users.count %></td>

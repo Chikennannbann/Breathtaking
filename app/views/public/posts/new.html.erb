@@ -4,37 +4,7 @@
       <h2>新規投稿</h2>
       <%= render 'layouts/errors', object: @post %>
       <%= form_with model:@post, url: posts_path, method: :post do |f| %>
-        <table class='table text-left my-4'>
-          <tr>
-            <td><%= f.label :"写真" %></td>
-            <td><%= f.file_field :view_image, size: "200x200", accept:'image/*' %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :"タイトル"%></td>
-            <td><%= f.text_field :title, autofocus: true, size:30 %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :"コメント" %></td>
-            <td><%= f.text_area :body, size:'30x5' %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :"国" %></td>
-            <td><%= f.text_field :nation, size:30 %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :"県、州" %></td>
-            <td><%= f.text_field :prefecture, size:30 %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :"スポット名" %></td>
-            <td><%= f.text_field :place, size:30 %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :"タグ" %></td>
-            <td><%= f.text_field :name, placeholder: "、で区切ると複数のタグが登録可能", size:30 %></td>
-            <!--params[:post][:tag]でパラメーターを受け取れるようにする-->
-          </tr>
-        </table>
+        <%= render 'public/posts/form', f: f %>
         <div class='row'>
           <div class='col-4 mx-auto'>
             <%= link_to "戻る", posts_path, class: 'btn btn-outline-dark btn-block' %>

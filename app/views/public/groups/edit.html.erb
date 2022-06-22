@@ -1,31 +1,10 @@
 <div class="container my-5">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto text-center">
-      <h2>新規グループ作成</h2>
+      <h2>グループ編集</h2>
       <%= render 'layouts/errors', object: @group %>
       <%= form_with model:@group, url: group_path, method: :patch do |f| %>
-        <table class='table text-left my-4'>
-         <tr>
-            <td><%= f.label :"グループ写真" %></td>
-            <td><%= f.file_field :group_image, size: "200x200", accept:'image/*' %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :"グループ名"%></td>
-            <td><%= f.text_field :name, autofocus: true, size:30 %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :"概要" %></td>
-            <td><%= f.text_area :caption, size:'30x5' %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :"行き先" %></td>
-            <td><%= f.text_field :destination, size:30 %></td>
-          </tr>
-          <tr>
-            <td><%= f.label :"日付" %></td>
-            <td><%= f.date_field :date %></td>
-          </tr>
-        </table>
+        <%= render 'public/groups/form', f: f %>
         <div class='row'>
           <div class='col-4 mx-auto'>
             <%= link_to "戻る", group_path(@group), class: 'btn btn-outline-dark btn-block' %>
