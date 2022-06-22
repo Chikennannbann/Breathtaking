@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 describe '投稿のテスト' do
+  # image_path = Rails.root.join('spec/fixtures/test.jpg')
   let!(:post) { create(:post, title:'hoge', nation:'hoge', prefecture:'hoge', place:'hoge') }
   #画像？
   describe 'トップ画面(root_path)のテスト' do
@@ -33,6 +34,7 @@ describe '投稿のテスト' do
     end
     context '投稿処理のテスト' do
       it '投稿後のリダイレクト先は正しいか' do
+        attach_file('post[:view_image]', image_path, make_visible: true)
         fill_in 'post[title]', with: Faker::Lerem.character(number:10)
         fill_in 'post[nation]', with: Faker::Lerem.character(number:5)
         fill_in 'post[prefecture]', with: Faker::Lerem.character(number:5)
