@@ -1,10 +1,10 @@
 <div class='container my-5'>
   <div class='row'>
     <div class='col-8 mx-auto'>
-      <h3 class='mb-3'>タグ一覧</h3>
+      <h3 class='mb-4'>タグ一覧</h3>
       <% @tags.each do |f| %>
-        <span class='mr-3 mt-4'>
-          <i class="fa-solid fa-tags"></i> <%= f.name %>(<%= f.post_tags.count %>)
+        <span class='mr-4'>
+          <i class="fa-solid fa-tags mb-4"></i> <%= f.name %>(<%= f.post_tags.count %>)
           <%= link_to "削除", admin_tag_path(f), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark btn-sm' %>
         </span>
       <% end %>

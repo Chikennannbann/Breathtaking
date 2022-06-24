@@ -4,8 +4,8 @@
       <h3 class='mb-4'>タグから探す</h3>
       <% @tags.each do |f| %>
         <% if f.post_tags.where(post: @posts).count >= 1 %>
-          <span class='mr-3 mt-4'>
-            <i class="fa-solid fa-tags"></i> <u><%= link_to f.name, tag_path(f.id), class: 'text-dark' %></u>(<%= f.post_tags.where(post: @posts).count %>)
+          <span class='mr-4'>
+            <i class="fa-solid fa-tags mb-4"></i> <u><%= link_to f.name, tag_path(f.id), class: 'text-dark' %></u>(<%= f.post_tags.where(post: @posts).count %>)
           </span>
         <% end %>
       <% end %>
