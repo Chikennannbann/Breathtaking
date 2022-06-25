@@ -11,7 +11,6 @@ RSpec.describe Post, 'モデルに関するテスト', type: :model do
   context '空白のバリデーションチェック' do
     it 'titleが空白の場合にバリデーションチェックされ空白のエラーメッセージが返ってきているか' do
       post = Post.new(title:'', nation:'hoge', prefecture:'hoge', place:'hoge')
-      #view_image？
       expect(post).to be_invalid
       expect(post.errors[:title]).to include("が入力されていません。")
     end
