@@ -29,7 +29,7 @@ class Public::PostsController < ApplicationController
       redirect_to posts_path
       flash[:notice] = "投稿が完了しました"
     else
-     render 'new'
+      render 'new'
     end
   end
 
