@@ -1,5 +1,4 @@
 class Public::TagsController < ApplicationController
-
   def index
     @end_user = EndUser.where("is_deleted = false")
     @posts = Post.where(end_user: @end_user)

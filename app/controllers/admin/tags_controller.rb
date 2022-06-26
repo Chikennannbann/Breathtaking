@@ -6,9 +6,9 @@ class Admin::TagsController < ApplicationController
   end
 
   def destroy
-     @tag = Tag.find(params[:id])
-     @tag.destroy
-     redirect_to request.referer
-     flash[:notice] = "タグを削除しました"
+    @tag = Tag.find(params[:id])
+    @tag.destroy
+    redirect_to request.referer
+    flash[:notice] = "タグを削除しました"
   end
 end

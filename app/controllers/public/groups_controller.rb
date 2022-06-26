@@ -63,7 +63,6 @@ class Public::GroupsController < ApplicationController
     flash[:notice] = "グループから脱退しました"
   end
 
-
   private
 
   def group_params

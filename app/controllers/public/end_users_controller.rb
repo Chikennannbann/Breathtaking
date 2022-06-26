@@ -38,7 +38,6 @@ class Public::EndUsersController < ApplicationController
     # Kaminari.paginate_array(配列)でオブジェクト扱いになりpageが使用可能
   end
 
-
   private
 
   def end_user_params

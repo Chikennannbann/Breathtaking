@@ -20,7 +20,7 @@ class Public::EventNoticesController < ApplicationController
     event = {
       :group => @group,
       :title => @title,
-      :body => @body
+      :body => @body,
     }
 
     ContactMailer.send_notifications_to_group(event)
@@ -32,7 +32,6 @@ class Public::EventNoticesController < ApplicationController
     @title = session[:title]
     @body = session[:body]
   end
-
 
   private
 
