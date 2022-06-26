@@ -56,7 +56,7 @@ ja:
           caption: "概要"
           price: "税抜価格"
           destination: "行き先"
-          date: "日付"
+          date: "開催日"
   views:
     pagination:
       first: <i class="fa-solid fa-angles-left"></i>
