@@ -15,7 +15,6 @@ class Public::PostCommentsController < ApplicationController
     @comment.destroy
   end
 
-
   private
 
   def post_comment_params

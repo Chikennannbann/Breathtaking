@@ -34,7 +34,6 @@ class Public::SessionsController < Devise::SessionsController
     root_path
   end
 
-
   protected
 
   def end_user_state

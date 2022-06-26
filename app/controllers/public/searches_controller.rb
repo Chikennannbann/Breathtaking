@@ -1,5 +1,4 @@
 class Public::SearchesController < ApplicationController
-
   def search
     @word = params[:word]
     @end_user = EndUser.where("is_deleted = false")

@@ -15,5 +15,4 @@ class Admin::GroupsController < ApplicationController
     redirect_to admin_groups_path
     flash[:notice] = "グループを削除しました"
   end
-
 end

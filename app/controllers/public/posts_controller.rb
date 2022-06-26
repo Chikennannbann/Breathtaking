@@ -45,7 +45,6 @@ class Public::PostsController < ApplicationController
     else
       render 'edit'
     end
-
   end
 
   def destroy
@@ -53,7 +52,6 @@ class Public::PostsController < ApplicationController
     redirect_to posts_path
     flash[:notice] = "投稿を削除しました"
   end
-
 
   private
 

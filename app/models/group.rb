@@ -1,5 +1,4 @@
 class Group < ApplicationRecord
-
   has_one_attached :group_image
   has_many :group_end_users, dependent: :destroy
   has_many :end_users, through: :group_end_users
@@ -8,7 +7,6 @@ class Group < ApplicationRecord
   validates :caption, presence: true
   validates :destination, presence: true
   validates :date, presence: true
-
 
   def get_group_image
     unless group_image.attached?
@@ -20,6 +18,6 @@ class Group < ApplicationRecord
 
   # オーナーの名前をどこからでも引っ張るためのメソッド
   def owner
-    self.end_users.find(self.owner_id)
+    end_users.find(owner_id)
   end
 end

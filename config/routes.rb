@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-
   devise_scope :end_user do
     post 'end_users/guest_sign_in' => 'end_users/sessions#guest_sign_in'
   end
 
   devise_for :admins, skip: [:registrations, :passwords], controllers: {
-    sessions: "admin/sessions"
+    sessions: "admin/sessions",
   }
 
   namespace :admin do
@@ -20,7 +19,7 @@ Rails.application.routes.draw do
 
   devise_for :end_users, skip: [:passwords], controllers: {
     registrations: "public/registrations",
-    sessions: "public/sessions"
+    sessions: "public/sessions",
   }
 
   scope module: :public do
@@ -48,7 +47,6 @@ Rails.application.routes.draw do
       delete 'withdraw' => 'groups#withdraw'
     end
   end
-
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
