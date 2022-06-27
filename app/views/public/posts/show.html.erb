@@ -1,7 +1,7 @@
 <div class='container my-5'>
   <% if @end_user.is_deleted == false %>
     <div class='row'>
-      <div class="col-sm-12 col-md-12 col-lg-8 px-5 px-sm-0 mx-auto">
+      <div class='col-sm-12 col-md-12 col-lg-8 px-sm-0 mx-auto'>
         <%= image_tag @post.get_view_image, size:'800x550' %>
       </div>
     </div>
@@ -64,25 +64,25 @@
     </div>
 
     <div class='row my-4'>
-      <div class='col-md-6 mx-auto'>
+      <div class='col-sm-10 col-md-8 col-lg-6 px-sm-0 mx-auto'>
         <h3><i class="fa-solid fa-map-pin"></i> <%= @post.place %></h3>
         <div id='map' class='my-4' style='width: 500px; height: 300px'></div>
       </div>
     </div>
 
     <div class='row'>
-      <div class='col-md-8 mx-auto'>
+      <div class='col-sm-11 col-md-9 col-lg-8 px-sm-0 mx-auto'>
         <%= render 'public/post_comments/counter', post: @post %>
         <%= render 'public/post_comments/index', post_comments: @post_comments %>
         <div class='pagination'><%= paginate @post_comments %></div>
       </div>
-      <div class='col-md-5 mx-auto'>
+      <div class='mx-auto'>
         <%= render 'public/post_comments/form', post: @post, post_comment: @post_comment %>
       </div>
     </div>
   <% else %>
     <div class='row'>
-      <div class='col-md-4 mx-auto'>
+      <div class='mx-auto text-center'>
       退会済みユーザーの投稿です。
       <%= link_to "投稿一覧に戻る", posts_path, class: 'btn btn-dark btn-sm' %>
       </div>

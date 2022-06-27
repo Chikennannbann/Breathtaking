@@ -1,7 +1,7 @@
 <div class='container my-5'>
   <div class='row'>
     <% if @end_user.is_deleted ==  false %>
-      <div class="col-sm-12 col-md-8 col-lg-6 px-5 px-sm-0 mx-auto text-center">
+      <div class='col-sm-12 col-md-8 col-lg-6 px-sm-0 mx-auto text-center'>
         <%= image_tag @group.get_group_image, size:'100x100' %>
         <table class='table text-left my-4'>
           <thead>
@@ -18,7 +18,7 @@
               <td><%= @group.destination %></td>
             </tr>
             <tr>
-              <th>日付</th>
+              <th>開催日</th>
               <td><%= @group.date %></td>
             </tr>
             <tr>
@@ -70,7 +70,7 @@
         <% end %>
       </div>
     <% else %>
-      <div class='col-md-5 mx-auto'>
+      <div class='mx-auto text-center'>
         退会済みユーザーのグループです。
         <%= link_to "グループ一覧に戻る", groups_path, class: 'btn btn-dark btn-sm' %>
       </div>

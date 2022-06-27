@@ -1,7 +1,7 @@
 <div class='container my-5'>
   <% if @end_user.is_deleted ==  false %>
     <div class='row'>
-      <div class='col-6 mx-auto text-center'>
+      <div class='col-sm-12 col-md-10 col-lg-6 px-sm-0 mx-auto text-center'>
         <%= image_tag @end_user.get_profile_image, size:'120x120' %>
         <table class='table table-sm my-4'>
           <tr>
@@ -27,13 +27,13 @@
       <%= render 'public/posts/index', posts: @posts %>
     </div>
     <div class='row'>
-      <div class='col-md-2 mx-auto mt-4'>
+      <div class='mx-auto mt-4'>
         <div class='pagination'><%= paginate @posts %></div>
       </div>
     </div>
   <% else %>
     <div class='row'>
-      <div class='col-md-4 mx-auto'>
+      <div class='mx-auto text-center'>
         退会済みユーザーです。
         <%= link_to "投稿一覧に戻る", posts_path, class: 'btn btn-dark btn-sm' %>
       </div>
