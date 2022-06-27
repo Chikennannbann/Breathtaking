@@ -1,7 +1,7 @@
 <div class='container my-5'>
   <% if @end_user.is_deleted ==  false %>
     <div class='row'>
-      <div class='col-6 mx-auto text-center'>
+      <div class='col-sm-12 col-md-10 col-lg-6 px-sm-0 mx-auto text-center'>
         <%= image_tag @end_user.get_profile_image, size:'120x120' %>
         <table class='table table-sm my-4'>
           <tr>

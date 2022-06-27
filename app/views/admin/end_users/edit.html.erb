@@ -1,6 +1,6 @@
-<div class="container my-5">
-  <div class="row">
-    <div class='col-md-6 mx-auto text-center'>
+<div class='container my-5'>
+  <div class='row'>
+    <div class='col-sm-12 col-md-10 col-lg-6 px-sm-0 mx-auto text-center'>
       <h3><%= @end_user.name %>さんの詳細編集</h3>
       <%= render 'layouts/errors', object: @end_user %>
       <%= form_with model: @end_user, url: admin_end_user_path, method: :patch do |f| %>
