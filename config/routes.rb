@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    get 'top' => 'homes#top', as: 'top'
     resources :end_users, only: [:index, :show, :edit, :update]
     resources :posts, only: [:index, :show, :destroy] do
       resources :post_comments, only: [:destroy]
@@ -40,7 +39,7 @@ Rails.application.routes.draw do
     end
     resources :tags, only: [:show, :index]
     resources :groups do
-      resources :group_end_users, only: [:create, :destroy]
+      # resources :group_end_users, only: [:create, :destroy]
       resources :event_notices, only: [:new, :create]
       get 'event_notices/sent' => 'event_notices#sent', as: 'sent'
       get 'join' => 'groups#join'
