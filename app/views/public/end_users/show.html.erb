@@ -27,13 +27,13 @@
       <%= render 'public/posts/index', posts: @posts %>
     </div>
     <div class='row'>
-      <div class='col-md-2 mx-auto mt-4'>
+      <div class='mx-auto mt-4'>
         <div class='pagination'><%= paginate @posts %></div>
       </div>
     </div>
   <% else %>
     <div class='row'>
-      <div class='col-md-4 mx-auto'>
+      <div class='mx-auto text-center'>
         退会済みユーザーです。
         <%= link_to "投稿一覧に戻る", posts_path, class: 'btn btn-dark btn-sm' %>
       </div>
