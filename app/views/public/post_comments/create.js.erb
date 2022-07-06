@@ -1,3 +1,5 @@
 $('.comment-textarea').val('');
 $('.comments-counter').html('<%= j(render 'public/post_comments/counter', post: @comment.post) %>');
 $('.comments-index').html('<%= j(render 'public/post_comments/index', post_comments: @comment.post.post_comments) %>');
+$('.errors').empty();
+<!--エラー表示後、正しく入力された際にエラー文を非表示-->
