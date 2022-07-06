@@ -7,7 +7,8 @@ class Public::PostCommentsController < ApplicationController
     @comment = PostComment.new(post_comment_params)
     @comment.end_user_id = current_end_user.id
     @comment.post_id = post.id
-    @comment.save
+    render :validater unless @comment.save
+    # 非同期でもエラー表示
   end
 
   def destroy

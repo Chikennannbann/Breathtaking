@@ -57,6 +57,8 @@ ja:
           price: "税抜価格"
           destination: "行き先"
           date: "開催日"
+        post_comment:
+          body: "コメント"
   views:
     pagination:
       first: <i class="fa-solid fa-angles-left"></i>

@@ -72,6 +72,9 @@
 
     <div class='row'>
       <div class='col-sm-11 col-md-9 col-lg-8 px-sm-0 mx-auto'>
+        <div class='errors'>
+          <%= render 'layouts/errors', object: @post_comment %>
+        </div>
         <%= render 'public/post_comments/counter', post: @post %>
         <%= render 'public/post_comments/index', post_comments: @post_comments %>
         <div class='pagination'><%= paginate @post_comments %></div>
