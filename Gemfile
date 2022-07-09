@@ -64,6 +64,7 @@ gem 'devise'
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
+  gem 'aws-sdk-s3', '~> 1.48'
 end
 
 gem 'rails-i18n'
