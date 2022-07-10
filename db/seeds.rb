@@ -101,6 +101,7 @@ GroupEndUser.create!(
   [
     {end_user_id:1, group_id:1},
     {end_user_id:2, group_id:2},
-    {end_user_id:1, group_id:3}
+    {end_user_id:1, group_id:3},
+    {end_user_id:2, group_id:4}
   ]
 )
