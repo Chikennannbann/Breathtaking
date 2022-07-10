@@ -7,7 +7,8 @@ class Public::GroupsController < ApplicationController
     session[:title] = nil
     session[:body] = nil
     @end_user = EndUser.where("is_deleted = false")
-    @groups = Group.page(params[:page]).where(owner_id: @end_user).order(created_at: :desc)
+    @groups = Group.page(params[:page]).where(owner_id: @end_user).where("date > ?", Date.today).order(created_at: :desc)
+    # where("date > ?", Date.today)で今日以前に開催のイベント用グループは表示されない
   end
 
   def show
