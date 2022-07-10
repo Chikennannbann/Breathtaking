@@ -92,3 +92,19 @@
     </div>
   </div>
 </div>
+<span id='back' style='position: fixed; right: 40px; bottom: 140px;'>
+  <a href=''>
+    <i class="fa-solid fa-circle-up fa-3x text-dark"></i>
+  </a>
+</span>
+
+<script>
+$(function() {
+  $('#back a').on('click',function(event){
+    $('body, html').animate({
+      scrollTop:0
+    }, 800);
+    event.preventDefault();
+  });
+});
+</script>
