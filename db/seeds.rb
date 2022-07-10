@@ -91,8 +91,9 @@ PostComment.create!(
 Group.create!(
   [
     {name: '琵琶湖に行きたい', caption: '琵琶湖で絶景撮りませんか', destination: '琵琶湖', date: 'Sat, 9 Jul 2022', owner_id: end_users[0].id},
-    {name: '京都　天橋立', caption: '日本三景の一つを見に行きませんか', destination: '天橋立', date: ' Sun, 14 Aug 2022', owner_id: end_users[1].id},
-    {name: '河口湖で富士山見を見る', caption: '河口湖から富士山を撮りたい', destination: '河口湖', date: 'Sat, 23 Jul 2022', owner_id: end_users[0].id}
+    {name: '京都　天橋立', caption: '日本三景の一つを見に行きませんか', destination: '天橋立', date: ' Sun, 27 Aug 2022', owner_id: end_users[1].id},
+    {name: '河口湖で富士山見を見る', caption: '河口湖から富士山を撮りたい', destination: '河口湖', date: 'Fri, 23 Sep 2022', owner_id: end_users[0].id},
+    {name: '山口県の秋芳洞へ', caption: '神秘的だと聞き行ってみたいと思いました', destination: '秋芳洞', date: 'Sat, 15 Oct 2022', owner_id: end_users[1].id}
   ]
 )
 
