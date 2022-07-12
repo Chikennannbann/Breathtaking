@@ -16,7 +16,7 @@
       <tr>
         <td>
           <% if comment.end_user == current_end_user %>
-            <%= link_to "削除", post_post_comment_path(comment.post, comment), method: :delete, remote: true, class: 'btn btn-outline-dark btn-sm' %>
+            <%= link_to t('.delete'), post_post_comment_path(comment.post, comment), method: :delete, remote: true, class: 'btn btn-outline-dark btn-sm' %>
           <% end %>
         </td>
       </tr>

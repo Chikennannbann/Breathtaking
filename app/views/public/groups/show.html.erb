@@ -6,23 +6,23 @@
         <table class='table text-left my-4'>
           <thead>
             <tr>
-              <th>グループ名</th>
+              <th><%= t('.name') %></th>
               <td><%= @group.name %></td>
             </tr>
             <tr>
-              <th>概要</th>
+              <th><%= t('.caption') %></th>
               <td><%= @group.caption %></td>
             </tr>
             <tr>
-              <th>行き先</th>
+              <th><%= t('.destination') %></th>
               <td><%= @group.destination %></td>
             </tr>
             <tr>
-              <th>開催日</th>
+              <th><%= t('.date') %>日</th>
               <td><%= @group.date %></td>
             </tr>
             <tr>
-              <th>メンバー</th>
+              <th><%= t('.member') %></th>
               <td>
                 <% @group.end_users.each do |f| %>
                   <u><%= link_to f.name, end_user_path(f), class: 'text-dark' %></u>
@@ -30,20 +30,20 @@
               </td>
             </tr>
             <tr>
-              <th>作成者</th>
+              <th><%= t('.owner') %></th>
               <td><%= @group.owner.name %></td>
             </tr>
           </thead>
         </table>
         <% if current_end_user.present? && @group.owner_id == current_end_user.id %>
         <!--current_end_user.present?がないと一般ユーザーが閲覧できない-->
-          <%= link_to "メンバーにイベントを通知（次のページでメール作成）", new_group_event_notice_path(@group), class: 'btn btn-dark' %>
+          <%= link_to t('.create_event_notice'), new_group_event_notice_path(@group), class: 'btn btn-dark' %>
           <div class='row mt-4'>
             <div class='col-4 mx-auto'>
-              <%= link_to "戻る", groups_path, class: 'btn btn-outline-dark btn-block' %>
+              <%= link_to t('.back'), groups_path, class: 'btn btn-outline-dark btn-block' %>
             </div>
             <div class='col-4 mx-auto'>
-              <%= link_to "編集", edit_group_path(@group), class: 'btn btn-outline-dark btn-block' %>
+              <%= link_to t('.edit'), edit_group_path(@group), class: 'btn btn-outline-dark btn-block' %>
             </div>
           </div>
           <div class='mt-5'>
@@ -52,27 +52,27 @@
         <% elsif @group.end_users.include?(current_end_user) %>
           <div class='row'>
             <div class='col-4 mx-auto'>
-              <%= link_to "戻る", groups_path, class: 'btn btn-outline-dark btn-block' %>
+              <%= link_to t('.back'), groups_path, class: 'btn btn-outline-dark btn-block' %>
             </div>
             <div class='col-4 mx-auto'>
-              <%= link_to "脱退する", group_withdraw_path(@group), method: :delete, data: {confirm: "本当に脱退しますか？"}, class: 'btn btn-dark btn-block' %>
+              <%= link_to t('.withdraw'), group_withdraw_path(@group), method: :delete, data: {confirm: "本当に脱退しますか？"}, class: 'btn btn-dark btn-block' %>
             </div>
           </div>
         <% else %>
           <div class='row'>
             <div class='col-4 mx-auto'>
-              <%= link_to "戻る", groups_path, class: 'btn btn-outline-dark btn-block' %>
+              <%= link_to t('.back'), groups_path, class: 'btn btn-outline-dark btn-block' %>
             </div>
             <div class='col-4 mx-auto'>
-              <%= link_to "参加する", group_join_path(@group), class: 'btn btn-dark btn-block' %>
+              <%= link_to t('.participate'), group_join_path(@group), class: 'btn btn-dark btn-block' %>
             </div>
           </div>
         <% end %>
       </div>
     <% else %>
       <div class='mx-auto text-center'>
-        退会済みユーザーのグループです。
-        <%= link_to "グループ一覧に戻る", groups_path, class: 'btn btn-dark btn-sm' %>
+        <%= t('.unsubscribed_end_users_group') %>
+        <%= link_to t('.back_to_groups'), groups_path, class: 'btn btn-dark btn-sm' %>
       </div>
     <% end %>
   </div>

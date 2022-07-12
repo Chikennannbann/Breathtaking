@@ -1,34 +1,34 @@
 <div class='container my-5'>
   <div class='row'>
     <div class='col-sm-10 col-md-8 col-lg-4 px-sm-0 mx-auto text-center'>
-      <h2>新規登録</h2>
+      <h2><%= t('.registration') %></h2>
       <%= render "layouts/errors", object: resource %>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <table class="table-sm text-left my-4">
           <tr>
-            <td><%= f.label :"名前" %></td>
+            <td><%= t('.name') %></td>
             <td><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
           </tr>
           <tr>
-            <td><%= f.label :"メールアドレス" %></td>
+            <td><%= t('.email') %></td>
             <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
           </tr>
           <tr>
             <td>
-              <%= f.label :"パスワード" %>
+              <%= t('.password') %>
               <% if @minimum_password_length %>
-                (<%= @minimum_password_length %>文字以上)
+                (<%= @minimum_password_length %><%= t('.over') %>)
               <% end %>
             </td>
             <td><%= f.password_field :password, autocomplete: "new-password" %></td>
           </tr>
           <tr>
-            <td><%= f.label :"パスワード確認" %></td>
+            <td><%= t('.password_confirmation') %></td>
             <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
           </tr>
         </table>
         <div class='col-6 mx-auto'>
-          <%= f.submit "登録", class: 'btn btn-dark btn-block' %>
+          <%= f.submit t('.register'), class: 'btn btn-dark btn-block' %>
         </div>
       <% end %>
     </div>

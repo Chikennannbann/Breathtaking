@@ -1,22 +1,22 @@
 <table class='table text-left my-4'>
   <tr>
-    <td><%= f.label :"グループ写真" %></td>
+    <td><%= t('.group_image') %></td>
     <td><%= f.file_field :group_image, size: "200x200", accept:'image/*' %></td>
   </tr>
   <tr>
-    <td><%= f.label :"グループ名"%></td>
+    <td><%= t('.name') %></td>
     <td><%= f.text_field :name, autofocus: true, size:30 %></td>
   </tr>
   <tr>
-    <td><%= f.label :"概要" %></td>
+    <td><%= t('.caption') %></td>
     <td><%= f.text_area :caption, size:'30x5' %></td>
   </tr>
   <tr>
-    <td><%= f.label :"行き先" %></td>
+    <td><%= t('.destination') %></td>
     <td><%= f.text_field :destination, size:30 %></td>
   </tr>
   <tr>
-    <td><%= f.label :"開催日" %></td>
+    <td><%= t('.date') %></td>
     <td><%= f.date_field :date %></td>
   </tr>
 </table>

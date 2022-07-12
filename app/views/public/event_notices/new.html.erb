@@ -1,22 +1,22 @@
 <div class='container my-5'>
   <div class='row'>
     <div class='col-sm-12 col-md-8 col-lg-6 px-sm-0 mx-auto'>
-      <h2 class='mb-4'><%= @group.name %>　へメール作成</h2>
+      <h2 class='mb-4'><%= @group.name %>　<%= t('.compose_a_mail_to') %></h2>
       <%= form_with model:@group, url: group_event_notices_path(@group), method: :post do |f| %>
         <div class='form-group'>
-          <%= f.label:"タイトル" %>
+          <%= t('.title') %>
           <%= f.text_field :title, class:'form-control'%>
         </div>
         <div class="form-group">
-          <%=f.label:"本文（日時、集合場所、予算、雨天の場合などの詳細）" %>
+          <%= t('.body') %>
           <%= f.text_area :body,size: '50x5', class:'form-control' %>
         </div>
         <div class='row mt-4'>
           <div class='col-4 mx-auto'>
-            <%= link_to "戻る", group_path(@group), class: 'btn btn-outline-dark btn-block' %>
+            <%= link_to t('.back'), group_path(@group), class: 'btn btn-outline-dark btn-block' %>
           </div>
           <div class='col-4 mx-auto'>
-            <%= f.submit "送信", class: 'btn btn-dark btn-block' %>
+            <%= f.submit t('.send'), class: 'btn btn-dark btn-block' %>
           </div>
         </div>
       <% end %>
