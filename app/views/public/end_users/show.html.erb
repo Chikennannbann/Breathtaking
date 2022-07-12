@@ -11,15 +11,15 @@
             <td colspan='2'><%= @end_user.introduction %></td>
           </tr>
           <tr>
-            <td>投稿数：<%= @posts.count %></td>
-            <td>グループ数：<%= @groups.count %></td>
+            <td><%= t('.number_of_posts') %>：<%= @posts.count %></td>
+            <td><%= t('.number_of_groups') %>：<%= @groups.count %></td>
           </tr>
         </table>
         <% if @end_user == current_end_user && @end_user.name != 'ゲストユーザー'%>
-          <%= link_to "ユーザー情報変更", edit_end_user_path, class: 'btn btn-outline-dark' %>
-          <%= link_to "いいねした投稿", favorites_end_user_path, class: 'btn btn-outline-dark' %>
+          <%= link_to t('.edit_end_user'), edit_end_user_path, class: 'btn btn-outline-dark' %>
+          <%= link_to t('.favorited_posts'), favorites_end_user_path, class: 'btn btn-outline-dark' %>
         <% else %>
-          <%= link_to "投稿一覧へ戻る", posts_path, class: 'btn btn-dark' %>
+          <%= link_to t('.back_to_posts'), posts_path, class: 'btn btn-dark' %>
         <% end %>
       </div>
     </div>
@@ -34,8 +34,8 @@
   <% else %>
     <div class='row'>
       <div class='mx-auto text-center'>
-        退会済みユーザーです。
-        <%= link_to "投稿一覧に戻る", posts_path, class: 'btn btn-dark btn-sm' %>
+        <%= t('.unsubscribed_end_user') %>
+        <%= link_to t('.back_to_posts'), posts_path, class: 'btn btn-dark btn-sm' %>
       </div>
     </div>
   <% end %>

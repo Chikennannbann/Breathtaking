@@ -44,7 +44,7 @@ ja:
           email: "メールアドレス"
           password: "パスワード"
           name: "名前"
-          introduction: "プロフィール"
+          introduction: "自己紹介"
         post:
           view_image: "写真"
           title: "タイトル"
@@ -66,3 +66,78 @@ ja:
       previous: <i class="fa-solid fa-angle-left"></i>
       next: <i class="fa-solid fa-angle-right"></i>
       truncate: "..."
+
+  public:
+    end_users:
+      edit: &end_user_common
+        email: "メールアドレス"
+        password: "パスワード"
+        name: "名前"
+        introduction: "自己紹介"
+        profile_image: "プロフィール写真"
+        edit_end_user: "ユーザー情報編集"
+        back: "戻る"
+        update: "更新"
+        unsubscribe: "退会する"
+      favorites:
+        favorited_posts: "いいねした投稿"
+        post: "件"
+        back_to_mypage: "マイページに戻る"
+        check_posts: "投稿を見に行く"
+        no_favorited_post: "いいねした投稿がありません。"
+      show:
+        number_of_posts: "投稿数"
+        number_of_groups: "グループ数"
+        edit_end_user: "ユーザー情報編集"
+        favorited_posts: "いいねした投稿"
+        back_to_posts: "投稿一覧に戻る"
+        unsubscribed_end_user: "退会済みユーザーです。"
+      unsubscribe:
+        <<: *end_user_common
+        are_you_sure: "本当に退会しますか？"
+    event_notices:
+      new:
+        compose_a_mail_to: "へメール作成"
+        title: "タイトル"
+        body: "本文（日時、集合場所、予算、雨天の場合などの詳細）"
+        back: "戻る"
+        send: "送信"
+      sent:
+        sent_a_mail: "メールを送信しました"
+        mail_detail: "内容は以下の通りです。"
+        mail_to_group_owner: "グループ作成者にもメールが届きます。"
+        title: "タイトル"
+        body: "本文"
+        back_to_groups: "グループ一覧へ戻る"
+    groups:
+      form: &groups_common
+        group_image: "グループ写真"
+        name: "グループ名"
+        caption: "概要"
+        destination: "行き先"
+        date: "開催日"
+      edit:
+        edit_group: "グループ編集"
+        back: "戻る"
+        update: "更新"
+      index:
+        <<: *groups_common
+        create_group: "グループ新規作成"
+        how_to: "グループの使い方"
+        number_of_participants: "参加人数"
+      new:
+        new_group: "新規グループ"
+        back: "戻る"
+        create: "作成"
+      show:
+        <<: *groups_common
+        member: "メンバー"
+        owner: "作成者"
+        create_event_notice: "メンバーにイベントを通知（次のページでメール作成）"
+        back: "戻る"
+        edit: "編集"
+        delete_group: "グループ削除"
+        withdraw: "脱退する"
+        participate: "参加する"
+        unsubscribed_end_users_group: "退会済みユーザーのグループです。"
+        back_to_groups: "グループ一覧に戻る"

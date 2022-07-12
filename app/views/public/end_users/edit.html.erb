@@ -1,33 +1,33 @@
 <div class='container my-5'>
   <div class='row'>
     <div class='col-sm-12 col-md-10 col-lg-6 px-sm-0 mx-auto text-center'>
-      <h2>ユーザー情報編集</h2>
+      <h2><%= t('.edit_end_user') %></h2>
       <%= render 'layouts/errors', object: @end_user %>
       <%= form_with model:@end_user, url: end_user_path, method: :patch do |f| %>
         <table class='table text-left my-4'>
           <tr>
-            <td><%= f.label :"プロフィール写真"%></td>
+            <td><%= t('.profile_image') %></td>
             <td><%= f.file_field :profile_image, size: "200x200", accept:'image/*' %></td>
           </tr>
           <tr>
-            <td><%= f.label :"名前" %></td>
+            <td><%= t('.name') %></td>
             <td><%= f.text_field :name, autofocus: true, autocomplete: "name", size:30 %></td>
           </tr>
           <tr>
-            <td><%= f.label :"自己紹介" %></td>
+            <td><%= t('.introduction') %></td>
             <td><%= f.text_area :introduction, size:'30x3' %></td>
           </tr>
         </table>
         <div class='row'>
           <div class='col-4 mx-auto'>
-            <%= link_to "戻る", end_user_path(@end_user), class: 'btn btn-outline-dark btn-block' %>
+            <%= link_to t('.back'), end_user_path(@end_user), class: 'btn btn-outline-dark btn-block' %>
           </div>
           <div class='col-4 mx-auto'>
-            <%= f.submit "更新", class: 'btn btn-dark btn-block' %>
+            <%= f.submit t('.update'), class: 'btn btn-dark btn-block' %>
           </div>
         </div>
         <div class='mt-5'>
-          <u><%= link_to "退会する", confirm_unsubscribe_path, class:'text-dark' %></u>
+          <u><%= link_to t('.unsubscribe'), confirm_unsubscribe_path, class:'text-dark' %></u>
         </div>
       <% end %>
     </div>

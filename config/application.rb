@@ -17,7 +17,13 @@ module Breathtaking
     # in config/environments, which are processed later.
     #
     config.time_zone = 'Tokyo'
+
+    config.i18n.available_locales = %i(ja en)
+    # 有効にする言語のホワイトリスト
+    config.i18n.enforce_available_locales = true
+    # ホワイトリストをチェックするか
     config.i18n.default_locale = :ja
+    # 言語を指定されなかった場合のデフォルト値
     # config.eager_load_paths << Rails.root.join("extras")
 
   end
