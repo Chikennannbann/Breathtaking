@@ -17,15 +17,15 @@
         </table>
         <table class='table'>
           <tr>
-            <th>国</th>
+            <th><%= t('.nation') %></th>
             <td><%= @post.nation %></td>
           </tr>
           <tr>
-            <th>県・州</th>
+            <th><%= t('.prefecture') %></th>
             <td><%= @post.prefecture %></td>
           </tr>
           <tr>
-            <th>スポット</th>
+            <th><%= t('.place') %></th>
             <td><%= @post.place %></td>
           </tr>
         </table>
@@ -54,8 +54,8 @@
           <tr>
             <td>
               <% if @post.end_user == current_end_user %>
-                <%= link_to "編集", edit_post_path, class: 'btn btn-dark' %>
-                <%= link_to "削除", post_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark'%>
+                <%= link_to t('.edit'), edit_post_path, class: 'btn btn-dark' %>
+                <%= link_to t('.delete'), post_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark'%>
               <% end %>
             </td>
           </tr>
@@ -86,8 +86,8 @@
   <% else %>
     <div class='row'>
       <div class='mx-auto text-center'>
-      退会済みユーザーの投稿です。
-      <%= link_to "投稿一覧に戻る", posts_path, class: 'btn btn-dark btn-sm' %>
+      <%= t('.unsubscribed_end_users_post') %>
+      <%= link_to t('.back_to_posts'), posts_path, class: 'btn btn-dark btn-sm' %>
       </div>
     </div>
   <% end %>

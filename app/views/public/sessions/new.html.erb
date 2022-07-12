@@ -1,25 +1,25 @@
 <div class='container my-5'>
   <div class='row'>
     <div class='col-sm-8 col-md-6 col-lg-4 px-sm-0 mx-auto text-center'>
-      <h2>ログイン</h2>
+      <h2><%= t('.log_in') %></h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <table class='table-sm text-left my-5'>
           <tr>
-            <td><%= f.label :"メールアドレス　　" %></td>
+            <td><%= t('.email') %></td>
             <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
           </tr>
           <tr>
-            <td><%= f.label :"パスワード　　" %></td>
+            <td><%= t('.password') %></td>
             <td><%= f.password_field :password, autocomplete: "current-password" %></td>
           </tr>
         </table>
         <div class='col-6 mx-auto mb-4'>
-          <%= f.submit "ログイン", class: 'btn btn-dark btn-block' %>
+          <%= f.submit t('.log_in'), class: 'btn btn-dark btn-block' %>
         </div>
       <% end %>
       <div class='col-10 mx-auto'>
-        <%= link_to '新規登録', new_end_user_registration_path, class: 'nav-link text-center text-dark border border-dark' %><br>
-        <%= link_to 'ゲストログイン', end_users_guest_sign_in_path, method: :post, class: 'nav-link text-center text-dark border border-dark' %>
+        <%= link_to t('.registration'), new_end_user_registration_path, class: 'nav-link text-center text-dark border border-dark' %><br>
+        <%= link_to t('.guest_log_in'), end_users_guest_sign_in_path, method: :post, class: 'nav-link text-center text-dark border border-dark' %>
       </div>
     </div>
   </div>

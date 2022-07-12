@@ -141,3 +141,69 @@ ja:
         participate: "参加する"
         unsubscribed_end_users_group: "退会済みユーザーのグループです。"
         back_to_groups: "グループ一覧に戻る"
+    homes:
+      about:
+      top:
+        for_superb_view_lovers: "絶景好きが集まる"
+        community_website: "コミュニティサイト"
+        about: "サイトについて"
+    post_comments:
+      form:
+        under_100letters: "コメント100文字以内"
+        send: "送信する"
+      index:
+        delete: "削除"
+      counter:
+        comment: "コメント"
+    posts:
+      form: &posts_common
+        view_image: "写真"
+        title: "タイトル"
+        body: "コメント"
+        nation: "国"
+        prefecture: "県・州"
+        place: "スポット名"
+        name: "タグ"
+        multiple_tags: "、で区切ると複数のタグが登録可能"
+      edit:
+        edit_post: "投稿編集"
+        back: "戻る"
+        update: "更新"
+      new:
+        new_post: "新規投稿"
+        back: "戻る"
+        post: "投稿"
+      show:
+        <<: *groups_common
+        edit: "編集"
+        delete: "削除"
+        unsubscribed_end_users_post: "退会済みユーザーの投稿です。"
+        back_to_posts: "投稿一覧に戻る"
+    registrations:
+      new:
+        registration: "新規登録"
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        over: "文字以上"
+        password_confirmation: "パスワード確認"
+        register: "登録"
+    searches:
+      search:
+        result: "の検索結果"
+        post: "件"
+        no_post_try_again: "ヒットする投稿がありませんでした。他の単語で再検索してください。"
+    sessions:
+      new:
+        log_in: "ログイン"
+        email: "メールアドレス"
+        password: "パスワード"
+        registration: "新規登録"
+        guest_log_in: "ゲストログイン"
+    tags:
+      index:
+        search_from_tags: "タグから探す"
+      show:
+        result: "の検索結果"
+        post: "件"
+        back_to_tags: "タグ一覧に戻る"

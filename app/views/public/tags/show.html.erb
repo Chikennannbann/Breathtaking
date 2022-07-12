@@ -1,6 +1,6 @@
 <div class='container my-5'>
-  <h3><i class="fa-solid fa-tags text-warning"></i>"<%= @tag.name %>"の検索結果：<%= @posts.count %>件
-  <%= link_to "タグ検索に戻る", tags_path, class: 'btn btn-outline-dark' %></h3>
+  <h3><i class="fa-solid fa-tags text-warning"></i>"<%= @tag.name %>"<%= t('.result') %>：<%= @posts.count %><%= t('.post') %>
+  <%= link_to t('.back_to_tags'), tags_path, class: 'btn btn-outline-dark' %></h3>
   <div class='row'>
     <%= render 'public/posts/index', posts: @posts %>
   </div>
