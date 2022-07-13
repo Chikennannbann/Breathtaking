@@ -2,6 +2,7 @@
   <div class='row'>
     <div class='col-sm-8 col-md-6 col-lg-4 px-sm-0 mx-auto text-center'>
       <h2><%= t('.log_in') %></h2>
+      <p class='text-center text-danger'><%= alert %></p>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <table class='table-sm text-left my-5'>
           <tr>
@@ -18,7 +19,7 @@
         </div>
       <% end %>
       <div class='col-10 mx-auto'>
-        <%= link_to t('.registration'), new_end_user_registration_path, class: 'nav-link text-center text-dark border border-dark' %><br>
+        <%= link_to t('.sign_up'), new_end_user_registration_path, class: 'nav-link text-center text-dark border border-dark' %><br>
         <%= link_to t('.guest_log_in'), end_users_guest_sign_in_path, method: :post, class: 'nav-link text-center text-dark border border-dark' %>
       </div>
     </div>

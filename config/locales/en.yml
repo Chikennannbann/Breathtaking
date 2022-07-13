@@ -30,4 +30,224 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      short: "%Y/%m/%d"
+
+  devise:
+    confirmations:
+      confirmed: 'Registered Your Account'
+    failure:
+      already_authenticated: 'Already Loged In'
+      invalid: "%{authentication_keys} もしくはパスワードが不正です。"
+      not_found_in_database: "%{authentication_keys} もしくはパスワードが不正です。"
+      unauthenticated: 'アカウント登録もしくはログインしてください。'
+    mailer:
+      password_change:
+        subject: 'パスワードの変更について'
+    omniauth_callbacks:
+      failure: "%{kind} アカウントによる認証に失敗しました。理由：（%{reason}）"
+      success: "%{kind} アカウントによる認証に成功しました。"
+    registrations:
+      signed_up: 'アカウント登録が完了しました'
+    sessions:
+      signed_in: 'ログインしました'
+      signed_out: 'ログアウトしました'
+      already_signed_out: '既にログアウト済みです'
+  errors:
+    messages:
+      already_confirmed: 'は既に登録済みです。ログインしてください。'
+      not_found: 'は見つかりませんでした。'
+      not_saved:
+        one: "エラーが発生したため保存されませんでした:"
+        other: "%{count} 件のエラー"
+      taken: "は既に使用されています。"
+      blank: "が入力されていません。"
+      too_short: "は%{count}文字以上に設定して下さい。"
+      too_long: "は%{count}文字以下に設定して下さい。"
+      invalid: "は有効でありません。"
+      confirmation: "が内容とあっていません。"
+
+  activerecord:
+      attributes:
+        end_user:
+          email: "Email"
+          password: "Password"
+          password_confirmation: "Password Confirmation"
+          name: "Name"
+        post:
+          view_image: "View Image"
+          title: "Title"
+          nation: "Nation"
+          prefecture: "Prefecture"
+          place: "Spot Name"
+        group:
+          name: "Group Name"
+          caption: "Caption"
+          destination: "Destination"
+          date: "Date"
+        post_comment:
+          body: "Comment"
+  views:
+    pagination:
+      first: <i class="fa-solid fa-angles-left"></i>
+      last: <i class="fa-solid fa-angles-right"></i>
+      previous: <i class="fa-solid fa-angle-left"></i>
+      next: <i class="fa-solid fa-angle-right"></i>
+      truncate: "..."
+
+  public:
+    end_users:
+      edit: &end_user_common
+        name: "Name"
+        introduction: "Introduction"
+        profile_image: "Profile Picture"
+        edit_end_user: "Edit Information"
+        back: "Back"
+        update: "Update"
+        unsubscribe: "Unsubscribe"
+      favorites:
+        favorited_posts: "Favorited"
+        post: "posts"
+        back_to_mypage: "Back to Mypage"
+        check_posts: "Check Posts"
+        no_favorited_post: "No favorited Post"
+      show:
+        number_of_posts: "Posts"
+        number_of_groups: "Groups"
+        edit_end_user: "Edit Information"
+        favorited_posts: "Favorited Posts"
+        back_to_posts: "Back to Posts"
+        unsubscribed_end_user: "Unsubscribed User"
+      unsubscribe:
+        <<: *end_user_common
+        are_you_sure: "Are you sure？"
+    event_notices:
+      new:
+        compose_a_mail_to: ""
+        title: "Title"
+        body: "Body (Daytime, Meeting place, Budget, In case of rain, etc.)"
+        back: "Back"
+        send: "Send"
+      sent:
+        sent_a_mail: "Email Sent"
+        mail_detail: "The details are shown below."
+        mail_to_group_owner: "The email is also send to tha group owner."
+        title: "Title"
+        body: "Body"
+        back_to_groups: "Back to Groups"
+    groups:
+      form: &groups_common
+        group_image: "Group Picture"
+        name: "Group Nama"
+        caption: "Caption"
+        destination: "Destination"
+        date: "Date"
+      edit:
+        edit_group: "Edit Group"
+        back: "Back"
+        update: "Update"
+      index:
+        <<: *groups_common
+        create_group: "New Group"
+        how_to: "How to use Group"
+        number_of_participants: "Participants"
+      new:
+        new_group: "New Group"
+        back: "Back"
+        create: "Create"
+      show:
+        <<: *groups_common
+        member: "Member"
+        owner: "Owner"
+        create_event_notice: "Create an Event Notice（Compose a mail on the next page.）"
+        back: "Back"
+        edit: "Edit"
+        delete_group: "Delete the Group"
+        withdraw: "Withdraw"
+        participate: "Participate"
+        unsubscribed_end_users_group: "Unsubscribed User's Group"
+        back_to_groups: "Back to Group"
+    homes:
+      about:
+      top:
+        for_superb_view_lovers: "For Superb View Lovers"
+        community_website: "Community Site"
+        about: "About Us"
+    post_comments:
+      form:
+        under_100letters: "Comment Under 100 letters"
+        send: "Send"
+      index:
+        delete: "Delete"
+      counter:
+        comment: "Comment"
+    posts:
+      form: &posts_common
+        view_image: "View Image"
+        title: "Title"
+        body: "Content"
+        nation: "Nation"
+        prefecture: "Prefecture"
+        place: "Spot Name"
+        name: "Tag"
+        multiple_tags: "Put [、] between words for multiple tags."
+      edit:
+        edit_post: "Edit Post"
+        back: "Back"
+        update: "Update"
+      new:
+        new_post: "New post"
+        back: "Back"
+        post: "Post"
+      show:
+        <<: *groups_common
+        edit: "Edit"
+        delete: "Delete"
+        unsubscribed_end_users_post: "Unsubscribed User's Post"
+        back_to_posts: "Back to Posts"
+    registrations:
+      new:
+        sign_up: "Sign Up"
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        over: "letters at least"
+        password_confirmation: "Password Confirmation"
+        register: "Sign Up"
+    searches:
+      search:
+        result: "Result"
+        post: "posts"
+        no_post_try_again: "No Post is found. Try again with other words."
+    sessions:
+      new:
+        log_in: "Log In"
+        email: "Email"
+        password: "Password"
+        sign_up: "Sign Up"
+        guest_log_in: "Guest Log In"
+    tags:
+      index:
+        search_from_tags: "Tag Search"
+      show:
+        result: "Result"
+        post: "posts"
+        back_to_tags: "Back to Tags"
+  layouts:
+    application:
+      about: "About Us"
+      mypage: "My Page"
+      new_post: "New Post"
+      posts: "Posts"
+      group: "Group"
+      tags: "Tag Search"
+      log_out: "Log Out"
+      log_in: "Log In"
+  contact_mailer:
+    send_notification:
+      has_an_event: "has an Event"
+      title: "Title"
+      caution: "This email address is for sending only."
+      not_reach_to_owner: "You can't reach the group owner even if you reply."
