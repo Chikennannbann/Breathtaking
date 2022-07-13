@@ -1,17 +1,17 @@
 <div class='container'>
   <div class='row'>
     <div class='col-5 offset-1'>
-      <h2 class='py-5'>サイトでできること</h2>
-      <h5>絶景の検索</h5><br>
-      <p>キーワードもしくは、投稿に付けられたタグから<br>
-      絶景を検索できます。</p><br>
+      <h2 class='py-5'><%= t('.what_we_can_do') %></h2>
+      <h5><%= t('.search') %></h5><br>
+      <p><%= t('.keyword_or_tag') %><br>
+      <%= t('.search_for_view') %></p><br>
 
-      <h5>写真の投稿</h5><br>
-      <p>あなたの思う絶景をぜひ共有してください。<br>
-      いいねやコメントがもらえるかも。</p><br>
+      <h5><%= t('.post') %></h5><br>
+      <p><%= t('.share') %><br>
+      <%= t('.favorite_or_comment') %></p><br>
 
-      <h5>グループの作成</h5><br>
-      <p>絶景スポットに行きたいメンバーを募ることができます。</p>
+      <h5><%= t('.group') %></h5><br>
+      <p><%= t('.look_for_member') %></p>
 
     </div>
     <div class='col-6 mt-3'>
@@ -23,9 +23,9 @@
 <div class='container' style='padding: 80px 0px;'>
   <div class='row'>
     <div class='col-8 mx-auto text-center'>
-      <h3>絶景好きが交流できるコミュニティーサイトです。<br>
-      誰でも大歓迎。<br>
-      あなたが感動した絶景をみんなで共有しましょう。</h3>
+      <h3><%= t('.site_for_lovers') %><br>
+      <%= t('.welcome') %><br>
+      <%= t('.share_your_views') %></h3>
       <br>
     </div>
   </div>
@@ -39,10 +39,10 @@
       </div>
     </div>
     <div class='col-4'>
-      <h2 class='pt-4 pb-5'>サイトの特徴</h2>
-      <h5>グループで絶景スポットに行く</h5><br>
-      <p>グループ作成をすると一緒にスポットに行くメンバーを募集できる。</p>
-      <p>価値観の合う友達に会えるかも。</p>
+      <h2 class='pt-4 pb-5'><%= t('.feature') %></h2>
+      <h5><%= t('.go_to_spot') %></h5><br>
+      <p><%= t('.members_with') %></p>
+      <p><%= t('.find_friends') %></p>
     </div>
     <div class='col-1'></div>
   </div>
@@ -51,12 +51,12 @@
 <div class='container' style='padding: 80px 0px;'>
   <div class='row'>
     <div class='col-8 mx-auto text-center'>
-      <h3>サイトのポリシー</h3><br>
-      <p>気持ちの良い交流を目指しています。いいねは積極的に。</p>
-      <p>自然が織りなす絶景が集まることを目的としています。<br>
-      （建物や人物が入っていても一部であれば問題ありません）</p>
-      <p>感性は人それぞれです。あなたが良いと思った絶景を投稿してみましょう。</p>
-      <p>批判的な見方をされる方はご遠慮ください。</p>
+      <h3><%= t('.policy') %></h3><br>
+      <p><%= t('.positive_communication') %></p>
+      <p><%= t('.purpose') %><br>
+      <%= t('.no_problem') %></p>
+      <p><%= t('.what_you_like') %></p>
+      <p><%= t('.prohibition') %></p>
     </div>
   </div>
 </div>
@@ -64,31 +64,31 @@
 <div class='container my-5'>
   <div id='group-explanation' class='row'>
     <div class='col-8 mx-auto text-center'>
-      <h3>グループについて</h3>
-      <p>（※ グループを利用するためにはログインが必要です。）</p><br>
+      <h3><%= t('.about_group') %></h3>
+      <p>（※ <%= t('.need_log_in') %>）</p><br>
     </div>
     <div class='col-8 mx-auto'>
-      <h4>□グループ作成</h4>
+      <h4>□<%= t('.create_group') %></h4>
       <p></p>
-      <p>1. グループ一覧画面からグループを新規作成のボタンをクリック</p>
-      <p>2. グループのタイトル、概要、行き先、開催日を入力して「作成」をクリック（写真は任意）</p>
-      <p>3. グループ一覧から作成したグループを選択すると詳細が確認できます。</p>
-      <p>4. 「編集」を押すと内容を変更することができます。</p><br>
+      <p>1. <%= t('.create_1') %></p>
+      <p>2. <%= t('.create_2') %></p>
+      <p>3. <%= t('.create_3') %></p>
+      <p>4. <%= t('.create_4') %></p><br>
 
-      <h4>□グループへの参加・脱退</h4>
+      <h4>□<%= t('.participate') %></h4>
       <p></p>
-      <p>1. グループ一覧画面から参加したいグループをクリック</p>
-      <p>2. 「参加する」をクリックすると参加となり、メンバーに名前が追加されます。</p>
-      <p>3. 「脱退する」をクリックするとメンバーから名前が削除されます。</p><br>
+      <p>1. <%= t('.participate_1') %></p>
+      <p>2. <%= t('.participate_2') %></p>
+      <p>3. <%= t('.participate_3') %></p><br>
 
-      <h4>□メンバーにイベントを通知</h4>
+      <h4>□<%= t('.event_notice') %></h4>
       <p></p>
-      <p> グループ作成者はメンバーにイベントについてお知らせメールを送信できます。<br>
-      （※ 送信元のメールアドレスはサイト管理下のアドレスが使用されます。）</p>
-      <p>1. グループの詳細画面から「メンバーにイベントを通知」をクリック</p>
-      <p>2. フォームにタイトルと本文を入力（日時、集合場所、予算、雨天の場合などの詳細）</p>
-      <p>3. 「送信」をクリックした後、「メールを送信しました」の画面が出たら通知完了。</p>
-      <p>4. グループ作成者にもメンバーと同様のメールが送信されます。</p>
+      <p> <%= t('.owner_sent_mail') %><br>
+      （※ <%= t('.by_managed_address') %>）</p>
+      <p>1. <%= t('.event_1') %></p>
+      <p>2. <%= t('.event_2') %></p>
+      <p>3. <%= t('.event_3') %></p>
+      <p>4. <%= t('.event_4') %></p>
     </div>
   </div>
 </div>

@@ -104,7 +104,7 @@
       zoom: 15,
     });
 
-    var contentString = 'スポット名：<%= @post.place %>';
+    var contentString = '<%= t('.place') %>：<%= @post.place %>';
     var infowindow = new google.maps.InfoWindow({
       content: contentString
     });

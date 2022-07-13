@@ -43,8 +43,8 @@ ja:
         end_user:
           email: "メールアドレス"
           password: "パスワード"
+          password_confirmation: "パスワード確認"
           name: "名前"
-          introduction: "自己紹介"
         post:
           view_image: "写真"
           title: "タイトル"
@@ -54,7 +54,6 @@ ja:
         group:
           name: "グループ名"
           caption: "概要"
-          price: "税抜価格"
           destination: "行き先"
           date: "開催日"
         post_comment:
@@ -70,8 +69,6 @@ ja:
   public:
     end_users:
       edit: &end_user_common
-        email: "メールアドレス"
-        password: "パスワード"
         name: "名前"
         introduction: "自己紹介"
         profile_image: "プロフィール写真"
@@ -143,6 +140,46 @@ ja:
         back_to_groups: "グループ一覧に戻る"
     homes:
       about:
+        what_we_can_do: "サイトでできること"
+        search: "絶景の検索"
+        keyword_or_tag: "キーワードもしくは、投稿に付けられたタグから"
+        search_for_view: "絶景を検索できます。"
+        post: "写真の投稿"
+        share: "あなたの思う絶景をぜひ共有してください。"
+        favorite_or_comment: "いいねやコメントがもらえるかも"
+        group: "グループの作成"
+        look_for_member: "絶景スポットに行きたいメンバーを募ることができます。"
+        site_for_lovers: "絶景好きが交流できるコミュニティーサイトです。"
+        welcome: "誰でも大歓迎。"
+        share_your_views: "あなたが感動した絶景をみんなで共有しましょう。"
+        feature: "サイトの特徴"
+        go_to_spot: "グループで絶景スポットに行く"
+        members_with: "グループ作成をすると一緒にスポットに行くメンバーを募集できる。"
+        find_friends: "価値観の合う友達に会えるかも。"
+        policy: "サイトのポリシー"
+        positive_communication: "気持ちの良い交流を目指しています。いいねは積極的に。"
+        purpose: "自然が織りなす絶景が集まることを目的としています。"
+        no_problem: "（建物や人物が入っていても一部であれば問題ありません）"
+        what_you_like: "感性は人それぞれです。あなたが良いと思った絶景を投稿してみましょう。"
+        prohibition: "批判的な見方をされる方はご遠慮ください。"
+        about_group: "グループについて"
+        need_log_in: "グループを利用するためにはログインが必要です。"
+        create_group: "グループ作成"
+        create_1: "グループ一覧画面からグループを新規作成のボタンをクリック"
+        create_2: "グループのタイトル、概要、行き先、開催日を入力して「作成」をクリック（写真は任意）"
+        create_3: "グループ一覧から作成したグループを選択すると詳細が確認できます。"
+        create_4: "「編集」を押すと内容を変更することができます。"
+        participate: "グループへの参加・脱退"
+        participate_1: "グループ一覧画面から参加したいグループをクリック"
+        participate_2: "「参加する」をクリックすると参加となり、メンバーに名前が追加されます。"
+        participate_3: "「脱退する」をクリックするとメンバーから名前が削除されます。"
+        event_notice: "メンバーにイベントを通知"
+        owner_sent_mail: "グループ作成者はメンバーにイベントについてお知らせメールを送信できます。"
+        by_managed_address: "送信元のメールアドレスはサイト管理下のアドレスが使用されます。"
+        event_1: "グループの詳細画面から「メンバーにイベントを通知」をクリック"
+        event_2: "フォームにタイトルと本文を入力（日時、集合場所、予算、雨天の場合などの詳細）"
+        event_3: "「送信」をクリックした後、「メールを送信しました」の画面が出たら通知完了。"
+        event_4: "グループ作成者にもメンバーと同様のメールが送信されます。"
       top:
         for_superb_view_lovers: "絶景好きが集まる"
         community_website: "コミュニティサイト"
@@ -174,14 +211,14 @@ ja:
         back: "戻る"
         post: "投稿"
       show:
-        <<: *groups_common
+        <<: *posts_common
         edit: "編集"
         delete: "削除"
         unsubscribed_end_users_post: "退会済みユーザーの投稿です。"
         back_to_posts: "投稿一覧に戻る"
     registrations:
       new:
-        registration: "新規登録"
+        sign_up: "新規登録"
         name: "名前"
         email: "メールアドレス"
         password: "パスワード"
@@ -198,7 +235,7 @@ ja:
         log_in: "ログイン"
         email: "メールアドレス"
         password: "パスワード"
-        registration: "新規登録"
+        sign_up: "新規登録"
         guest_log_in: "ゲストログイン"
     tags:
       index:
@@ -207,3 +244,19 @@ ja:
         result: "の検索結果"
         post: "件"
         back_to_tags: "タグ一覧に戻る"
+  layouts:
+    application:
+      about: "サイトについて"
+      mypage: "マイページ"
+      new_post: "新規投稿"
+      posts: "投稿一覧"
+      group: "グループ"
+      tags: "タグ検索"
+      log_out: "ログアウト"
+      log_in: "ログイン"
+  contact_mailer:
+    send_notification:
+      has_an_event: "からのイベント通知です"
+      title: "タイトル"
+      caution: "イベント通知専用のメールアドレスです。"
+      not_reach_to_owner: "返信してもグループ作成者には届きません。"
