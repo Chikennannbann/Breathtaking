@@ -55,7 +55,7 @@
             <td>
               <% if @post.end_user == current_end_user %>
                 <%= link_to t('.edit'), edit_post_path, class: 'btn btn-dark' %>
-                <%= link_to t('.delete'), post_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-dark'%>
+                <%= link_to t('.delete'), post_path, method: :delete, data: {confirm: t('.confirm_delete')}, class: 'btn btn-dark'%>
               <% end %>
             </td>
           </tr>

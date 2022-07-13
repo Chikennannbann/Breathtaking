@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class='mt-5'>
-            <u><%= link_to "グループ削除", group_path, method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'text-dark' %></u>
+            <u><%= link_to t('.delete_group'), group_path, method: :delete, data: {confirm: t('.confirm_delete_group')}, class: 'text-dark' %></u>
           </div>
         <% elsif @group.end_users.include?(current_end_user) %>
           <div class='row'>
@@ -55,7 +55,7 @@
               <%= link_to t('.back'), groups_path, class: 'btn btn-outline-dark btn-block' %>
             </div>
             <div class='col-4 mx-auto'>
-              <%= link_to t('.withdraw'), group_withdraw_path(@group), method: :delete, data: {confirm: "本当に脱退しますか？"}, class: 'btn btn-dark btn-block' %>
+              <%= link_to t('.withdraw'), group_withdraw_path(@group), method: :delete, data: {confirm: t('.confirm_withdraw_group')}, class: 'btn btn-dark btn-block' %>
             </div>
           </div>
         <% else %>
@@ -64,7 +64,7 @@
               <%= link_to t('.back'), groups_path, class: 'btn btn-outline-dark btn-block' %>
             </div>
             <div class='col-4 mx-auto'>
-              <%= link_to t('.participate'), group_join_path(@group), class: 'btn btn-dark btn-block' %>
+              <%= link_to t('.join'), group_join_path(@group), class: 'btn btn-dark btn-block' %>
             </div>
           </div>
         <% end %>
