@@ -40,34 +40,24 @@ en:
       confirmed: 'Registered Your Account'
     failure:
       already_authenticated: 'Already Loged In'
-      invalid: "%{authentication_keys} もしくはパスワードが不正です。"
-      not_found_in_database: "%{authentication_keys} もしくはパスワードが不正です。"
-      unauthenticated: 'アカウント登録もしくはログインしてください。'
-    mailer:
-      password_change:
-        subject: 'パスワードの変更について'
-    omniauth_callbacks:
-      failure: "%{kind} アカウントによる認証に失敗しました。理由：（%{reason}）"
-      success: "%{kind} アカウントによる認証に成功しました。"
+      invalid: "%{authentication_keys} or Password is incorrect."
+      not_found_in_database: "%{authentication_keys} or Password is incorrect."
+      unauthenticated: 'Sign up or Log in is required.'
     registrations:
-      signed_up: 'アカウント登録が完了しました'
+      signed_up: 'Registered Your Account.'
     sessions:
-      signed_in: 'ログインしました'
-      signed_out: 'ログアウトしました'
-      already_signed_out: '既にログアウト済みです'
+      signed_in: 'Signed in'
+      signed_out: 'Loged out'
+      already_signed_out: 'Already Loged out'
   errors:
     messages:
-      already_confirmed: 'は既に登録済みです。ログインしてください。'
-      not_found: 'は見つかりませんでした。'
-      not_saved:
-        one: "エラーが発生したため保存されませんでした:"
-        other: "%{count} 件のエラー"
-      taken: "は既に使用されています。"
-      blank: "が入力されていません。"
-      too_short: "は%{count}文字以上に設定して下さい。"
-      too_long: "は%{count}文字以下に設定して下さい。"
-      invalid: "は有効でありません。"
-      confirmation: "が内容とあっていません。"
+      already_confirmed: 'Already confirmed. Log in with this account.'
+      not_found: 'is not found'
+      taken: "is already taken."
+      blank: "is blank"
+      too_short: "is too short. Must be more than %{count} letters."
+      too_long: "is too long. Must be less than %{count} letters."
+      invalid: "is invalid"
 
   activerecord:
       attributes:
@@ -103,7 +93,7 @@ en:
         name: "Name"
         introduction: "Introduction"
         profile_image: "Profile Picture"
-        edit_end_user: "Edit Information"
+        edit_end_user: "Edit Profile"
         back: "Back"
         update: "Update"
         unsubscribe: "Unsubscribe"
@@ -116,7 +106,7 @@ en:
       show:
         number_of_posts: "Posts"
         number_of_groups: "Groups"
-        edit_end_user: "Edit Information"
+        edit_end_user: "Edit Profile"
         liked_posts: "Liked Posts"
         back_to_posts: "Back to Posts"
         unsubscribed_end_user: "Unsubscribed User"
@@ -127,13 +117,13 @@ en:
       new:
         compose_a_mail_to: ""
         title: "Title"
-        body: "Body (Daytime, Meeting place, Budget, In case of rain, etc.)"
+        body: "Body (Day, Time, Meeting place, Budget, In case of rain, etc.)"
         back: "Back"
         send: "Send"
       sent:
-        sent_a_mail: "Email Sent"
+        sent_a_mail: "Mail Sent"
         mail_detail: "The details are shown below."
-        mail_to_group_owner: "The email is also send to tha group owner."
+        mail_to_group_owner: "The mail is also send to tha group owner."
         title: "Title"
         body: "Body"
         back_to_groups: "Back to Groups"
@@ -174,52 +164,52 @@ en:
     homes:
       about:
         what_we_can_do: "What This Site Can Do"
-        search: "Seaerching for a Breathtaking scenery"
+        search: "Searching for a Breathtaking Scenery"
         keyword_or_tag: "By keywords and tags attached posts,"
         search_for_view: "you can search for views."
         post: "Posting"
-        share: "Share Superb views you think it is."
-        favorite_or_comment: "You may get Likes or comments."
+        share: "Share superb views you think it is."
+        favorite_or_comment: "You may get Likes or Comments."
         group: "Creating a Group"
-        look_for_member: "You can look for members who go to the breathtaking scenery with."
-        site_for_lovers: "The Community Site for Breathtaking Senerty lovers."
+        look_for_member: "You can look for members who go to see the breathtaking scenery with."
+        site_for_lovers: "The Community Site for Breathtaking Scenery lovers"
         welcome: "All are welcome."
-        share_your_views: "Share a senery you were moved."
-        feature: "The Feature of this Site"
+        share_your_views: "Share sceneries you were moved by."
+        feature: "The Feature of This Site"
         go_to_spot: "Go to the spot with group members."
         members_with: "You make a group and look for members who go to the spot with,"
         find_friends: "and may also find friends."
         policy: "Site Policy"
-        positive_communication: "Have positive communication with others. Likes and comments works."
-        purpose: "自然が織りなす絶景が集まることを目的としています。"
-        no_problem: "（建物や人物が入っていても一部であれば問題ありません）"
-        what_you_like: "Everyone has different sensibilities. Post whatever you are moved."
+        positive_communication: "Have positive communication with others. Do Likes and Comments."
+        purpose: "The purpose of this site is sharing the beauty of nature."
+        no_problem: "（There is no ploblem if the view image has a building or person as a part of it.）"
+        what_you_like: "Everyone has different sensibilities. Post whatever you are moved by."
         prohibition: "We request that you don't make critical or negative comments."
-        about_group: "About Group"
+        how_to_use_group: "How to use Group"
         need_sign_up: "Sign up is required for any group activities."
         create_group: "Create a Group"
-        create_1: "グループ一覧画面からグループを新規作成のボタンをクリック"
-        create_2: "グループのタイトル、概要、行き先、開催日を入力して「作成」をクリック（写真は任意）"
-        create_3: "グループ一覧から作成したグループを選択すると詳細が確認できます。"
-        create_4: "「編集」を押すと内容を変更することができます。"
+        create_1: "Click the 'Create a Group' on a group list page."
+        create_2: "Fill the form (Title, Caption, Destination and Date) and click 'Create'(Group image is an option)."
+        create_3: "Select the group you created on a group list page, and check the details of the group."
+        create_4: "To edit group information, click 'Edit' on the group detail page."
         join_withdrawal: "Join and Withdrawal"
-        join_1: "グループ一覧画面から参加したいグループをクリック"
-        join_2: "「参加する」をクリックすると参加となり、メンバーに名前が追加されます。"
-        join_3: "「脱退する」をクリックするとメンバーから名前が削除されます。"
-        event_notice: "Event Notice to the Group members"
-        owner_sent_mail: "グループ作成者はメンバーにイベントについてお知らせメールを送信できます。"
-        by_managed_address: "送信元のメールアドレスはサイト管理下のアドレスが使用されます。"
-        event_1: "グループの詳細画面から「メンバーにイベントを通知」をクリック"
-        event_2: "フォームにタイトルと本文を入力（日時、集合場所、予算、雨天の場合などの詳細）"
-        event_3: "「送信」をクリックした後、「メールを送信しました」の画面が出たら通知完了。"
-        event_4: "グループ作成者にもメンバーと同様のメールが送信されます。"
+        join_1: "Select a group you want to join on a group list page."
+        join_2: "Click 'Join' and your name is added as the member."
+        join_3: "To withdraw from the group, click 'Withdraw' and your name is removed."
+        event_notice: "Event Notice to the Group Members"
+        owner_sent_mail: "A group owner can send members a mail to notice an event."
+        by_managed_address: "The mail is send by a site's managed email address."
+        event_1: "Click 'Create an Event Notice' on a group detail page."
+        event_2: "Fill the form (mention about Date, Gathering place, Budget and In case of rain)."
+        event_3: "After click 'Send', a page with 'Mail Sent' will be displayed and the event notice is completed."
+        event_4: "The mail is also send to tha group owner."
       top:
-        for_superb_view_lovers: "For Breathtaking senery Lovers"
+        for_superb_view_lovers: "For Breathtaking Scenery Lovers"
         community_website: "Community Site"
         about: "About Us"
     post_comments:
       form:
-        under_100letters: "Comment Under 100 letters"
+        under_100letters: "Comment under 100 letters"
         send: "Send"
       index:
         delete: "Delete"
@@ -263,14 +253,14 @@ en:
       search:
         result: "Result"
         post: "posts"
-        no_post_try_again: "No Post is found. Try again with other words."
+        no_post_try_again: "No post is found. Try again with other words."
     sessions:
       new:
         log_in: "Log In"
         email: "Email"
         password: "Password"
         sign_up: "Sign Up"
-        guest_log_in: "Guest Log In"
+        guest_log_in: "Guest"
     tags:
       index:
         search_from_tags: "Tag Search"
@@ -283,14 +273,14 @@ en:
       about: "About Us"
       mypage: "My Page"
       new_post: "New Post"
-      posts: "Posts"
+      posts: "Post"
       group: "Group"
       tags: "Tag Search"
       log_out: "Log Out"
       log_in: "Log In"
   contact_mailer:
     send_notification:
-      has_an_event: "has an Event"
+      has_an_event: "has an event"
       title: "Title"
       caution: "This email address is for sending only."
       not_reach_to_owner: "You can't reach the group owner even if you reply."

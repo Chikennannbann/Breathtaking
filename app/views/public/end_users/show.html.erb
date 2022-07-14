@@ -16,8 +16,8 @@
           </tr>
         </table>
         <% if @end_user == current_end_user && @end_user.name != 'ゲストユーザー'%>
-          <%= link_to t('.edit_end_user'), edit_end_user_path, class: 'btn btn-outline-dark' %>
-          <%= link_to t('.liked_posts'), favorites_end_user_path, class: 'btn btn-outline-dark' %>
+          <%= link_to t('.edit_end_user'), edit_end_user_path, class: 'btn btn-dark' %>
+          <%= link_to t('.liked_posts'), favorites_end_user_path, class: 'btn btn-dark' %>
         <% else %>
           <%= link_to t('.back_to_posts'), posts_path, class: 'btn btn-dark' %>
         <% end %>
