@@ -11,13 +11,7 @@ ja:
       already_authenticated: 'すでにログインしています。'
       invalid: "%{authentication_keys} もしくはパスワードが不正です。"
       not_found_in_database: "%{authentication_keys} もしくはパスワードが不正です。"
-      unauthenticated: 'アカウント登録もしくはログインしてください。'
-    mailer:
-      password_change:
-        subject: 'パスワードの変更について'
-    omniauth_callbacks:
-      failure: "%{kind} アカウントによる認証に失敗しました。理由：（%{reason}）"
-      success: "%{kind} アカウントによる認証に成功しました。"
+      unauthenticated: '新規登録もしくはログインしてください。'
     registrations:
       signed_up: 'アカウント登録が完了しました'
     sessions:
@@ -28,15 +22,11 @@ ja:
     messages:
       already_confirmed: 'は既に登録済みです。ログインしてください。'
       not_found: 'は見つかりませんでした。'
-      not_saved:
-        one: "エラーが発生したため保存されませんでした:"
-        other: "%{count} 件のエラー"
       taken: "は既に使用されています。"
       blank: "が入力されていません。"
       too_short: "は%{count}文字以上に設定して下さい。"
       too_long: "は%{count}文字以下に設定して下さい。"
       invalid: "は有効でありません。"
-      confirmation: "が内容とあっていません。"
 
   activerecord:
       attributes:
@@ -72,7 +62,7 @@ ja:
         name: "名前"
         introduction: "自己紹介"
         profile_image: "プロフィール写真"
-        edit_end_user: "ユーザー情報編集"
+        edit_end_user: "プロフィール編集"
         back: "戻る"
         update: "更新"
         unsubscribe: "退会する"
@@ -85,7 +75,7 @@ ja:
       show:
         number_of_posts: "投稿数"
         number_of_groups: "グループ数"
-        edit_end_user: "ユーザー情報編集"
+        edit_end_user: "プロフィール編集"
         liked_posts: "いいねした投稿"
         back_to_posts: "投稿一覧に戻る"
         unsubscribed_end_user: "退会済みユーザーです。"
@@ -164,10 +154,10 @@ ja:
         no_problem: "（建物や人物が入っていても一部であれば問題ありません）"
         what_you_like: "感性は人それぞれです。あなたが良いと思った絶景を投稿してみましょう。"
         prohibition: "批判的な見方をされる方はご遠慮ください。"
-        about_group: "グループについて"
+        how_to_user_group: "グループについて"
         need_sign_up: "グループを利用するためにはログインが必要です。"
         create_group: "グループ作成"
-        create_1: "グループ一覧画面からグループを新規作成のボタンをクリック"
+        create_1: "グループ一覧画面から「グループを新規作成」をクリック"
         create_2: "グループのタイトル、概要、行き先、開催日を入力して「作成」をクリック（写真は任意）"
         create_3: "グループ一覧から作成したグループを選択すると詳細が確認できます。"
         create_4: "「編集」を押すと内容を変更することができます。"
