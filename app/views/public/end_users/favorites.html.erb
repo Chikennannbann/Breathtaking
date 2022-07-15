@@ -1,11 +1,13 @@
 <div class='container my-5'>
-  <h3><i class="fa-solid fa-heart text-danger"></i><%= t('.liked_posts')%>： <%= @favorite_posts.count %><%= t('.post') %>  <%= link_to t('.back_to_mypage'), end_user_path(current_end_user), class: 'btn btn-outline-dark' %></h3>
+  <h3><i class="fa-solid fa-heart text-danger"></i> <%= t('.liked_posts')%>： <%= @favorite_posts.count %><%= t('.post') %>  <%= link_to t('.back_to_mypage'), end_user_path(current_end_user), class: 'btn btn-outline-dark' %></h3>
   <div class='row card-wrapper'>
     <% if @favorite_posts.present? %>
       <%= render 'public/posts/index', posts: @favorite_posts %>
     <% else %>
+      <div class='row mx-auto'>
       <p><%= t('.no_liked_post')%>
       <%= link_to t('.check_posts'), posts_path, class: 'btn btn-dark btn-sm' %></p>
+      </div>
     <% end %>
   </div>
   <div class='row'>

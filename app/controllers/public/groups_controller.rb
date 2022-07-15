@@ -19,8 +19,7 @@ class Public::GroupsController < ApplicationController
   def join
     @group = Group.find(params[:group_id])
     @group.end_users << current_end_user
-    redirect_to group_path(@group)
-    flash[:notice] = "グループに参加しました"
+    redirect_to group_path(@group), notice: t('notice.group_join')
   end
 
   def new
@@ -32,8 +31,7 @@ class Public::GroupsController < ApplicationController
     @group.owner_id = current_end_user.id
     @group.end_users << current_end_user
     if @group.save
-      redirect_to groups_path
-      flash[:notice] = "グループを作成しました"
+      redirect_to groups_path, notice: t('notice.group_new')
     else
       render 'new'
     end
@@ -44,8 +42,7 @@ class Public::GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to groups_path
-      flash[:notice] = "グループ情報を更新しました"
+      redirect_to groups_path, notice: t('notice.group_update')
     else
       render 'edit'
     end
@@ -53,15 +50,13 @@ class Public::GroupsController < ApplicationController
 
   def destroy
     @group.destroy
-    redirect_to groups_path
-    flash[:notice] = "グループを削除しました"
+    redirect_to groups_path, notice: t('notice.group_delete')
   end
 
   def withdraw
     @group = Group.find(params[:group_id])
     @group.end_users.delete(current_end_user)
-    redirect_to group_path(@group)
-    flash[:notice] = "グループから脱退しました"
+    redirect_to group_path(@group), notice: t('notice.group_withdraw')
   end
 
   private
@@ -79,7 +74,7 @@ class Public::GroupsController < ApplicationController
 
   def ensure_guest_end_user
     if current_end_user.name == "ゲストユーザー"
-      redirect_to groups_path, notice: 'ゲストユーザーではご利用いただけません'
+      redirect_to groups_path, notice: t('notice.guest_alert')
     end
   end
 end

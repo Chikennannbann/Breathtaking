@@ -37,18 +37,18 @@ en:
 
   devise:
     confirmations:
-      confirmed: 'Registered Your Account'
+      confirmed: 'Registered your account'
     failure:
-      already_authenticated: 'Already Loged In'
+      already_authenticated: 'Already loged in'
       invalid: "%{authentication_keys} or Password is incorrect."
       not_found_in_database: "%{authentication_keys} or Password is incorrect."
-      unauthenticated: 'Sign up or Log in is required.'
+      unauthenticated: 'Sign up or log in is required.'
     registrations:
-      signed_up: 'Registered Your Account.'
+      signed_up: 'Registered your account.'
     sessions:
       signed_in: 'Signed in'
       signed_out: 'Loged out'
-      already_signed_out: 'Already Loged out'
+      already_signed_out: 'Already loged out'
   errors:
     messages:
       already_confirmed: 'Already confirmed. Log in with this account.'
@@ -130,7 +130,7 @@ en:
     groups:
       form: &groups_common
         group_image: "Group Picture"
-        name: "Group Nama"
+        name: "Group Name"
         caption: "Caption"
         destination: "Destination"
         date: "Date"
@@ -151,7 +151,7 @@ en:
         <<: *groups_common
         member: "Member"
         owner: "Owner"
-        create_event_notice: "Create an Event Notice（Compose a mail on the next page.）"
+        create_event_notice: "Create an Event Notice（Compose a mail on the next page）"
         back: "Back"
         edit: "Edit"
         delete_group: "Delete the Group"
@@ -284,3 +284,17 @@ en:
       title: "Title"
       caution: "This email address is for sending only."
       not_reach_to_owner: "You can't reach the group owner even if you reply."
+  notice:
+    guest_log_in: "Loged in as a guest"
+    end_user: "Updated your profile"
+    withdraw: "Deleted your account. Thank you for using our site!"
+    guest_alert: "Guest can't use this service. Sign up is required."
+    group_join: "Joined the group"
+    group_new: "Created the group"
+    group_update: "Updated the group info"
+    group_delete: "Deleted the group"
+    group_withdraw: "Withdrew form the group"
+    post_new: "Posted successfully"
+    post_update: "Updated the post"
+    post_delete: "Deleted the post"
+    withdrew_end_user: "This user already withdrew."

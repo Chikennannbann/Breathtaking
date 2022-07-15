@@ -26,8 +26,7 @@ class Public::PostsController < ApplicationController
     tag_list = params[:post][:name].split('、')
     if @post.save
       @post.save_tags(tag_list)
-      redirect_to posts_path
-      flash[:notice] = "投稿が完了しました"
+      redirect_to posts_path, notice: t('notice.post_new')
     else
       render 'new'
     end
@@ -40,8 +39,7 @@ class Public::PostsController < ApplicationController
     tag_list = params[:post][:name].split('、')
     if @post.update(post_params)
       @post.save_tags(tag_list)
-      redirect_to posts_path
-      flash[:notice] = "編集が完了しました"
+      redirect_to posts_path, notice: t('notice.post_new')
     else
       render 'edit'
     end
@@ -49,8 +47,7 @@ class Public::PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path
-    flash[:notice] = "投稿を削除しました"
+    redirect_to posts_path, notice: t('notice.post_delete')
   end
 
   private
@@ -68,7 +65,7 @@ class Public::PostsController < ApplicationController
 
   def ensure_guest_end_user
     if current_end_user.name == "ゲストユーザー"
-      redirect_to posts_path, notice: 'ゲストユーザーではご利用いただけません'
+      redirect_to posts_path, notice: t('notice.guest_alert')
     end
   end
 end

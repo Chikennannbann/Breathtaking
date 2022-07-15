@@ -14,8 +14,7 @@ class Public::EndUsersController < ApplicationController
 
   def update
     if @end_user.update(end_user_params)
-      redirect_to end_user_path
-      flash[:notice] = "ユーザー情報を更新しました"
+      redirect_to end_user_path, notice: t('notice.end_user')
     else
       render 'edit'
     end
@@ -28,8 +27,7 @@ class Public::EndUsersController < ApplicationController
     @end_user = current_end_user
     @end_user.update(is_deleted: true)
     reset_session
-    redirect_to root_path
-    flash[:notice] = "退会しました。ご利用いただきありがとうございました！"
+    redirect_to root_path, notice: t('notice.withdraw')
   end
 
   def favorites
@@ -54,7 +52,7 @@ class Public::EndUsersController < ApplicationController
   def ensure_guest_end_user
     @end_user = EndUser.find(params[:id])
     if @end_user.name == "ゲストユーザー"
-      redirect_to end_user_path(current_end_user), notice: 'ゲストユーザーはプロフィール編集画面へは遷移できません。'
+      redirect_to end_user_path(current_end_user), notice: t('notice.guest_alert')
     end
   end
 end
