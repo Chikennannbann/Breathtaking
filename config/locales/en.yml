@@ -39,7 +39,7 @@ en:
     confirmations:
       confirmed: 'Registered your account'
     failure:
-      already_authenticated: 'Already loged in'
+      already_authenticated: 'Already logged in'
       invalid: "%{authentication_keys} or Password is incorrect."
       not_found_in_database: "%{authentication_keys} or Password is incorrect."
       unauthenticated: 'Sign up or log in is required.'
@@ -47,8 +47,8 @@ en:
       signed_up: 'Registered your account.'
     sessions:
       signed_in: 'Signed in'
-      signed_out: 'Loged out'
-      already_signed_out: 'Already loged out'
+      signed_out: 'Logged out'
+      already_signed_out: 'Already logged out'
   errors:
     messages:
       already_confirmed: 'Already confirmed. Log in with this account.'
@@ -102,14 +102,14 @@ en:
         post: "posts"
         back_to_mypage: "Back to Mypage"
         check_posts: "Check Posts"
-        no_liked_post: "No Liked Post"
+        no_liked_post: "No liked post"
       show:
         number_of_posts: "Posts"
         number_of_groups: "Groups"
         edit_end_user: "Edit Profile"
         liked_posts: "Liked Posts"
         back_to_posts: "Back to Posts"
-        unsubscribed_end_user: "Unsubscribed User"
+        unsubscribed_end_user: "Unsubscribed user"
       unsubscribe:
         <<: *end_user_common
         are_you_sure: "Are you sure？"
@@ -159,7 +159,7 @@ en:
         withdraw: "Withdraw"
         confirm_withdraw_group: "Are you sure to withdraw from the group?"
         join: "Join"
-        unsubscribed_end_users_group: "Unsubscribed User's Group"
+        unsubscribed_end_users_group: "Unsubscribed user's group"
         back_to_groups: "Back to Group"
     homes:
       about:
@@ -238,7 +238,7 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm_delete: "Are you sure to delete the post?"
-        unsubscribed_end_users_post: "Unsubscribed User's Post"
+        unsubscribed_end_users_post: "Unsubscribed user's post"
         back_to_posts: "Back to Posts"
     registrations:
       new:
@@ -285,7 +285,7 @@ en:
       caution: "This email address is for sending only."
       not_reach_to_owner: "You can't reach the group owner even if you reply."
   notice:
-    guest_log_in: "Loged in as a guest"
+    guest_log_in: "Logged in as a guest"
     end_user: "Updated your profile"
     withdraw: "Deleted your account. Thank you for using our site!"
     guest_alert: "Guest can't use this service. Sign up is required."
@@ -293,7 +293,7 @@ en:
     group_new: "Created the group"
     group_update: "Updated the group info"
     group_delete: "Deleted the group"
-    group_withdraw: "Withdrew form the group"
+    group_withdraw: "Withdrew from the group"
     post_new: "Posted successfully"
     post_update: "Updated the post"
     post_delete: "Deleted the post"
