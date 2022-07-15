@@ -40,8 +40,7 @@ class Public::SessionsController < Devise::SessionsController
     @end_user = EndUser.find_by(email: params[:end_user][:email])
     return if !@end_user
     if @end_user.valid_password?(params[:end_user][:password]) && @end_user.is_deleted
-      flash[:notice] = '退会済みユーザーです。'
-      redirect_to new_end_user_registration_path
+      redirect_to new_end_user_registration_path, notice: t('notice.withdrew_end_user')
     end
   end
 end

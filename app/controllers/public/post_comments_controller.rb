@@ -24,7 +24,7 @@ class Public::PostCommentsController < ApplicationController
 
   def ensure_guest_end_user
     if current_end_user.name == "ゲストユーザー"
-      redirect_to request.referer, notice: 'ゲストユーザーではご利用いただけません'
+      redirect_to request.referer, notice: t('notice.guest_alert')
     end
   end
 end

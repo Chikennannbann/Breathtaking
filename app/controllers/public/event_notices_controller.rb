@@ -44,7 +44,7 @@ class Public::EventNoticesController < ApplicationController
 
   def ensure_guest_end_user
     if current_end_user.name == "ゲストユーザー"
-      redirect_to groups_path, notice: 'ゲストユーザーではご利用いただけません'
+      redirect_to groups_path, notice: t('notice.guest_alert')
     end
   end
 end

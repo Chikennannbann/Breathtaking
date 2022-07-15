@@ -18,6 +18,7 @@ ja:
       signed_in: 'ログインしました'
       signed_out: 'ログアウトしました'
       already_signed_out: '既にログアウト済みです'
+
   errors:
     messages:
       already_confirmed: 'は既に登録済みです。ログインしてください。'
@@ -48,6 +49,7 @@ ja:
           date: "開催日"
         post_comment:
           body: "コメント"
+
   views:
     pagination:
       first: <i class="fa-solid fa-angles-left"></i>
@@ -154,7 +156,7 @@ ja:
         no_problem: "（建物や人物が入っていても一部であれば問題ありません）"
         what_you_like: "感性は人それぞれです。あなたが良いと思った絶景を投稿してみましょう。"
         prohibition: "批判的な見方をされる方はご遠慮ください。"
-        how_to_user_group: "グループについて"
+        how_to_use_group: "グループの使い方"
         need_sign_up: "グループを利用するためにはログインが必要です。"
         create_group: "グループ作成"
         create_1: "グループ一覧画面から「グループを新規作成」をクリック"
@@ -237,6 +239,7 @@ ja:
         result: "の検索結果"
         post: "件"
         back_to_tags: "タグ一覧に戻る"
+
   layouts:
     application:
       about: "サイトについて"
@@ -247,9 +250,25 @@ ja:
       tags: "タグ検索"
       log_out: "ログアウト"
       log_in: "ログイン"
+
   contact_mailer:
     send_notification:
       has_an_event: "からのイベント通知です"
       title: "タイトル"
       caution: "イベント通知専用のメールアドレスです。"
       not_reach_to_owner: "返信してもグループ作成者には届きません。"
+
+  notice:
+    guest_log_in: "ゲストユーザーでログインしました"
+    end_user: "プロフィールを更新しました"
+    withdraw: "退会しました。ご利用いただきありがとうございました！"
+    guest_alert: "ゲストユーザーではご利用いただけません"
+    group_join: "グループに参加しました"
+    group_new: "グループを作成しました"
+    group_update: "グループ情報を更新しました"
+    group_delete: "グループを削除しました"
+    group_withdraw: "グループから脱退しました"
+    post_new: "投稿が完了しました"
+    post_update: "投稿を更新しました"
+    post_delete: "投稿を削除しました"
+    withdrew_end_user: "退会済みのユーザーです"
