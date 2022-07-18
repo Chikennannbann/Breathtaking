@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def locale
-    # binding.pry
     @locale ||= params[:locale] ||= I18n.default_locale
     # パラメータで受け取った言語をインスタンス変数へ
     # パラメータがない場合はデフォルトの言語を使用(jaを設定済)
@@ -22,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def generate_variable_path
     @path = request.path.gsub(%r(/ja/|/en/), "")
-    # ページのURLをrequest.pathで受け取り、/enや/jaを削除。
+    # ページのURLをrequest.pathで受け取り、/en/や/ja/を削除。
     # どのページから切り替えても多言語対応を可能にするため
   end
 
