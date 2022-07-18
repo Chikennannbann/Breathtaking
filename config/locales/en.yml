@@ -234,7 +234,7 @@ en:
         back: "Back"
         post: "Post"
       show:
-        <<: *groups_common
+        <<: *posts_common
         edit: "Edit"
         delete: "Delete"
         confirm_delete: "Are you sure to delete the post?"
