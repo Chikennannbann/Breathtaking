@@ -23,7 +23,7 @@
           <span class='pl-2'>
             <% if params[:locale] == "en" || params[:locale].blank? %>
               <%= link_to "/ja/#{@path}", class: 'text-dark' do %>
-              <!--@pathで/jaを削除済みのURLを合体し、どのページからでも多言語対応が可能-->
+              <!--@pathで/ja/を削除済みのURLを合体し、どのページからでも多言語対応が可能-->
                  日本語
               <% end %>
             <% else %>
