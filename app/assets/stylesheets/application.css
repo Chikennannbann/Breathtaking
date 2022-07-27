@@ -89,3 +89,8 @@
 .pagination>.active>a {
   color: darkgray;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
