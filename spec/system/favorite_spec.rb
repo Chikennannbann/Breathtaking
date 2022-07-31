@@ -19,7 +19,7 @@ RSpec.describe 'いいねのテスト', type: :system do
   end
 
   context 'いいねをする', js: true do
-    it 'いいねできる' do
+    it 'いいねできる・取り消しできる' do
       find('.fa-regular').click
       expect(page).to have_css '.fa-solid'
       expect(@post.favorites.count).to eq(1)
