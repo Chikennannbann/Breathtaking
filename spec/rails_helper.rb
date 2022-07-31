@@ -63,16 +63,6 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
 
-  # Capybara.register_driver :firefox do |app|
-  #   browser_options = ::Selenium::WebDriver::Firefox::Options.new()
-  #   browser_options.args << '--headless'
-
-  #   Capybara::Selenium::Driver.new(
-  #     app,
-  #     browser: :firefox,
-  #     options: browser_options
-  #   )
-  # end
 
   Capybara.register_driver :selenium do |app|
     browser_options = ::Selenium::WebDriver::Firefox::Options.new()

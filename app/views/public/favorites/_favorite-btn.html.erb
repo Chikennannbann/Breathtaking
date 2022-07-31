@@ -1,6 +1,6 @@
 <% if current_end_user.present? && post.favorited_by?(current_end_user) %>
   <%= link_to post_favorites_path(post), method: :delete, remote: true, class:'text-danger' do %>
-    <i class="fa-solid fa-heart"></i> <%= post.favorites.count %>
+    <i class="fa-solid fa-heart" id='delete-favorite'></i> <%= post.favorites.count %>
   <% end %>
 <% else %>
   <%= link_to post_favorites_path(post), method: :post, remote: true, class:'text-danger' do %>
