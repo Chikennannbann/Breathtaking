@@ -79,6 +79,8 @@ en:
           date: "Date"
         post_comment:
           body: "Comment"
+        tag:
+          name: "Tag Name"
   views:
     pagination:
       first: <i class="fa-solid fa-angles-left"></i>

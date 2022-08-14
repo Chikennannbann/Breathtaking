@@ -49,6 +49,8 @@ ja:
           date: "開催日"
         post_comment:
           body: "コメント"
+        tag:
+          name: "タグ名"
 
   views:
     pagination:

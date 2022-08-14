@@ -21,14 +21,17 @@ class Public::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.end_user_id = current_end_user.id
-    tag_list = params[:post][:name].split('、')
-    if @post.save
-      @post.save_tags(tag_list)
-      redirect_to posts_path, notice: t('notice.post_new')
-    else
-      render 'new'
+    ActiveRecord::Base.transaction do
+      @post = Post.new(post_params)
+      @post.end_user_id = current_end_user.id
+      tag_list = params[:post][:name].split('、')
+      if
+        @post.save
+        @post.save_tags(tag_list)
+        redirect_to posts_path, notice: t('notice.post_new')
+      else
+        render 'new'
+      end
     end
   end
 
@@ -36,12 +39,14 @@ class Public::PostsController < ApplicationController
   end
 
   def update
-    tag_list = params[:post][:name].split('、')
-    if @post.update(post_params)
-      @post.save_tags(tag_list)
-      redirect_to posts_path, notice: t('notice.post_new')
-    else
-      render 'edit'
+    ActiveRecord::Base.transaction do
+      tag_list = params[:post][:name].split('、')
+      if @post.update(post_params)
+        @post.save_tags(tag_list)
+        redirect_to posts_path, notice: t('notice.post_new')
+      else
+        render 'edit'
+      end
     end
   end
 
